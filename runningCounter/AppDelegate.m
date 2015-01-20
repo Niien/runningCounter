@@ -8,13 +8,15 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
--(void)ReOderBadgeNumber { //重新安排應用程式的按鈕的提示數字
+-(void)ReOderBadgeNumber {
+    //重新安排應用程式的按鈕的提示數字
     //查看目前剩餘的通知數
     NSArray *notifys = [[UIApplication sharedApplication] scheduledLocalNotifications];
     int index = 1;
@@ -29,12 +31,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //裝置版本判斷，註冊LocalNotification
+    //====== 裝置版本判斷，註冊LocalNotification
     if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
         if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
             [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil ]];
         }
     }
+    //====== 裝置版本判斷
+    
+    //====== Parse
+    [Parse enableLocalDatastore];   //允許本地儲存
+    
+    // Initialize Parse(初始化)
+    [Parse setApplicationId:@"37sMr08M1ovb6en1nQ7mm6wMa0wZS9w8EBrb8203"
+                  clientKey:@"VPIfQhgqixZKALeTzbhIurFTwYOrLZZPqRYS9oRn"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    //====== Parse
     
     return YES;
 }
