@@ -7,6 +7,7 @@
 //
 
 #import "BookViewController.h"
+#import "CollectionViewCell.h"
 
 @interface BookViewController ()
 

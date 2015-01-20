@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
-		A9F677831A6E34F900E5F06E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677821A6E34F900E5F06E /* CoreLocation.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
 		A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		A9F677821A6E34F900E5F06E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		A9F6778B1A6E366400E5F06E /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
@@ -86,10 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				A9F677831A6E34F900E5F06E /* CoreLocation.framework in Frameworks */,
 				A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */,
-
 				AE6BF3F61A6E3663004280AF /* libsqlite3.dylib in Frameworks */,
 				AE6BF3F71A6E3663004280AF /* libz.dylib in Frameworks */,
 				AE6BF3F81A6E3663004280AF /* MobileCoreServices.framework in Frameworks */,
@@ -103,7 +98,6 @@
 				AE6BF3EC1A6E362B004280AF /* CFNetwork.framework in Frameworks */,
 				AE6BF3ED1A6E362B004280AF /* CoreGraphics.framework in Frameworks */,
 				AE6BF3EE1A6E362B004280AF /* CoreLocation.framework in Frameworks */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,15 +133,17 @@
 			name = module;
 			sourceTree = "<group>";
 		};
+		A9F677961A6E3C1800E5F06E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		AE15B1371A6E2A0400452FCB = {
 			isa = PBXGroup;
 			children = (
-
-				A9F677821A6E34F900E5F06E /* CoreLocation.framework */,
-				A9F677801A6E34F200E5F06E /* MapKit.framework */,
-
 				AE6BF3FD1A6E366F004280AF /* framework */,
-
 				AE15B1421A6E2A0400452FCB /* runningCounter */,
 				AE15B15C1A6E2A0500452FCB /* runningCounterTests */,
 				AE15B1411A6E2A0400452FCB /* Products */,
@@ -170,6 +166,7 @@
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
 				A9F677911A6E382800E5F06E /* module */,
 				A9F677871A6E35C300E5F06E /* ViewController */,
+				A9F677961A6E3C1800E5F06E /* Images */,
 				AE15B14D1A6E2A0500452FCB /* Main.storyboard */,
 				AE15B1501A6E2A0500452FCB /* Images.xcassets */,
 				AE15B1521A6E2A0500452FCB /* LaunchScreen.xib */,
@@ -207,6 +204,7 @@
 		AE6BF3FD1A6E366F004280AF /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				A9F677801A6E34F200E5F06E /* MapKit.framework */,
 				AE6BF3FE1A6E3691004280AF /* Bolts.framework */,
 				AE6BF3FF1A6E3691004280AF /* Parse.framework */,
 				AE6BF3EF1A6E3663004280AF /* libsqlite3.dylib */,
