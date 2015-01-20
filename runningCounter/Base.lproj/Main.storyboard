@@ -231,7 +231,7 @@
         <!--Book-->
         <scene sceneID="e5p-FP-1vY">
             <objects>
-                <viewController id="x6U-I4-XnP" sceneMemberID="viewController">
+                <viewController id="x6U-I4-XnP" customClass="BookViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ps0-ar-brx"/>
                         <viewControllerLayoutGuide type="bottom" id="vD2-VB-r32"/>

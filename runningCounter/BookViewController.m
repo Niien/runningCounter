@@ -10,6 +10,9 @@
 #import "CollectionViewCell.h"
 
 @interface BookViewController ()
+{
+    NSMutableArray *pictures;
+}
 
 @end
 
@@ -27,6 +30,23 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    
+    if (pictures == nil) {
+        
+        pictures = [NSMutableArray new];
+        
+    }
+    
+    for (int i = 0; i < 3; i++) {
+        
+        [pictures setObject:[NSString stringWithFormat:@"pokemon%d_big.png",i] atIndexedSubscript:i];
+        
+    }
+    
+    NSLog(@"%@",pictures);
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

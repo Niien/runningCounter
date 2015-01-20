@@ -11,6 +11,12 @@
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
 		A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */; };
+		A9F6779D1A6E428700E5F06E /* pokemon0_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F677971A6E428700E5F06E /* pokemon0_big.png */; };
+		A9F6779E1A6E428700E5F06E /* pokemon0.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F677981A6E428700E5F06E /* pokemon0.png */; };
+		A9F6779F1A6E428700E5F06E /* pokemon1_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F677991A6E428700E5F06E /* pokemon1_big.png */; };
+		A9F677A01A6E428700E5F06E /* pokemon1.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F6779A1A6E428700E5F06E /* pokemon1.png */; };
+		A9F677A11A6E428700E5F06E /* pokemon2_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F6779B1A6E428700E5F06E /* pokemon2_big.png */; };
+		A9F677A21A6E428700E5F06E /* pokemon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F6779C1A6E428700E5F06E /* pokemon2.png */; };
 		AE15B1461A6E2A0500452FCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE15B1451A6E2A0500452FCB /* main.m */; };
 		AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE15B1481A6E2A0500452FCB /* AppDelegate.m */; };
 		AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE15B14B1A6E2A0500452FCB /* ViewController.m */; };
@@ -51,6 +57,12 @@
 		A9F6778C1A6E366400E5F06E /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		A9F677971A6E428700E5F06E /* pokemon0_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemon0_big.png; sourceTree = "<group>"; };
+		A9F677981A6E428700E5F06E /* pokemon0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemon0.png; sourceTree = "<group>"; };
+		A9F677991A6E428700E5F06E /* pokemon1_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemon1_big.png; sourceTree = "<group>"; };
+		A9F6779A1A6E428700E5F06E /* pokemon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemon1.png; sourceTree = "<group>"; };
+		A9F6779B1A6E428700E5F06E /* pokemon2_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemon2_big.png; sourceTree = "<group>"; };
+		A9F6779C1A6E428700E5F06E /* pokemon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemon2.png; sourceTree = "<group>"; };
 		AE15B1401A6E2A0400452FCB /* runningCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runningCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE15B1441A6E2A0500452FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE15B1451A6E2A0500452FCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +148,12 @@
 		A9F677961A6E3C1800E5F06E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A9F677971A6E428700E5F06E /* pokemon0_big.png */,
+				A9F677981A6E428700E5F06E /* pokemon0.png */,
+				A9F677991A6E428700E5F06E /* pokemon1_big.png */,
+				A9F6779A1A6E428700E5F06E /* pokemon1.png */,
+				A9F6779B1A6E428700E5F06E /* pokemon2_big.png */,
+				A9F6779C1A6E428700E5F06E /* pokemon2.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -302,9 +320,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F677A01A6E428700E5F06E /* pokemon1.png in Resources */,
 				AE15B14F1A6E2A0500452FCB /* Main.storyboard in Resources */,
+				A9F6779D1A6E428700E5F06E /* pokemon0_big.png in Resources */,
 				AE15B1541A6E2A0500452FCB /* LaunchScreen.xib in Resources */,
 				AE15B1511A6E2A0500452FCB /* Images.xcassets in Resources */,
+				A9F6779F1A6E428700E5F06E /* pokemon1_big.png in Resources */,
+				A9F6779E1A6E428700E5F06E /* pokemon0.png in Resources */,
+				A9F677A21A6E428700E5F06E /* pokemon2.png in Resources */,
+				A9F677A11A6E428700E5F06E /* pokemon2_big.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
