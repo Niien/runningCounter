@@ -9,7 +9,16 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+{
+    
+}
+//====== User Info
+@property (weak, nonatomic) IBOutlet UILabel *UserNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *UserLVLabel;
+@property (weak, nonatomic) IBOutlet UILabel *UserPowerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *UserAdwardLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *UserImageView;
+//====== User Info
 @end
 
 @implementation ViewController
