@@ -6,10 +6,17 @@
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
 
+@import MapKit;
+
 #import "MapViewController.h"
 #import "CollectionViewCell.h"
+#import "MyCustomPin.h"
 
 @interface MapViewController ()
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+
 
 @end
 

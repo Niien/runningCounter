@@ -15,7 +15,4 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *ImageName;
 
-@property (weak, nonatomic) IBOutlet UILabel *ImageDetailInfo;
-
-
 @end

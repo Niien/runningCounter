@@ -10,4 +10,8 @@
 
 @interface MapViewController : ViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
+
+
+
 @end

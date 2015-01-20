@@ -5,15 +5,18 @@
 //  Created by chiawei on 2015/1/20.
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
+@import MapKit;
 
 #import "BookViewController.h"
 #import "CollectionViewCell.h"
 
-@interface BookViewController ()
+@interface BookViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 {
     NSMutableArray *pictures;
+    
 }
 
+@property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 
 @end
 
@@ -43,6 +46,8 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     NSLog(@"%@",pictures);
     
+    self.myMapView.hidden = YES;
+    
     
     
 }
@@ -51,6 +56,21 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+// hide status bar
+- (BOOL)prefersStatusBarHidden {
+    
+    return YES;
+}
+
+
+- (IBAction)hide:(id)sender {
+    
+    _myMapView.hidden = YES;
+    
+}
+
 
 /*
 #pragma mark - Navigation
@@ -87,9 +107,31 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     cell.myImage.image = image;
     
     return cell;
+    
 }
 
+
+
+
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    return UIEdgeInsetsMake(10.0, 10.0, 20.0, 10.0);
+    
+}
+
+
+
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
