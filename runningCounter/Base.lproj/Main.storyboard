@@ -223,7 +223,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5MW-xP-kL8" customClass="CollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="5MW-xP-kL8" customClass="CollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -253,7 +253,7 @@
                                 <connections>
                                     <outlet property="ImageDetailInfo" destination="LyS-lr-Tg0" id="UzK-cy-cFS"/>
                                     <outlet property="ImageName" destination="Q2p-2T-yPI" id="FKz-iX-Sf3"/>
-                                    <outlet property="myImage" destination="jXI-9U-ss1" id="JvD-9O-pSN"/>
+                                    <outlet property="myImage" destination="jXI-9U-ss1" id="50R-h6-aLE"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

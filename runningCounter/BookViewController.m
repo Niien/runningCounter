@@ -15,9 +15,6 @@
 }
 
 
-@property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
-
-
 @end
 
 @implementation BookViewController
@@ -29,9 +26,6 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
     
@@ -72,19 +66,25 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    return 0;
+    return [pictures count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    
+    NSString *imageName = [NSString stringWithFormat:@"%@",[pictures objectAtIndex:indexPath.row]];
+    
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    cell.myImage.image = image;
     
     return cell;
 }
