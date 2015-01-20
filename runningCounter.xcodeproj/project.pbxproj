@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
+		A9F677831A6E34F900E5F06E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677821A6E34F900E5F06E /* CoreLocation.framework */; };
+		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
+		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
+		A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */; };
 		AE15B1461A6E2A0500452FCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE15B1451A6E2A0500452FCB /* main.m */; };
 		AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE15B1481A6E2A0500452FCB /* AppDelegate.m */; };
 		AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE15B14B1A6E2A0500452FCB /* ViewController.m */; };
@@ -27,6 +32,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A9F677821A6E34F900E5F06E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		A9F6778B1A6E366400E5F06E /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		A9F6778C1A6E366400E5F06E /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		AE15B1401A6E2A0400452FCB /* runningCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runningCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE15B1441A6E2A0500452FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE15B1451A6E2A0500452FCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F677831A6E34F900E5F06E /* CoreLocation.framework in Frameworks */,
+				A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +75,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9F677871A6E35C300E5F06E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE15B14A1A6E2A0500452FCB /* ViewController.h */,
+				AE15B14B1A6E2A0500452FCB /* ViewController.m */,
+				A9F6778B1A6E366400E5F06E /* BookViewController.h */,
+				A9F6778C1A6E366400E5F06E /* BookViewController.m */,
+				A9F677841A6E35B700E5F06E /* MapViewController.h */,
+				A9F677851A6E35B700E5F06E /* MapViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A9F677911A6E382800E5F06E /* module */ = {
+			isa = PBXGroup;
+			children = (
+				A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */,
+				A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */,
+			);
+			name = module;
+			sourceTree = "<group>";
+		};
 		AE15B1371A6E2A0400452FCB = {
 			isa = PBXGroup;
 			children = (
+				A9F677821A6E34F900E5F06E /* CoreLocation.framework */,
+				A9F677801A6E34F200E5F06E /* MapKit.framework */,
 				AE15B1421A6E2A0400452FCB /* runningCounter */,
 				AE15B15C1A6E2A0500452FCB /* runningCounterTests */,
 				AE15B1411A6E2A0400452FCB /* Products */,
@@ -83,8 +122,8 @@
 			children = (
 				AE15B1471A6E2A0500452FCB /* AppDelegate.h */,
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
-				AE15B14A1A6E2A0500452FCB /* ViewController.h */,
-				AE15B14B1A6E2A0500452FCB /* ViewController.m */,
+				A9F677911A6E382800E5F06E /* module */,
+				A9F677871A6E35C300E5F06E /* ViewController */,
 				AE15B14D1A6E2A0500452FCB /* Main.storyboard */,
 				AE15B1501A6E2A0500452FCB /* Images.xcassets */,
 				AE15B1521A6E2A0500452FCB /* LaunchScreen.xib */,
@@ -219,9 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
+				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
 				AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */,
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,
 				AE15B1461A6E2A0500452FCB /* main.m in Sources */,
+				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +456,7 @@
 				AE15B1651A6E2A0500452FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE15B1661A6E2A0500452FCB /* Build configuration list for PBXNativeTarget "runningCounterTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +465,7 @@
 				AE15B1681A6E2A0500452FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
