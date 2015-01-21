@@ -39,11 +39,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // === create a navigation item ===
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(back:)];
-    
-    self.navigationItem.rightBarButtonItem = backButton;
-    
     // ==== add image ====
     self.pokemonImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"pokemon%ld_big.png",(long)self.indexPathNumber]];
     
@@ -123,7 +118,7 @@
         // 註解位置等於上面新的經緯度
         annotation.coordinate = annoationCoordinate;
         
-        [self.myMapView addAnnotation:annotation];
+        [_myMapView addAnnotation:annotation];
         
     }
     
@@ -136,7 +131,6 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
-    NSLog(@"aaa");
     
     if (annotation == mapView.userLocation) {
         
@@ -144,11 +138,11 @@
     }
     
     
-    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)pictureID]];
+    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)self.indexPathNumber]];
         
     if (AnnotationView == nil) {
             
-        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)pictureID]];
+        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)self.indexPathNumber]];
             
     }
     else {
@@ -161,7 +155,7 @@
     AnnotationView.canShowCallout = YES;
         
         
-        //37.332018,-122.031409
+    //37.332018,-122.031409
         
     
     

@@ -295,6 +295,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-PS-UVw">
                                 <rect key="frame" x="0.0" y="236" width="600" height="370"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5Hf-dk-OiW" id="yaj-KF-Bei"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqY-wB-kN6">
                                 <rect key="frame" x="203" y="73" width="100" height="30"/>
@@ -326,8 +329,24 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SDk-xr-ETT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem id="WuG-Wd-GbT"/>
+                                    <navigationItem id="WuG-Wd-GbT">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="X3y-oe-kmO">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3b5-Lo-muR">
+                                                <rect key="frame" x="16" y="7" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="backIcon.jpg">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="back:" destination="5Hf-dk-OiW" eventType="touchUpInside" id="liN-lB-T1C"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="5Hf-dk-OiW" id="KMx-NE-pNa"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -374,4 +393,7 @@
             <point key="canvasLocation" x="-1044" y="1413.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backIcon.jpg" width="25" height="25"/>
+    </resources>
 </document>
