@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
+		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
+		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9B064D21A6ECE5B004554B6 /* ICON */ = {
+			isa = PBXGroup;
+			children = (
+				A9B064D31A6ECECA004554B6 /* backIcon.jpg */,
+			);
+			name = ICON;
+			sourceTree = "<group>";
+		};
 		A9F677871A6E35C300E5F06E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
 				A9F677911A6E382800E5F06E /* module */,
 				A9F677871A6E35C300E5F06E /* ViewController */,
+				A9B064D21A6ECE5B004554B6 /* ICON */,
 				A9F677961A6E3C1800E5F06E /* Images */,
 				AE15B14D1A6E2A0500452FCB /* Main.storyboard */,
 				AE15B1501A6E2A0500452FCB /* Images.xcassets */,
@@ -328,6 +339,7 @@
 				A9F677A01A6E428700E5F06E /* pokemon1.png in Resources */,
 				AE15B14F1A6E2A0500452FCB /* Main.storyboard in Resources */,
 				A9F6779D1A6E428700E5F06E /* pokemon0_big.png in Resources */,
+				A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */,
 				AE15B1541A6E2A0500452FCB /* LaunchScreen.xib in Resources */,
 				AE15B1511A6E2A0500452FCB /* Images.xcassets in Resources */,
 				A9F6779F1A6E428700E5F06E /* pokemon1_big.png in Resources */,

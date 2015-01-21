@@ -18,4 +18,24 @@
 }
 */
 
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
+{
+    
+    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",reuseIdentifier]];
+    
+    NSLog(@"image:%@",image);
+    
+    self.frame = CGRectMake(25, 25, 10, 10);
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    
+    [self addSubview:imageView];
+    
+    
+    return self;
+}
+
+
 @end

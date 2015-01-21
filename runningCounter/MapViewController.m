@@ -7,15 +7,28 @@
 //
 
 @import MapKit;
+@import CoreLocation;
 
 #import "MapViewController.h"
 #import "CollectionViewCell.h"
 #import "MyCustomPin.h"
 
-@interface MapViewController ()
+@interface MapViewController () <MKMapViewDelegate,CLLocationManagerDelegate>
+{
+    
+    CLLocationManager *locationManager;
+    
+    CLLocation *userLocation;
+    
+    NSInteger pictureID;
+    
+    BOOL isfirstLocation;
+}
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+
+
 
 
 @end
@@ -25,11 +38,135 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // === create a navigation item ===
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(back:)];
+    
+    self.navigationItem.rightBarButtonItem = backButton;
+    
+    // ==== add image ====
+    self.pokemonImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"pokemon%ld_big.png",(long)self.indexPathNumber]];
+    
+    //================
+    
+    locationManager = [CLLocationManager new];
+    
+    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        
+        [locationManager requestWhenInUseAuthorization];
+    }
+    
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.activityType = CLActivityTypeFitness;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    
+    //================
+    
+    _myMapView.userTrackingMode = MKUserTrackingModeFollow;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+// hide status bar
+- (BOOL)prefersStatusBarHidden {
+    
+    return YES;
+}
+
+
+
+#pragma mark - button Action
+
+- (IBAction)back:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
+#pragma mark - locattionManager Delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    
+    userLocation = [locations lastObject];
+    
+    if (isfirstLocation == NO) {
+        
+        MKCoordinateRegion region = _myMapView.region;
+        
+        region.center = userLocation.coordinate;
+        
+        
+        // 縮放比例
+        region.span.latitudeDelta = 0.001;
+        region.span.longitudeDelta = 0.001;
+        
+        [_myMapView setRegion:region animated:YES];
+        
+        isfirstLocation = YES;
+        
+        CLLocationCoordinate2D annoationCoordinate = userLocation.coordinate;
+        
+        // 改變經緯度
+        annoationCoordinate.latitude += 0.0005;
+        annoationCoordinate.longitude += 0.0005;
+        
+        MKPointAnnotation *annotation = [MKPointAnnotation new];
+        
+        // 註解位置等於上面新的經緯度
+        annotation.coordinate = annoationCoordinate;
+        
+        [self.myMapView addAnnotation:annotation];
+        
+    }
+    
+    
+}
+
+
+
+#pragma mark - mapView delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    NSLog(@"aaa");
+    
+    if (annotation == mapView.userLocation) {
+        
+        return nil;
+    }
+    
+    
+    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)pictureID]];
+        
+    if (AnnotationView == nil) {
+            
+        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)pictureID]];
+            
+    }
+    else {
+            
+        AnnotationView.annotation = annotation;
+    }
+        
+        
+        
+    AnnotationView.canShowCallout = YES;
+        
+        
+        //37.332018,-122.031409
+        
+    
+    
+    return AnnotationView;
+    
 }
 
 /*

@@ -9,6 +9,7 @@
 
 #import "BookViewController.h"
 #import "CollectionViewCell.h"
+#import "MapViewController.h"
 
 @interface BookViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 {
@@ -62,13 +63,6 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 - (BOOL)prefersStatusBarHidden {
     
     return YES;
-}
-
-
-- (IBAction)hide:(id)sender {
-    
-    _myMapView.hidden = YES;
-    
 }
 
 
@@ -128,8 +122,11 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    MapViewController *MVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     
+    MVC.indexPathNumber = indexPath.row;
     
+    [self presentViewController:MVC animated:YES completion:nil];
     
 }
 

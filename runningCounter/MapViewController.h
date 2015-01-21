@@ -10,7 +10,9 @@
 
 @interface MapViewController : ViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
+@property (strong, nonatomic) IBOutlet UIImageView *pokemonImage;
+
+@property (assign, nonatomic) NSInteger indexPathNumber;
 
 
 
