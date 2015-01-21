@@ -50,6 +50,8 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     //====== Parse
     
+    [self copyDBtoDocumentIfNeeded];
+    
     return YES;
 }
 
@@ -92,5 +94,57 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 
 }
+
+
+#pragma mark -SQLite
+- (NSString*)getBundleFilePath_filename:(NSString*)filename
+{
+    NSString *bundleResourcePath = [[NSBundle mainBundle]resourcePath];
+    NSString *dbPath = [bundleResourcePath stringByAppendingPathComponent:filename];
+    return dbPath;
+}
+
+
+- (NSString*)getDBPath_filename:(NSString*)filename
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documenPath = [paths firstObject];
+    NSString *dbPath = [documenPath stringByAppendingPathComponent:filename];
+    //NSLog(@"%@",dbPath);
+    return dbPath;
+}
+
+
+- (void)copyDBtoDocumentIfNeeded
+{
+    //readable DB
+    NSString *dbPath = [self getDBPath_filename:@"pokemonDatabase.sqlite"];
+    
+    //origenal DB(sample data table)
+    NSString *defaultDbPath = [self getBundleFilePath_filename:@"pokemonDatabase.sqlite"];
+    
+    //check file is exit or not
+    NSFileManager *fileMansger = [NSFileManager defaultManager];
+    NSError *error;
+    BOOL success;
+    success = [fileMansger fileExistsAtPath:dbPath];
+    if (!success) {
+        //copy sample table to document is Needed;
+        success = [fileMansger copyItemAtPath:defaultDbPath toPath:dbPath error:&error];
+        if (!success) {
+            NSLog(@"Error: %@",[error description]);
+        }
+        
+    }else{
+        /*
+         if db/table change structure is needed;
+         1. copy mydatabase.sqlite to _mydatabase.sqlite
+         2. move the data of _mydatabase.sqlite to mydatabase.sqlite(which table is change)
+         3. check the move data is correct,and delet _mydatabase!
+         4. change the Method - (id)queryCust
+         */
+    }
+}
+
 
 @end

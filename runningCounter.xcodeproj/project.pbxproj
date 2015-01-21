@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
 		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
+		A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D61A6F5848004554B6 /* HousePlaceMark.m */; };
+		A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064DA1A6F7D7A004554B6 /* FMDatabase.m */; };
+		A9B064E71A6F7D7A004554B6 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064DC1A6F7D7A004554B6 /* FMDatabaseAdditions.m */; };
+		A9B064E81A6F7D7A004554B6 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064DE1A6F7D7A004554B6 /* FMDatabasePool.m */; };
+		A9B064E91A6F7D7A004554B6 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064E01A6F7D7A004554B6 /* FMDatabaseQueue.m */; };
+		A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064E31A6F7D7A004554B6 /* FMResultSet.m */; };
+		A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064E51A6F7D7A004554B6 /* myDB.m */; };
+		A9B064F21A6F91A6004554B6 /* pokemonDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A9B064F11A6F91A6004554B6 /* pokemonDatabase.sqlite */; };
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
@@ -55,6 +63,22 @@
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
 		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
+		A9B064D51A6F5848004554B6 /* HousePlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HousePlaceMark.h; sourceTree = "<group>"; };
+		A9B064D61A6F5848004554B6 /* HousePlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HousePlaceMark.m; sourceTree = "<group>"; };
+		A9B064D91A6F7D7A004554B6 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		A9B064DA1A6F7D7A004554B6 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		A9B064DB1A6F7D7A004554B6 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		A9B064DC1A6F7D7A004554B6 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		A9B064DD1A6F7D7A004554B6 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		A9B064DE1A6F7D7A004554B6 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		A9B064DF1A6F7D7A004554B6 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		A9B064E01A6F7D7A004554B6 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		A9B064E11A6F7D7A004554B6 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		A9B064E21A6F7D7A004554B6 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		A9B064E31A6F7D7A004554B6 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		A9B064E41A6F7D7A004554B6 /* myDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myDB.h; path = fmdb/myDB.h; sourceTree = "<group>"; };
+		A9B064E51A6F7D7A004554B6 /* myDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = myDB.m; path = fmdb/myDB.m; sourceTree = "<group>"; };
+		A9B064F11A6F91A6004554B6 /* pokemonDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemonDatabase.sqlite; sourceTree = "<group>"; };
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -136,6 +160,24 @@
 			name = ICON;
 			sourceTree = "<group>";
 		};
+		A9B064D81A6F7D7A004554B6 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				A9B064D91A6F7D7A004554B6 /* FMDatabase.h */,
+				A9B064DA1A6F7D7A004554B6 /* FMDatabase.m */,
+				A9B064DB1A6F7D7A004554B6 /* FMDatabaseAdditions.h */,
+				A9B064DC1A6F7D7A004554B6 /* FMDatabaseAdditions.m */,
+				A9B064DD1A6F7D7A004554B6 /* FMDatabasePool.h */,
+				A9B064DE1A6F7D7A004554B6 /* FMDatabasePool.m */,
+				A9B064DF1A6F7D7A004554B6 /* FMDatabaseQueue.h */,
+				A9B064E01A6F7D7A004554B6 /* FMDatabaseQueue.m */,
+				A9B064E11A6F7D7A004554B6 /* FMDB.h */,
+				A9B064E21A6F7D7A004554B6 /* FMResultSet.h */,
+				A9B064E31A6F7D7A004554B6 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		A9F677871A6E35C300E5F06E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +194,14 @@
 		A9F677911A6E382800E5F06E /* module */ = {
 			isa = PBXGroup;
 			children = (
+				A9B064D51A6F5848004554B6 /* HousePlaceMark.h */,
+				A9B064D61A6F5848004554B6 /* HousePlaceMark.m */,
 				A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */,
 				A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */,
 				A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */,
 				A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */,
+				A9B064E41A6F7D7A004554B6 /* myDB.h */,
+				A9B064E51A6F7D7A004554B6 /* myDB.m */,
 			);
 			name = module;
 			sourceTree = "<group>";
@@ -176,6 +222,7 @@
 		AE15B1371A6E2A0400452FCB = {
 			isa = PBXGroup;
 			children = (
+				A9B064F11A6F91A6004554B6 /* pokemonDatabase.sqlite */,
 				AE6BF3FD1A6E366F004280AF /* framework */,
 				AE15B1421A6E2A0400452FCB /* runningCounter */,
 				AE15B15C1A6E2A0500452FCB /* runningCounterTests */,
@@ -195,6 +242,7 @@
 		AE15B1421A6E2A0400452FCB /* runningCounter */ = {
 			isa = PBXGroup;
 			children = (
+				A9B064D81A6F7D7A004554B6 /* fmdb */,
 				AE15B1471A6E2A0500452FCB /* AppDelegate.h */,
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
 				A9F677911A6E382800E5F06E /* module */,
@@ -337,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F677A01A6E428700E5F06E /* pokemon1.png in Resources */,
+				A9B064F21A6F91A6004554B6 /* pokemonDatabase.sqlite in Resources */,
 				AE15B14F1A6E2A0500452FCB /* Main.storyboard in Resources */,
 				A9F6779D1A6E428700E5F06E /* pokemon0_big.png in Resources */,
 				A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */,
@@ -366,10 +415,17 @@
 				A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */,
 				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
+				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
 				AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */,
+				A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */,
+				A9B064E91A6F7D7A004554B6 /* FMDatabaseQueue.m in Sources */,
+				A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */,
+				A9B064E81A6F7D7A004554B6 /* FMDatabasePool.m in Sources */,
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,
 				AE15B1461A6E2A0500452FCB /* main.m in Sources */,
 				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,
+				A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */,
+				A9B064E71A6F7D7A004554B6 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
