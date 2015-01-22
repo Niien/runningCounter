@@ -7,6 +7,7 @@
 //
 
 #import "Game1ViewController.h"
+#import "ViewController.h"
 
 @interface Game1ViewController (){
     NSTimer *timeCountDown;
@@ -35,9 +36,11 @@
     [_BtnLabelright setImage:[UIImage imageNamed:@"RedBtn1.png"] forState:UIControlStateNormal];
     [_BtnLabelright setImage:[UIImage imageNamed:@"RedBtn2.png"] forState:UIControlStateHighlighted];
     
+}
+-(void)viewDidAppear:(BOOL)animated{
     //隨機目標數
     time = 6.0;
-    goal = arc4random()%100;
+    goal = 10;//arc4random()%50+40;
     myPressPoint = 0;
     
     //顯示目標 分數 時間
@@ -70,22 +73,49 @@
 
 -(void)myCountDown:(NSTimer *)timer{
     
+    time -=0.1;
     _mytimeLabel.text = [NSString stringWithFormat:@"= %.1f =",time];
-    NSLog(@"%.1f",time);
     if (time >= 0) {
         if (myPressPoint >= goal) {
             //還有時間 且 已達標
             [timeCountDown invalidate];
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Succeed" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            alert.tag = 1;  //要分辨多個 Alert 且加動作 就需設tag
             [alert show];
         }
     }else{
         [timeCountDown invalidate];
         UIAlertView *failalert = [[UIAlertView alloc]initWithTitle:@"Failed" message:nil delegate:self cancelButtonTitle:@"QQ" otherButtonTitles:nil];
+        failalert.tag = 2;  //要分辨多個 Alert 且加動作 就需設tag
         [failalert show];
     }
-    time -=0.1;
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (alertView.tag) {
+        case 1:
+            if (buttonIndex == 0) {
+                ViewController *Home = [ViewController new];
+//                NSLog(@"%@",Home.power);
+                [self dismissViewControllerAnimated:YES completion:^{
+                    NSLog(@"成功過去的");
+                }];
+                
+            }
+            break;
+        case 2:
+            if (buttonIndex == 0) {
+                
+                [self dismissViewControllerAnimated:YES completion:^{
+                    NSLog(@"失敗過去的");
+                }];
+            }
+            break;
+        default:
+            break;
+    }
+}
+
 -(void)viewDidDisappear:(BOOL)animated{
     [timeCountDown invalidate];
 }

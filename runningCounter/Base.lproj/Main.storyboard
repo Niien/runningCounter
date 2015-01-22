@@ -9,7 +9,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -96,7 +96,7 @@
                                 </variation>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikw-16-LAY">
-                                <rect key="frame" x="16" y="302" width="568" height="249"/>
+                                <rect key="frame" x="16" y="302" width="568" height="199"/>
                                 <connections>
                                     <segue destination="U6b-IX-bYc" kind="embed" id="oH1-iX-TGn"/>
                                 </connections>
@@ -105,7 +105,7 @@
                         <color key="backgroundColor" red="1" green="0.95659797420000003" blue="0.48393602569999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="E5S-p5-c9o" firstAttribute="leading" secondItem="T05-Q6-bs2" secondAttribute="trailing" id="359-Tq-x1o"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ikw-16-LAY" secondAttribute="bottom" id="41j-DL-S7b"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ikw-16-LAY" secondAttribute="bottom" constant="50" id="41j-DL-S7b"/>
                             <constraint firstItem="BY4-lc-cmr" firstAttribute="top" secondItem="eXO-dO-dCh" secondAttribute="bottom" id="4m3-RC-DdZ"/>
                             <constraint firstItem="eXO-dO-dCh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5iA-Jm-M4j"/>
                             <constraint firstItem="BY4-lc-cmr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5ql-ks-hUE"/>
@@ -214,7 +214,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRL-VY-QCK">
                                 <rect key="frame" x="16" y="20" width="568" height="255"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeZ-09-tT3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeZ-09-tT3">
                                 <rect key="frame" x="16" y="421" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="D05-zH-k6O"/>
@@ -227,7 +227,7 @@
                                     <action selector="pressedBtnleft:" destination="ORN-Xj-12o" eventType="touchUpInside" id="OUh-tX-6C2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-z4-4MQ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-z4-4MQ">
                                 <rect key="frame" x="484" y="421" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Fud-aF-sgZ"/>
@@ -240,7 +240,7 @@
                                     <action selector="pressedBtnRight:" destination="ORN-Xj-12o" eventType="touchUpInside" id="70B-Ze-dc4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-K9-aaC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-K9-aaC">
                                 <rect key="frame" x="270" y="441" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7FY-sj-hHn"/>
@@ -305,7 +305,7 @@
         <!--Mission-->
         <scene sceneID="WlO-sd-7lj">
             <objects>
-                <tableViewController id="XGJ-AO-3u3" customClass="MissionViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Mission" id="XGJ-AO-3u3" customClass="MissionViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xs2-oA-lp9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,10 +332,10 @@
             </objects>
             <point key="canvasLocation" x="284" y="1227"/>
         </scene>
-        <!--book-->
+        <!--Book-->
         <scene sceneID="8Y5-Vo-A4V">
             <objects>
-                <collectionViewController id="Wh9-hB-Vbe" customClass="BookViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Book" id="Wh9-hB-Vbe" customClass="BookViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="pDz-Hu-N7I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,7 +378,7 @@
                             <outlet property="delegate" destination="Wh9-hB-Vbe" id="a0Z-A5-j2J"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="book" id="RUN-O6-cK7"/>
+                    <tabBarItem key="tabBarItem" title="Book" id="RUN-O6-cK7"/>
                     <navigationItem key="navigationItem" id="MTg-1K-uWj"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jx-bk-3ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,7 +388,7 @@
         <!--Setting-->
         <scene sceneID="hOz-AW-rUU">
             <objects>
-                <viewController id="MFA-iO-tvG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" id="MFA-iO-tvG" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="262-9h-7Pd"/>
                         <viewControllerLayoutGuide type="bottom" id="pgp-Jy-AAX"/>
@@ -505,7 +505,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oZK-n2-gb9"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="giO-VB-Mm9">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="249"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="199"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

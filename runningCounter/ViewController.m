@@ -10,18 +10,16 @@
 
 @interface ViewController ()
 {
+    //因為不能直接接parse下來的東西 所以設個用來接的變數
+    NSString *username,*useradward,*userLV,*userPower;
+
+    //接parse
     //====== Parse
     PFObject *addInfo;
     PFQuery *getInfo;
     //====== Parse
 }
-//====== User Info
-@property (weak, nonatomic) IBOutlet UILabel *UserNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *UserLVLabel;
-@property (weak, nonatomic) IBOutlet UILabel *UserPowerLabel;
-@property (weak, nonatomic) IBOutlet UILabel *UserAdwardLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *UserImageView;
-//====== User Info
+
 @end
 
 @implementation ViewController
@@ -33,10 +31,15 @@
     //初始化
     getInfo = [[PFQuery alloc]initWithClassName:@"BattleUser"];
     //Label 取值
-    _UserNameLabel.text = [[getInfo findObjects][0]valueForKey:@"UserName"];
-    _UserLVLabel.text = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserLV"]];
-    _UserPowerLabel.text = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserPower"]];
-    _UserAdwardLabel.text = [[getInfo findObjects][0]valueForKey:@"UserAdward"];
+    username = [[getInfo findObjects][0]valueForKey:@"UserName"];
+    userLV = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserLV"]];
+    _power = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserPower"]];
+    useradward = [[getInfo findObjects][0]valueForKey:@"UserAdward"];
+    
+    _UserNameLabel.text = username;
+    _UserLVLabel.text = userLV;
+    _UserPowerLabel.text = userPower;
+    _UserAdwardLabel.text = useradward;
 }
 
 - (void)didReceiveMemoryWarning {
