@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8441434D1A73C94A0002A079 /* UserProfileSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441434C1A73C94A0002A079 /* UserProfileSingleton.m */; };
+		844143511A73CAF60002A079 /* StepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143501A73CAF60002A079 /* StepCounter.m */; };
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
 		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
 		A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D61A6F5848004554B6 /* HousePlaceMark.m */; };
@@ -66,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8441434B1A73C94A0002A079 /* UserProfileSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileSingleton.h; sourceTree = "<group>"; };
+		8441434C1A73C94A0002A079 /* UserProfileSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileSingleton.m; sourceTree = "<group>"; };
+		8441434F1A73CAF60002A079 /* StepCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepCounter.h; sourceTree = "<group>"; };
+		844143501A73CAF60002A079 /* StepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepCounter.m; sourceTree = "<group>"; };
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
 		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
@@ -166,6 +172,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8441434A1A73C9060002A079 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				8441434B1A73C94A0002A079 /* UserProfileSingleton.h */,
+				8441434C1A73C94A0002A079 /* UserProfileSingleton.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		8441434E1A73CAD20002A079 /* StepCounter */ = {
+			isa = PBXGroup;
+			children = (
+				8441434F1A73CAF60002A079 /* StepCounter.h */,
+				844143501A73CAF60002A079 /* StepCounter.m */,
+			);
+			name = StepCounter;
+			sourceTree = "<group>";
+		};
 		A9B064D21A6ECE5B004554B6 /* ICON */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +291,8 @@
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
 				A9F677911A6E382800E5F06E /* module */,
 				A9F677871A6E35C300E5F06E /* ViewController */,
+				8441434E1A73CAD20002A079 /* StepCounter */,
+				8441434A1A73C9060002A079 /* Singleton */,
 				AE4F3A2B1A6FE724000CEE1C /* GameView */,
 				A9B064D21A6ECE5B004554B6 /* ICON */,
 				A9F677961A6E3C1800E5F06E /* Images */,
@@ -451,6 +477,7 @@
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
 				AE4F3A391A6FEE01000CEE1C /* MissionViewController.m in Sources */,
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
+				8441434D1A73C94A0002A079 /* UserProfileSingleton.m in Sources */,
 				AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */,
 				A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */,
 				A9B064E91A6F7D7A004554B6 /* FMDatabaseQueue.m in Sources */,
@@ -459,6 +486,7 @@
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,
 				AE15B1461A6E2A0500452FCB /* main.m in Sources */,
 				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,
+				844143511A73CAF60002A079 /* StepCounter.m in Sources */,
 				A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */,
 				A9B064E71A6F7D7A004554B6 /* FMDatabaseAdditions.m in Sources */,
 				AE4F3A2E1A6FE756000CEE1C /* Game1ViewController.m in Sources */,
