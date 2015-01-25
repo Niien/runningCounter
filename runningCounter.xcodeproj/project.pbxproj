@@ -24,6 +24,10 @@
 		A9BFE8DD1A74F33400D2B2EA /* cart_25.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8DB1A74F33400D2B2EA /* cart_25.png */; };
 		A9BFE8DE1A74F33400D2B2EA /* hospital_25.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */; };
 		A9BFE8E11A74F35700D2B2EA /* myPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E01A74F35700D2B2EA /* myPlist.m */; };
+		A9BFE8E41A7523EF00D2B2EA /* WorldMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */; };
+		A9BFE8E71A75242700D2B2EA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E61A75242700D2B2EA /* SettingViewController.m */; };
+		A9BFE8EA1A75245E00D2B2EA /* Game2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E91A75245E00D2B2EA /* Game2ViewController.m */; };
+		A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */; };
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
@@ -103,6 +107,14 @@
 		A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_25.png; sourceTree = "<group>"; };
 		A9BFE8DF1A74F35700D2B2EA /* myPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPlist.h; sourceTree = "<group>"; };
 		A9BFE8E01A74F35700D2B2EA /* myPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myPlist.m; sourceTree = "<group>"; };
+		A9BFE8E21A7523EF00D2B2EA /* WorldMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldMapViewController.h; sourceTree = "<group>"; };
+		A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldMapViewController.m; sourceTree = "<group>"; };
+		A9BFE8E51A75242700D2B2EA /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		A9BFE8E61A75242700D2B2EA /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		A9BFE8E81A75245E00D2B2EA /* Game2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game2ViewController.h; sourceTree = "<group>"; };
+		A9BFE8E91A75245E00D2B2EA /* Game2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game2ViewController.m; sourceTree = "<group>"; };
+		A9BFE8EB1A75246D00D2B2EA /* Game3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game3ViewController.h; sourceTree = "<group>"; };
+		A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game3ViewController.m; sourceTree = "<group>"; };
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -244,12 +256,16 @@
 			children = (
 				AE15B14A1A6E2A0500452FCB /* ViewController.h */,
 				AE15B14B1A6E2A0500452FCB /* ViewController.m */,
+				844143521A73DAA80002A079 /* MissionTableViewController.h */,
+				844143531A73DAA80002A079 /* MissionTableViewController.m */,
 				A9F6778B1A6E366400E5F06E /* BookViewController.h */,
 				A9F6778C1A6E366400E5F06E /* BookViewController.m */,
 				A9F677841A6E35B700E5F06E /* MapViewController.h */,
 				A9F677851A6E35B700E5F06E /* MapViewController.m */,
-				844143521A73DAA80002A079 /* MissionTableViewController.h */,
-				844143531A73DAA80002A079 /* MissionTableViewController.m */,
+				A9BFE8E51A75242700D2B2EA /* SettingViewController.h */,
+				A9BFE8E61A75242700D2B2EA /* SettingViewController.m */,
+				A9BFE8E21A7523EF00D2B2EA /* WorldMapViewController.h */,
+				A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -359,6 +375,10 @@
 			children = (
 				AE4F3A2C1A6FE756000CEE1C /* Game1ViewController.h */,
 				AE4F3A2D1A6FE756000CEE1C /* Game1ViewController.m */,
+				A9BFE8E81A75245E00D2B2EA /* Game2ViewController.h */,
+				A9BFE8E91A75245E00D2B2EA /* Game2ViewController.m */,
+				A9BFE8EB1A75246D00D2B2EA /* Game3ViewController.h */,
+				A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */,
 			);
 			name = GameView;
 			sourceTree = "<group>";
@@ -502,15 +522,19 @@
 				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
+				A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */,
 				8441434D1A73C94A0002A079 /* UserProfileSingleton.m in Sources */,
 				AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */,
 				A9BFE8E11A74F35700D2B2EA /* myPlist.m in Sources */,
 				A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */,
 				844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */,
+				A9BFE8E71A75242700D2B2EA /* SettingViewController.m in Sources */,
 				A9B064E91A6F7D7A004554B6 /* FMDatabaseQueue.m in Sources */,
+				A9BFE8EA1A75245E00D2B2EA /* Game2ViewController.m in Sources */,
 				844143541A73DAA80002A079 /* MissionTableViewController.m in Sources */,
 				A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */,
 				A9B064E81A6F7D7A004554B6 /* FMDatabasePool.m in Sources */,
+				A9BFE8E41A7523EF00D2B2EA /* WorldMapViewController.m in Sources */,
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,
 				AE15B1461A6E2A0500452FCB /* main.m in Sources */,
 				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,
