@@ -9,6 +9,19 @@
 #import "SettingViewController.h"
 
 @interface SettingViewController ()
+{
+    NSMutableArray *content;
+    
+    NSString *Acount;
+    NSString *Password;
+    NSString *height;
+    NSString *weight;
+    NSString *age;
+    
+    UIView *myView;
+    
+}
+
 
 @end
 
@@ -22,6 +35,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    content = [[NSMutableArray alloc]initWithObjects:@"個人資料",@"個人帳戶",@"世界地圖",@"音量", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,13 +49,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return 0;
+    return [content count];
 }
 
 /*
