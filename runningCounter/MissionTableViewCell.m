@@ -13,6 +13,11 @@
 - (void)awakeFromNib {
     // Initialization code
     
+    float hight = 50 , wight = 50;
+    
+    CGRect timeLBFrame = CGRectMake(50 ,50, 50, 50);
+    self.timeLabel.frame = timeLBFrame;
+    [self addSubview:self.timeLabel];
     
 }
 

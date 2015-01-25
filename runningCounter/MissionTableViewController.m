@@ -8,6 +8,7 @@
 
 #import "MissionTableViewController.h"
 #import "MissionTableViewCell.h"
+#import "UserProfileSingleton.h"
 
 @interface MissionTableViewController ()
 
@@ -23,6 +24,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] integerForKey:@"NotifyTotal"];
+    _notifyArray = [[UserProfileSingleton shareUserProfile] notifydateArray];
+    NSLog(@"%lu",(unsigned long)[_notifyArray count]);
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return [_notifyArray count];
 }
 
 
@@ -47,6 +58,7 @@
     MissionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.timeLabel.text = [NSString stringWithFormat:@"%@ 分鐘",[_notifyArray objectAtIndex:indexPath.row]];
     
     return cell;
 }

@@ -193,6 +193,11 @@
     }else [dateArray addObject:nowDate];
     
     [[UserProfileSingleton shareUserProfile] setNotifydateArray:dateArray];
+//    儲存
+    [[NSUserDefaults standardUserDefaults] setInteger:[[UserProfileSingleton shareUserProfile].notifydateArray count] + badgeNB forKey:@"NotifyTotal"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"NotifyTotal %ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"NotifyTotal"]);
+    
 }
 
 

@@ -10,4 +10,5 @@
 
 @interface MissionTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) UILabel *timeLabel;
 @end

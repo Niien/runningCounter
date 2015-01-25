@@ -196,6 +196,8 @@
 		844143551A73DAE40002A079 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */,
+				A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */,
 				844143561A73DB040002A079 /* MissionTableViewCell.h */,
 				844143571A73DB040002A079 /* MissionTableViewCell.m */,
 			);
@@ -251,8 +253,6 @@
 				8441434A1A73C9060002A079 /* Singleton */,
 				A9B064D51A6F5848004554B6 /* HousePlaceMark.h */,
 				A9B064D61A6F5848004554B6 /* HousePlaceMark.m */,
-				A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */,
-				A9F6778F1A6E368400E5F06E /* CollectionViewCell.m */,
 				A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */,
 				A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */,
 				A9B064E41A6F7D7A004554B6 /* myDB.h */,
@@ -632,6 +632,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = runningCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -646,6 +647,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = runningCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

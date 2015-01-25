@@ -10,6 +10,7 @@
 
 @interface UserProfileSingleton : NSObject
 
+// 通知的數量
 @property NSMutableArray *notifydateArray;
 
 +(UserProfileSingleton *) shareUserProfile;
