@@ -11,6 +11,8 @@
 		844143511A73CAF60002A079 /* StepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143501A73CAF60002A079 /* StepCounter.m */; };
 		844143541A73DAA80002A079 /* MissionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143531A73DAA80002A079 /* MissionTableViewController.m */; };
 		844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143571A73DB040002A079 /* MissionTableViewCell.m */; };
+		A91368891A75362500BBB0CA /* home_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368871A75362500BBB0CA /* home_30.png */; };
+		A913688A1A75362500BBB0CA /* setting_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368881A75362500BBB0CA /* setting_30.png */; };
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
 		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
 		A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D61A6F5848004554B6 /* HousePlaceMark.m */; };
@@ -28,6 +30,8 @@
 		A9BFE8EA1A75245E00D2B2EA /* Game2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E91A75245E00D2B2EA /* Game2ViewController.m */; };
 		A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */; };
 		A9BFE8F21A75264B00D2B2EA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */; };
+		A9BFE8F61A752BA500D2B2EA /* mission_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8F51A752BA500D2B2EA /* mission_30.png */; };
+		A9BFE8F81A752C7E00D2B2EA /* book_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8F71A752C7E00D2B2EA /* book_30.png */; };
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
@@ -84,6 +88,8 @@
 		844143531A73DAA80002A079 /* MissionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewController.m; sourceTree = "<group>"; };
 		844143561A73DB040002A079 /* MissionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionTableViewCell.h; sourceTree = "<group>"; };
 		844143571A73DB040002A079 /* MissionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewCell.m; sourceTree = "<group>"; };
+		A91368871A75362500BBB0CA /* home_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_30.png; sourceTree = "<group>"; };
+		A91368881A75362500BBB0CA /* setting_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_30.png; sourceTree = "<group>"; };
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
 		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 		A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game3ViewController.m; sourceTree = "<group>"; };
 		A9BFE8F01A75264B00D2B2EA /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		A9BFE8F51A752BA500D2B2EA /* mission_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mission_30.png; sourceTree = "<group>"; };
+		A9BFE8F71A752C7E00D2B2EA /* book_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book_30.png; sourceTree = "<group>"; };
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -227,6 +235,10 @@
 			isa = PBXGroup;
 			children = (
 				A9B064D31A6ECECA004554B6 /* backIcon.jpg */,
+				A91368871A75362500BBB0CA /* home_30.png */,
+				A91368881A75362500BBB0CA /* setting_30.png */,
+				A9BFE8F71A752C7E00D2B2EA /* book_30.png */,
+				A9BFE8F51A752BA500D2B2EA /* mission_30.png */,
 				A9BFE8DB1A74F33400D2B2EA /* cart_25.png */,
 				A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */,
 			);
@@ -503,17 +515,21 @@
 				A9F677A01A6E428700E5F06E /* pokemon1.png in Resources */,
 				A9B064F21A6F91A6004554B6 /* pokemonDatabase.sqlite in Resources */,
 				AE15B14F1A6E2A0500452FCB /* Main.storyboard in Resources */,
+				A913688A1A75362500BBB0CA /* setting_30.png in Resources */,
 				A9F6779D1A6E428700E5F06E /* pokemon0_big.png in Resources */,
 				A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */,
+				A91368891A75362500BBB0CA /* home_30.png in Resources */,
 				AE15B1541A6E2A0500452FCB /* LaunchScreen.xib in Resources */,
 				AE15B1511A6E2A0500452FCB /* Images.xcassets in Resources */,
 				AE4F3A351A6FED4D000CEE1C /* RedBtn2.png in Resources */,
 				A9F6779F1A6E428700E5F06E /* pokemon1_big.png in Resources */,
+				A9BFE8F61A752BA500D2B2EA /* mission_30.png in Resources */,
 				AE4F3A341A6FED4D000CEE1C /* RedBtn1.png in Resources */,
 				A9F6779E1A6E428700E5F06E /* pokemon0.png in Resources */,
 				A9BFE8DE1A74F33400D2B2EA /* hospital_25.png in Resources */,
 				A9F677A21A6E428700E5F06E /* pokemon2.png in Resources */,
 				AE4F3A361A6FED4D000CEE1C /* Rufe.png in Resources */,
+				A9BFE8F81A752C7E00D2B2EA /* book_30.png in Resources */,
 				AE4F3A331A6FED4D000CEE1C /* battle01-1.jpeg in Resources */,
 				A9BFE8DD1A74F33400D2B2EA /* cart_25.png in Resources */,
 				A9F677A11A6E428700E5F06E /* pokemon2_big.png in Resources */,

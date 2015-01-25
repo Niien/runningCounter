@@ -52,6 +52,18 @@
     
     [self copyDBtoDocumentIfNeeded];
     
+    
+    // register notification
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
+    
+    // set tabBar item image
+    [self changeTabBarItemImage];
+    
+    
     return YES;
 }
 
@@ -146,5 +158,31 @@
     }
 }
 
+
+
+#pragma mark - tabBar item image
+
+- (void)changeTabBarItemImage {
+    
+    UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
+    
+    UITabBar *myTabBar = tbc.tabBar;
+    
+    myTabBar.barTintColor = [UIColor blackColor];
+    
+    
+    UITabBarItem *myItem = [myTabBar.items objectAtIndex:0];
+    myItem.image = [[UIImage imageNamed:@"home_30.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UITabBarItem *myItem2 = [myTabBar.items objectAtIndex:1];
+    myItem2.image = [[UIImage imageNamed:@"mission_30.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UITabBarItem *myItem3 = [myTabBar.items objectAtIndex:2];
+    myItem3.image = [[UIImage imageNamed:@"book_30.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UITabBarItem *myItem4 = [myTabBar.items objectAtIndex:3];
+    myItem4.image = [[UIImage imageNamed:@"setting_30.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+}
 
 @end

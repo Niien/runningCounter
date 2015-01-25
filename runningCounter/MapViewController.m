@@ -52,7 +52,6 @@
     }
     
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.activityType = CLActivityTypeFitness;
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
     
