@@ -21,6 +21,9 @@
 		A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064E31A6F7D7A004554B6 /* FMResultSet.m */; };
 		A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064E51A6F7D7A004554B6 /* myDB.m */; };
 		A9B064F21A6F91A6004554B6 /* pokemonDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A9B064F11A6F91A6004554B6 /* pokemonDatabase.sqlite */; };
+		A9BFE8DD1A74F33400D2B2EA /* cart_25.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8DB1A74F33400D2B2EA /* cart_25.png */; };
+		A9BFE8DE1A74F33400D2B2EA /* hospital_25.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */; };
+		A9BFE8E11A74F35700D2B2EA /* myPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E01A74F35700D2B2EA /* myPlist.m */; };
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
 		A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6778C1A6E366400E5F06E /* BookViewController.m */; };
@@ -96,6 +99,10 @@
 		A9B064E41A6F7D7A004554B6 /* myDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myDB.h; path = fmdb/myDB.h; sourceTree = "<group>"; };
 		A9B064E51A6F7D7A004554B6 /* myDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = myDB.m; path = fmdb/myDB.m; sourceTree = "<group>"; };
 		A9B064F11A6F91A6004554B6 /* pokemonDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemonDatabase.sqlite; sourceTree = "<group>"; };
+		A9BFE8DB1A74F33400D2B2EA /* cart_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart_25.png; sourceTree = "<group>"; };
+		A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_25.png; sourceTree = "<group>"; };
+		A9BFE8DF1A74F35700D2B2EA /* myPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPlist.h; sourceTree = "<group>"; };
+		A9BFE8E01A74F35700D2B2EA /* myPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myPlist.m; sourceTree = "<group>"; };
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A9F677851A6E35B700E5F06E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -208,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				A9B064D31A6ECECA004554B6 /* backIcon.jpg */,
+				A9BFE8DB1A74F33400D2B2EA /* cart_25.png */,
+				A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */,
 			);
 			name = ICON;
 			sourceTree = "<group>";
@@ -257,6 +266,8 @@
 				A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */,
 				A9B064E41A6F7D7A004554B6 /* myDB.h */,
 				A9B064E51A6F7D7A004554B6 /* myDB.m */,
+				A9BFE8DF1A74F35700D2B2EA /* myPlist.h */,
+				A9BFE8E01A74F35700D2B2EA /* myPlist.m */,
 			);
 			name = module;
 			sourceTree = "<group>";
@@ -464,9 +475,11 @@
 				A9F6779F1A6E428700E5F06E /* pokemon1_big.png in Resources */,
 				AE4F3A341A6FED4D000CEE1C /* RedBtn1.png in Resources */,
 				A9F6779E1A6E428700E5F06E /* pokemon0.png in Resources */,
+				A9BFE8DE1A74F33400D2B2EA /* hospital_25.png in Resources */,
 				A9F677A21A6E428700E5F06E /* pokemon2.png in Resources */,
 				AE4F3A361A6FED4D000CEE1C /* Rufe.png in Resources */,
 				AE4F3A331A6FED4D000CEE1C /* battle01-1.jpeg in Resources */,
+				A9BFE8DD1A74F33400D2B2EA /* cart_25.png in Resources */,
 				A9F677A11A6E428700E5F06E /* pokemon2_big.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +504,7 @@
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
 				8441434D1A73C94A0002A079 /* UserProfileSingleton.m in Sources */,
 				AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */,
+				A9BFE8E11A74F35700D2B2EA /* myPlist.m in Sources */,
 				A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */,
 				844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */,
 				A9B064E91A6F7D7A004554B6 /* FMDatabaseQueue.m in Sources */,

@@ -11,11 +11,14 @@
 #import "CollectionViewCell.h"
 #import "MapViewController.h"
 #import "myDB.h"
+#import "myPlist.h"
+
 
 @interface BookViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 {
     NSMutableArray *pictures;
     
+    NSMutableArray *datas;
 }
 
 
@@ -44,17 +47,21 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
         
         [pictures setObject:[NSString stringWithFormat:@"pokemon%d_big.png",i] atIndexedSubscript:i];
         
+        
     }
     
-    NSLog(@"%@",pictures);
     
     
+    
+    /*
+    // sqlite
     NSArray *table = [NSArray arrayWithObjects:@"ID",@"Name",@"URL", nil];
     NSArray *data = [NSArray arrayWithObjects:@"ABC",@"CBA",@"google.com", nil];
     [[myDB sharedInstance]insertCustNo_TableName:@"MypokemonsImage" TableArray:table TableInside:data];
     
     NSArray *a = [NSArray arrayWithArray:[[myDB sharedInstance] queryCust_TableName:@"MypokemonsImage" TableArray:table OrderBy:@"ID"]];
     NSLog(@"a:%@",a);
+    */
     
     
 }
@@ -109,8 +116,6 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     return cell;
     
 }
-
-
 
 
 
