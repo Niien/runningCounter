@@ -181,8 +181,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0pD-EW-diB"/>
-                        <segue destination="XGJ-AO-3u3" kind="relationship" relationship="viewControllers" id="7K1-Dy-raW"/>
                         <segue destination="Wh9-hB-Vbe" kind="relationship" relationship="viewControllers" id="W8c-8A-wNE"/>
+                        <segue destination="RoN-bT-2N5" kind="relationship" relationship="viewControllers" id="pgq-cO-eBM"/>
                         <segue destination="MFA-iO-tvG" kind="relationship" relationship="viewControllers" id="3An-YF-FM8"/>
                     </connections>
                 </tabBarController>
@@ -303,34 +303,31 @@
             <point key="canvasLocation" x="284" y="1955"/>
         </scene>
         <!--Mission-->
-        <scene sceneID="WlO-sd-7lj">
+        <scene sceneID="pBL-rb-2hS">
             <objects>
-                <tableViewController storyboardIdentifier="Mission" id="XGJ-AO-3u3" customClass="MissionViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xs2-oA-lp9">
+                <tableViewController id="RoN-bT-2N5" customClass="MissionTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="GzM-Vu-B0a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="96" id="hab-Ph-aSk">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="IFN-FZ-F5A" customClass="MissionTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hab-Ph-aSk" id="8uy-t7-2Nw">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IFN-FZ-F5A" id="ijd-ad-223">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="ORN-Xj-12o" kind="presentation" id="7zd-Fz-hoG"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="XGJ-AO-3u3" id="R2x-zP-YhF"/>
-                            <outlet property="delegate" destination="XGJ-AO-3u3" id="3aN-Hy-kCO"/>
+                            <outlet property="dataSource" destination="RoN-bT-2N5" id="6TP-Jd-hfq"/>
+                            <outlet property="delegate" destination="RoN-bT-2N5" id="ckd-8s-uVk"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Mission" id="lDR-QA-VeZ"/>
+                    <tabBarItem key="tabBarItem" title="Mission" id="VYg-sD-PdF"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pg-R6-o9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7R-in-Jdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="1227"/>
+            <point key="canvasLocation" x="292" y="1225"/>
         </scene>
         <!--Book-->
         <scene sceneID="8Y5-Vo-A4V">

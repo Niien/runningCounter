@@ -1,18 +1,19 @@
 //
-//  MissionViewController.m
+//  MissionTableViewController.m
 //  runningCounter
 //
-//  Created by Longfatown on 1/21/15.
-//  Copyright (c) 2015 Longfatown. All rights reserved.
+//  Created by ChingHua on 2015/1/24.
+//  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
 
-#import "MissionViewController.h"
+#import "MissionTableViewController.h"
+#import "MissionTableViewCell.h"
 
-@interface MissionViewController ()
+@interface MissionTableViewController ()
 
 @end
 
-@implementation MissionViewController
+@implementation MissionTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,25 +33,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    MissionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

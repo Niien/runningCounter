@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8441434D1A73C94A0002A079 /* UserProfileSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441434C1A73C94A0002A079 /* UserProfileSingleton.m */; };
 		844143511A73CAF60002A079 /* StepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143501A73CAF60002A079 /* StepCounter.m */; };
+		844143541A73DAA80002A079 /* MissionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143531A73DAA80002A079 /* MissionTableViewController.m */; };
+		844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143571A73DB040002A079 /* MissionTableViewCell.m */; };
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
 		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
 		A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D61A6F5848004554B6 /* HousePlaceMark.m */; };
@@ -41,7 +43,6 @@
 		AE4F3A341A6FED4D000CEE1C /* RedBtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4F3A301A6FED4D000CEE1C /* RedBtn1.png */; };
 		AE4F3A351A6FED4D000CEE1C /* RedBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4F3A311A6FED4D000CEE1C /* RedBtn2.png */; };
 		AE4F3A361A6FED4D000CEE1C /* Rufe.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4F3A321A6FED4D000CEE1C /* Rufe.png */; };
-		AE4F3A391A6FEE01000CEE1C /* MissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F3A381A6FEE01000CEE1C /* MissionViewController.m */; };
 		AE6BF3EB1A6E362B004280AF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6BF3E71A6E362B004280AF /* AudioToolbox.framework */; };
 		AE6BF3EC1A6E362B004280AF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6BF3E81A6E362B004280AF /* CFNetwork.framework */; };
 		AE6BF3ED1A6E362B004280AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6BF3E91A6E362B004280AF /* CoreGraphics.framework */; };
@@ -72,6 +73,10 @@
 		8441434C1A73C94A0002A079 /* UserProfileSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileSingleton.m; sourceTree = "<group>"; };
 		8441434F1A73CAF60002A079 /* StepCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepCounter.h; sourceTree = "<group>"; };
 		844143501A73CAF60002A079 /* StepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepCounter.m; sourceTree = "<group>"; };
+		844143521A73DAA80002A079 /* MissionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionTableViewController.h; sourceTree = "<group>"; };
+		844143531A73DAA80002A079 /* MissionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewController.m; sourceTree = "<group>"; };
+		844143561A73DB040002A079 /* MissionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionTableViewCell.h; sourceTree = "<group>"; };
+		844143571A73DB040002A079 /* MissionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewCell.m; sourceTree = "<group>"; };
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
 		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
@@ -123,8 +128,6 @@
 		AE4F3A301A6FED4D000CEE1C /* RedBtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedBtn1.png; sourceTree = "<group>"; };
 		AE4F3A311A6FED4D000CEE1C /* RedBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedBtn2.png; sourceTree = "<group>"; };
 		AE4F3A321A6FED4D000CEE1C /* Rufe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rufe.png; sourceTree = "<group>"; };
-		AE4F3A371A6FEE01000CEE1C /* MissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionViewController.h; sourceTree = "<group>"; };
-		AE4F3A381A6FEE01000CEE1C /* MissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionViewController.m; sourceTree = "<group>"; };
 		AE6BF3E71A6E362B004280AF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AE6BF3E81A6E362B004280AF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AE6BF3E91A6E362B004280AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,15 @@
 			name = StepCounter;
 			sourceTree = "<group>";
 		};
+		844143551A73DAE40002A079 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				844143561A73DB040002A079 /* MissionTableViewCell.h */,
+				844143571A73DB040002A079 /* MissionTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		A9B064D21A6ECE5B004554B6 /* ICON */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,8 +237,8 @@
 				A9F6778C1A6E366400E5F06E /* BookViewController.m */,
 				A9F677841A6E35B700E5F06E /* MapViewController.h */,
 				A9F677851A6E35B700E5F06E /* MapViewController.m */,
-				AE4F3A371A6FEE01000CEE1C /* MissionViewController.h */,
-				AE4F3A381A6FEE01000CEE1C /* MissionViewController.m */,
+				844143521A73DAA80002A079 /* MissionTableViewController.h */,
+				844143531A73DAA80002A079 /* MissionTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -234,6 +246,9 @@
 		A9F677911A6E382800E5F06E /* module */ = {
 			isa = PBXGroup;
 			children = (
+				844143551A73DAE40002A079 /* TableViewCell */,
+				8441434E1A73CAD20002A079 /* StepCounter */,
+				8441434A1A73C9060002A079 /* Singleton */,
 				A9B064D51A6F5848004554B6 /* HousePlaceMark.h */,
 				A9B064D61A6F5848004554B6 /* HousePlaceMark.m */,
 				A9F6778E1A6E368400E5F06E /* CollectionViewCell.h */,
@@ -291,8 +306,6 @@
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
 				A9F677911A6E382800E5F06E /* module */,
 				A9F677871A6E35C300E5F06E /* ViewController */,
-				8441434E1A73CAD20002A079 /* StepCounter */,
-				8441434A1A73C9060002A079 /* Singleton */,
 				AE4F3A2B1A6FE724000CEE1C /* GameView */,
 				A9B064D21A6ECE5B004554B6 /* ICON */,
 				A9F677961A6E3C1800E5F06E /* Images */,
@@ -475,12 +488,13 @@
 				A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */,
 				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
-				AE4F3A391A6FEE01000CEE1C /* MissionViewController.m in Sources */,
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
 				8441434D1A73C94A0002A079 /* UserProfileSingleton.m in Sources */,
 				AE15B14C1A6E2A0500452FCB /* ViewController.m in Sources */,
 				A9B064EB1A6F7D7A004554B6 /* myDB.m in Sources */,
+				844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */,
 				A9B064E91A6F7D7A004554B6 /* FMDatabaseQueue.m in Sources */,
+				844143541A73DAA80002A079 /* MissionTableViewController.m in Sources */,
 				A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */,
 				A9B064E81A6F7D7A004554B6 /* FMDatabasePool.m in Sources */,
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,

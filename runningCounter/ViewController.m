@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "StepCounter.h"
 
 @interface ViewController ()
 {
@@ -18,6 +19,8 @@
     PFObject *addInfo;
     PFQuery *getInfo;
     //====== Parse
+    
+    StepCounter *stepCounter;
 }
 
 @end
@@ -40,6 +43,12 @@
     _UserLVLabel.text = userLV;
     _UserPowerLabel.text = userPower;
     _UserAdwardLabel.text = useradward;
+    
+    
+    stepCounter = [StepCounter new];
+    [stepCounter startStepCounter];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:nil object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,4 +56,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+// 增加步數（精力）
+-(void) powerLabel
+{
+    _UserPowerLabel.text = [NSString stringWithFormat:@"%d",stepCounter.stepNB];
+}
 @end

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "StepCounter.h"
 #import "ViewController.h"
-#import "MissionViewController.h"
+#import "MissionTableViewController.h"
 #import "UserProfileSingleton.h"
 
 
@@ -28,7 +28,7 @@
     CMMotionManager *motionManager;
     NSTimer *timerMonitor;
         
-    MissionViewController *mission;
+    MissionTableViewController *mission;
         
     NSMutableArray *dateArray;
 
