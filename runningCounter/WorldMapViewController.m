@@ -122,8 +122,8 @@
         
         if (isEnterRegion) {
             
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"close" message:self.annotation.title delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
+            //UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"close" message:self.annotation.title delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            //[alert show];
             
             self.StoreButton.enabled = YES;
             
@@ -256,6 +256,7 @@
 }
 
 
+
 #pragma mark - mapView delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -306,6 +307,16 @@
 - (IBAction)positionButton:(id)sender {
     
     [self downloadJSON];
+    
+    MKCoordinateRegion region = _myMapView.region;
+    
+    region.center = userLocation.coordinate;
+    
+    // 縮放比例
+    region.span.latitudeDelta = 0.01;
+    region.span.longitudeDelta = 0.01;
+    
+    [_myMapView setRegion:region animated:YES];
     
 }
 
