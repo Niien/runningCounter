@@ -112,6 +112,7 @@
     if ([userLocation distanceFromLocation:lastLocation]>800 ) {
         
         [self downloadJSON];
+        lastLocation = userLocation;
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"update map" message:nil delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
         [alert show];
         

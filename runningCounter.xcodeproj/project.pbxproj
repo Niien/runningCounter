@@ -13,6 +13,8 @@
 		844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143571A73DB040002A079 /* MissionTableViewCell.m */; };
 		A91368891A75362500BBB0CA /* home_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368871A75362500BBB0CA /* home_30.png */; };
 		A913688A1A75362500BBB0CA /* setting_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368881A75362500BBB0CA /* setting_30.png */; };
+		A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368BE1A76188700BBB0CA /* StoreViewController.m */; };
+		A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */; };
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
 		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
 		A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D61A6F5848004554B6 /* HousePlaceMark.m */; };
@@ -90,6 +92,10 @@
 		844143571A73DB040002A079 /* MissionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewCell.m; sourceTree = "<group>"; };
 		A91368871A75362500BBB0CA /* home_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_30.png; sourceTree = "<group>"; };
 		A91368881A75362500BBB0CA /* setting_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_30.png; sourceTree = "<group>"; };
+		A91368BD1A76188700BBB0CA /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		A91368BE1A76188700BBB0CA /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		A91368C51A7629D300BBB0CA /* PersonalIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalIDViewController.h; sourceTree = "<group>"; };
+		A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalIDViewController.m; sourceTree = "<group>"; };
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
 		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
@@ -231,6 +237,32 @@
 			name = TableViewCell;
 			sourceTree = "<group>";
 		};
+		A91368C01A7619E000BBB0CA /* book */ = {
+			isa = PBXGroup;
+			children = (
+				A9F6778B1A6E366400E5F06E /* BookViewController.h */,
+				A9F6778C1A6E366400E5F06E /* BookViewController.m */,
+				A9F677841A6E35B700E5F06E /* MapViewController.h */,
+				A9F677851A6E35B700E5F06E /* MapViewController.m */,
+			);
+			name = book;
+			sourceTree = "<group>";
+		};
+		A91368C11A7619F000BBB0CA /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				A9BFE8F01A75264B00D2B2EA /* SettingViewController.h */,
+				A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */,
+				A91368C51A7629D300BBB0CA /* PersonalIDViewController.h */,
+				A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */,
+				A9BFE8E21A7523EF00D2B2EA /* WorldMapViewController.h */,
+				A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */,
+				A91368BD1A76188700BBB0CA /* StoreViewController.h */,
+				A91368BE1A76188700BBB0CA /* StoreViewController.m */,
+			);
+			name = setting;
+			sourceTree = "<group>";
+		};
 		A9B064D21A6ECE5B004554B6 /* ICON */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,14 +325,8 @@
 				AE15B14B1A6E2A0500452FCB /* ViewController.m */,
 				844143521A73DAA80002A079 /* MissionTableViewController.h */,
 				844143531A73DAA80002A079 /* MissionTableViewController.m */,
-				A9F6778B1A6E366400E5F06E /* BookViewController.h */,
-				A9F6778C1A6E366400E5F06E /* BookViewController.m */,
-				A9F677841A6E35B700E5F06E /* MapViewController.h */,
-				A9F677851A6E35B700E5F06E /* MapViewController.m */,
-				A9BFE8F01A75264B00D2B2EA /* SettingViewController.h */,
-				A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */,
-				A9BFE8E21A7523EF00D2B2EA /* WorldMapViewController.h */,
-				A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */,
+				A91368C01A7619E000BBB0CA /* book */,
+				A91368C11A7619F000BBB0CA /* setting */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -565,8 +591,10 @@
 				A9BFE8EA1A75245E00D2B2EA /* Game2ViewController.m in Sources */,
 				844143541A73DAA80002A079 /* MissionTableViewController.m in Sources */,
 				A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */,
+				A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */,
 				A9B064E81A6F7D7A004554B6 /* FMDatabasePool.m in Sources */,
 				A9BFE8E41A7523EF00D2B2EA /* WorldMapViewController.m in Sources */,
+				A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */,
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,
 				AE15B1461A6E2A0500452FCB /* main.m in Sources */,
 				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,

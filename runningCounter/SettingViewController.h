@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WorldMapViewController.h"
+#import "PersonalIDViewController.h"
 
 @interface SettingViewController : UITableViewController
 

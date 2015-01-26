@@ -38,7 +38,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    content = [[NSMutableArray alloc]initWithObjects:@"個人資料",@"個人帳戶",@"世界地圖",@"對戰",@"音量", nil];
+    content = [[NSMutableArray alloc]initWithObjects:@"個人資料",@"世界地圖",@"連線對戰",@"藍芽對戰",@"圖鑑",@"音量", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,108 +75,91 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        //
-    }];
-    
-    UIAlertAction *checkButton = [UIAlertAction actionWithTitle:@"確定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        //
-    }];
-    
-    
-    
-    if (indexPath.row == 0) { // 個人資料
-        
-        [alert setTitle:@"個人資料"];
-        
-        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+    switch (indexPath.row) {
             
-            textField.placeholder = @"輸入你的身高";
-            height = textField.text;
+        case 0:   // 個人資料
             
-        }];
-        
-        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            textField.placeholder = @"輸入你的體重";
-            weight = textField.text;
-        }];
-        
-        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            textField.placeholder = @"輸入你的年齡";
-        }];
-        
-        [self presentViewController:alert animated:YES completion:^{
+            [self ToPersonalID];
+            
+            break;
+            
+        case 1:  // 世界地圖
+            
+            [self ToWorldMap];
+            
+            break;
+            
+        case 2:  // 連線對戰
             //
-        }];
-        
-        [alert addAction:cancelButton];
-        [alert addAction:checkButton];
-        
-    }
-    else if (indexPath.row == 1) { // 個人帳戶
-        
-        [alert setTitle:@"個人帳戶"];
-        
-        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            textField.placeholder = @"輸入你的帳號";
-        }];
-        
-        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            textField.placeholder = @"輸入你的密碼";
-            textField.secureTextEntry = YES;
-        }];
-        
-        [self presentViewController:alert animated:YES completion:^{
+            break;
+            
+        case 3:  // 藍芽對戰
             //
-        }];
-        
-        [alert addAction:cancelButton];
-        [alert addAction:checkButton];
-        
-    }
-    else if (indexPath.row == 2) { // 世界地圖
-        
-        WorldMapViewController *wmvc = [self.storyboard instantiateViewControllerWithIdentifier:@"WorldMap"];
-        
-        [self presentViewController:wmvc animated:YES completion:^{
+            break;
+            
+        case 4:  //圖鑑
             //
-        }];
-        
+            break;
+            
+        case 5: // 音量
+            
+            [self VoiceChange];
+            
+            break;
+            
+        default:
+            break;
     }
+
+}
+
+
+
+#pragma mark - switch method
+
+- (void)ToPersonalID {
     
-    else if (indexPath.row == 3) { // 對戰
-        
-        
-        
-    }
-    else if (indexPath.row == 4) { // 音量
-        
-        myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/3, self.view.frame.size.height/3, 200, 100)];
-        
-        myView.backgroundColor = [UIColor grayColor];
-        
-        UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(0, myView.frame.size.height/2-10, 200, 30)];
-        
-        [myView addSubview:slider];
-        
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(myView.frame.size.width/3, myView.frame.size.height/2+30, 50, 20)];
-        
-        [button setTitle:@"ok" forState:UIControlStateNormal];
-        
-        [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
-        
-        button.backgroundColor = [UIColor blueColor];
-        
-        [myView addSubview:button];
-        
-        [self.view addSubview:myView];
-        
-    }
+    PersonalIDViewController *ID = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonalID"];
+    
+    [self presentViewController:ID animated:YES completion:nil];
     
 }
 
+
+- (void)ToWorldMap {
+    
+    WorldMapViewController *wmvc = [self.storyboard instantiateViewControllerWithIdentifier:@"WorldMap"];
+    
+    [self presentViewController:wmvc animated:YES completion:nil];
+    
+}
+
+
+
+
+- (void)VoiceChange {
+    
+    myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/3, self.view.frame.size.height/3, 200, 100)];
+    
+    myView.backgroundColor = [UIColor grayColor];
+    
+    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(0, myView.frame.size.height/2-10, 200, 30)];
+    
+    [myView addSubview:slider];
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(myView.frame.size.width/3, myView.frame.size.height/2+30, 50, 20)];
+    
+    [button setTitle:@"ok" forState:UIControlStateNormal];
+    
+    [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
+    
+    button.backgroundColor = [UIColor blueColor];
+    
+    [myView addSubview:button];
+    
+    [self.view addSubview:myView];
+    
+}
 
 
 #pragma mark - button action
