@@ -260,7 +260,8 @@
 				A9B064E21A6F7D7A004554B6 /* FMResultSet.h */,
 				A9B064E31A6F7D7A004554B6 /* FMResultSet.m */,
 			);
-			path = fmdb;
+			name = fmdb;
+			path = runningCounter/fmdb;
 			sourceTree = "<group>";
 		};
 		A9BFE8EE1A75258F00D2B2EA /* DB */ = {
@@ -337,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				A9B064F11A6F91A6004554B6 /* pokemonDatabase.sqlite */,
+				A9B064D81A6F7D7A004554B6 /* fmdb */,
 				AE6BF3FD1A6E366F004280AF /* framework */,
 				AE15B1421A6E2A0400452FCB /* runningCounter */,
 				AE15B15C1A6E2A0500452FCB /* runningCounterTests */,
@@ -357,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				AE15B14D1A6E2A0500452FCB /* Main.storyboard */,
-				A9B064D81A6F7D7A004554B6 /* fmdb */,
 				AE15B1471A6E2A0500452FCB /* AppDelegate.h */,
 				AE15B1481A6E2A0500452FCB /* AppDelegate.m */,
 				A9F677911A6E382800E5F06E /* module */,

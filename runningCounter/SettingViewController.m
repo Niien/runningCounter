@@ -7,7 +7,7 @@
 //
 
 #import "SettingViewController.h"
-#import "WorldMapViewController.h"
+
 
 
 @interface SettingViewController ()<UITabBarDelegate,UITabBarControllerDelegate>

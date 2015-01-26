@@ -6,7 +6,13 @@
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
 
+@import MapKit;
+
 #import <UIKit/UIKit.h>
+#import "CollectionViewCell.h"
+#import "MapViewController.h"
+#import "myDB.h"
+#import "myPlist.h"
 
 @interface BookViewController : UICollectionViewController
 

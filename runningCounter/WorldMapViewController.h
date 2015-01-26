@@ -6,7 +6,10 @@
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
 
+@import MapKit;
+@import CoreLocation;
 #import <UIKit/UIKit.h>
+#import "MyCustomPin.h"
 
 @interface WorldMapViewController : UIViewController
 

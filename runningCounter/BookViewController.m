@@ -5,20 +5,15 @@
 //  Created by chiawei on 2015/1/20.
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
-@import MapKit;
+
 
 #import "BookViewController.h"
-#import "CollectionViewCell.h"
-#import "MapViewController.h"
-#import "myDB.h"
-#import "myPlist.h"
-
 
 @interface BookViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 {
     NSMutableArray *pictures;
     
-    NSMutableArray *datas;
+    NSArray *data;
 }
 
 
@@ -47,11 +42,12 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
         
         [pictures setObject:[NSString stringWithFormat:@"pokemon%d_big.png",i] atIndexedSubscript:i];
         
-        
     }
     
     
+    data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
     
+    NSLog(@"%@",data);
     
     /*
     // sqlite
@@ -99,7 +95,8 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    return [pictures count];
+    //return [pictures count];
+    return [data count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,7 +104,9 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     // Configure the cell
     
-    NSString *imageName = [NSString stringWithFormat:@"%@",[pictures objectAtIndex:indexPath.row]];
+    //NSString *imageName = [NSString stringWithFormat:@"%@",[pictures objectAtIndex:indexPath.row]];
+    
+    NSString *imageName = [NSString stringWithFormat:@"%@",[data objectAtIndex:indexPath.row]];
     
     UIImage *image = [UIImage imageNamed:imageName];
     
@@ -123,7 +122,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
-    return UIEdgeInsetsMake(10.0, 10.0, 20.0, 10.0);
+    return UIEdgeInsetsMake(10.0, 5.0, 20.0, 5.0);
     
 }
 

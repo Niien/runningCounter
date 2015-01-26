@@ -11,15 +11,13 @@
 @interface myPlist : NSObject
 
 
-+ (myPlist *)shareInstance;
-
-- (void)getPlistPath;
++ (myPlist *)shareInstanceWithplistName:(NSString *)name;
 
 - (void)saveDataWithArray:(NSArray *)data;
 
 - (NSArray *)getDataFromPlist;
 
-- (NSArray *)getDataWithKey:(NSString *)key;
+- (NSArray *)getDataWithPokemonName:(NSString *)key;
 
 
 @end

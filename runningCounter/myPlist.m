@@ -16,25 +16,24 @@
 myPlist *shareInstance;
 
 
-- (id)init {
+- (id)initWith:(NSString *)name {
     
     self = [super init];
     
     if (self) {
         
-        [self getPlistPath];
-        
+        [self getPlistPath:name];
     }
     
     return self;
 }
 
 
-+ (myPlist *)shareInstance {
++ (myPlist *)shareInstanceWithplistName:(NSString *)name {
     
     if (shareInstance == nil) {
         
-        shareInstance = [[myPlist alloc]init];
+        shareInstance = [[myPlist alloc]initWith:name];
         
     }
     
@@ -42,12 +41,13 @@ myPlist *shareInstance;
 }
 
 
-- (void)getPlistPath {
+- (void)getPlistPath:(NSString *)name {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath = [paths firstObject];
-    dbPath = [documentPath stringByAppendingPathComponent:@"MyPokemon.plist"];
-    
+    //dbPath = [documentPath stringByAppendingPathComponent:@"MyPokemon.plist"];
+    NSString *plistName = [NSString stringWithFormat:@"%@.plist",name];
+    dbPath = [documentPath stringByAppendingPathComponent:plistName];
     NSLog(@"path:%@",dbPath);
 }
 
@@ -67,7 +67,7 @@ myPlist *shareInstance;
 }
 
 
-- (NSArray *)getDataWithKey:(NSString *)key{
+- (NSArray *)getDataWithPokemonName:(NSString *)key{
     
     NSArray *array = [[NSArray alloc]initWithArray:[self getDataFromPlist]];
     

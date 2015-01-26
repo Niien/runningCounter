@@ -6,12 +6,10 @@
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
 
-@import MapKit;
-@import CoreLocation;
+
 
 #import "MapViewController.h"
-#import "CollectionViewCell.h"
-#import "MyCustomPin.h"
+
 
 @interface MapViewController () <MKMapViewDelegate,CLLocationManagerDelegate>
 {
