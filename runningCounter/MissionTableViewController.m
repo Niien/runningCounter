@@ -9,6 +9,8 @@
 #import "MissionTableViewController.h"
 #import "MissionTableViewCell.h"
 #import "UserProfileSingleton.h"
+#import "Game1ViewController.h"
+#import "Game2ViewController.h"
 
 @interface MissionTableViewController ()
 
@@ -50,7 +52,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [_notifyArray count];
+    return 1;//[_notifyArray count];
 }
 
 
@@ -65,7 +67,26 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    Game1ViewController *vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"Game1"];
+    Game2ViewController *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Game2"];
+    //UIViewController *VC;
+    int random = arc4random()%2;//隨機跳遊戲
+    switch (random) {
+        case 0:
+            [self presentViewController:vc1 animated:YES completion:^{
+                //
+            }];
+            break;
+        case 1:
+            [self presentViewController:vc2 animated:YES completion:^{
+                //
+            }];
+        default:
+            break;
+    }
+//    [self presentViewController:VC animated:YES completion:^{
+//        //
+//    }];
 }
 
 /*

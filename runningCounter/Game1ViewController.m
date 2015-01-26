@@ -93,22 +93,18 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (alertView.tag) {
-        case 1:
+        case 1:     // Successed Alert
             if (buttonIndex == 0) {
-                ViewController *Home = [ViewController new];
-//                NSLog(@"%@",Home.power);
                 [self dismissViewControllerAnimated:YES completion:^{
-                    NSLog(@"成功過去的");
+                //成功動作
                 }];
-                
             }
             break;
-        case 2:
+        case 2:     // Failed Alert
             if (buttonIndex == 0) {
-                
                 [self dismissViewControllerAnimated:YES completion:^{
-                    NSLog(@"失敗過去的");
-                }];
+                //失敗動作
+            }];
             }
             break;
         default:
