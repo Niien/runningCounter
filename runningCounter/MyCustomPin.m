@@ -23,13 +23,17 @@
     
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     
+    NSLog(@"%@",reuseIdentifier);
+    
     if ([reuseIdentifier  isEqualToString: @"hospital"]) {
         
         UIImage *image = [UIImage imageNamed:@"hospital_25.png"];
         
-        self.frame = CGRectMake(0, 0, 5, 5);
+        self.frame = CGRectMake(0, 0, 10, 10);
         
-        UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, self.frame.size.width, self.frame.size.height)];
+        
+        imageView.image = image;
         
         [self addSubview:imageView];
         
@@ -47,7 +51,7 @@
     }
     else {
         
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",reuseIdentifier]];
+        UIImage *image = [UIImage imageNamed:reuseIdentifier];
         
         self.frame = CGRectMake(25, 25, 10, 10);
         

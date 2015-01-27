@@ -25,6 +25,7 @@
     
     NSDictionary *locationDict;
     
+    UIButton *rightButton;
     
 }
 
@@ -35,6 +36,8 @@
 @property (strong, nonatomic) MKPointAnnotation *annotation;
 
 @property (strong, nonatomic) CLCircularRegion *circularRegion;
+
+@property (strong, nonatomic) MyCustomPin *annotationView;
 
 @end
 
@@ -118,27 +121,11 @@
         
     }
     
-    // prepare for check region
     if ([self.circularRegion containsCoordinate:userLocation.coordinate]) {
         
-        if (isEnterRegion) {
-            
-            //UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"close" message:self.annotation.title delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            //[alert show];
-            
-            self.StoreButton.enabled = YES;
-            
-            isEnterRegion = NO;
-            
-        }
         
     }
-    else {
-        
-        isEnterRegion = YES;
-        
-        self.StoreButton.enabled = NO;
-    }
+    
     
 }
 
@@ -197,7 +184,7 @@
 
 
 
-#pragma mark - add annotation
+#pragma mark - add annotation method
 
 - (void)addAnnotation:(NSArray *)data
 {
@@ -208,11 +195,11 @@
         
         self.annotation = [MKPointAnnotation new];
         
-        
         // set annotation title
         if ([[dict objectForKey:@"types"] containsObject:@"hospital"]) {
             
             self.annotation.title = @"hospital";
+            
         }
         else if ([[dict objectForKey:@"types"] containsObject:@"convenience_store"]) {
             
@@ -228,6 +215,7 @@
         
         CLLocationCoordinate2D annoationCoordinate = CLLocationCoordinate2DMake(lat, lon);
         
+        // create a circularRegion
         self.circularRegion = [[CLCircularRegion alloc]initWithCenter:annoationCoordinate radius:50 identifier:self.annotation.title];
         
         [self scheduleLocalNotification];
@@ -240,14 +228,14 @@
 }
 
 
-
 #pragma mark - schedule LocalNotification
 
 - (void)scheduleLocalNotification{
-    
+
     // add localNotification
     UILocalNotification *localNotifi = [UILocalNotification new];
     
+    // region is not support ios7
     localNotifi.region = self.circularRegion;
     localNotifi.alertBody = @"you arrived the region";
     localNotifi.soundName = UILocalNotificationDefaultSoundName;
@@ -268,39 +256,62 @@
         return nil;
     }
     
-    MyCustomPin *annotationView = (MyCustomPin *)[mapView dequeueReusableAnnotationViewWithIdentifier:annotation.title];
+    self.annotationView = (MyCustomPin *)[mapView dequeueReusableAnnotationViewWithIdentifier:annotation.title];
     
-    if (annotationView == nil) {
+    if (self.annotationView == nil) {
         
-        annotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:annotation.title];
+        self.annotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:annotation.title];
         
     }
     else {
         
-        annotationView.annotation = annotation;
+        self.annotationView.annotation = annotation;
     }
     
-    annotationView.canShowCallout = YES;
     
-    return annotationView;
+    
+    self.annotationView.canShowCallout = YES;
+    
+    rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
+    self.annotationView.rightCalloutAccessoryView = rightButton;
+    
+    self.annotationView.rightCalloutAccessoryView.hidden = YES;
+    
+    
+    return self.annotationView;
 }
 
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:[view.annotation coordinate].latitude longitude:[view.annotation coordinate].longitude];
+    
+    if ([userLocation distanceFromLocation:location] < 50 ) {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"welcome" message:nil delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        
+        [alert show];
+        
+        
+        
+    }
+    else {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"太遠啦 廢物" message:nil delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        
+        [alert show];
+        
+    }
+    
+}
 
 
 #pragma mark - button Action
 
-- (IBAction)StoreButton:(id)sender {
-    
-    
-    
-}
-
-
 - (IBAction)backButton:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        //
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -320,6 +331,7 @@
     [_myMapView setRegion:region animated:YES];
     
 }
+
 
 
 

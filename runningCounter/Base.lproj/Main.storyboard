@@ -568,7 +568,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7R-in-Jdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="292" y="1225"/>
+            <point key="canvasLocation" x="292" y="1256"/>
         </scene>
         <!--PersonalID View Controller-->
         <scene sceneID="ffx-37-Z06">
@@ -863,7 +863,7 @@
                                     <constraint firstAttribute="width" constant="70" id="55v-Ka-a2u"/>
                                     <constraint firstAttribute="height" constant="50" id="FUD-f7-eWz"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="hospital">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -1003,6 +1003,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="LvLabel" destination="oRz-JZ-Qm4" id="iIa-Di-PCd"/>
+                        <outlet property="NameLabel" destination="tqY-wB-kN6" id="22g-Ds-6M6"/>
                         <outlet property="myMapView" destination="g3W-PS-UVw" id="FEr-cF-bDf"/>
                         <outlet property="pokemonImage" destination="Zoa-3o-XvY" id="ysJ-l1-F9B"/>
                     </connections>

@@ -49,12 +49,25 @@ myPlist *shareInstance;
     NSString *plistName = [NSString stringWithFormat:@"%@.plist",name];
     dbPath = [documentPath stringByAppendingPathComponent:plistName];
     NSLog(@"path:%@",dbPath);
+    
 }
 
 
 - (void)saveDataWithArray:(NSArray *)data {
     
-    [data writeToFile:dbPath atomically:YES];
+    NSMutableArray *array = [[NSMutableArray alloc]initWithContentsOfFile:dbPath];
+    
+    if (array == nil) {
+        
+        [data writeToFile:dbPath atomically:YES];
+        
+    }
+    else {
+        
+        [array addObjectsFromArray:data];
+        [array writeToFile:dbPath atomically:YES];
+        
+    }
     
 }
 

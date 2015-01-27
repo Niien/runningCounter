@@ -277,6 +277,19 @@
 			name = setting;
 			sourceTree = "<group>";
 		};
+		A91369331A77920600BBB0CA /* pokemonImage */ = {
+			isa = PBXGroup;
+			children = (
+				A9F677971A6E428700E5F06E /* pokemon0_big.png */,
+				A9F677981A6E428700E5F06E /* pokemon0.png */,
+				A9F677991A6E428700E5F06E /* pokemon1_big.png */,
+				A9F6779A1A6E428700E5F06E /* pokemon1.png */,
+				A9F6779B1A6E428700E5F06E /* pokemon2_big.png */,
+				A9F6779C1A6E428700E5F06E /* pokemon2.png */,
+			);
+			name = pokemonImage;
+			sourceTree = "<group>";
+		};
 		A9B064D21A6ECE5B004554B6 /* ICON */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,12 +376,6 @@
 				AE4F3A301A6FED4D000CEE1C /* RedBtn1.png */,
 				AE4F3A311A6FED4D000CEE1C /* RedBtn2.png */,
 				AE4F3A321A6FED4D000CEE1C /* Rufe.png */,
-				A9F677971A6E428700E5F06E /* pokemon0_big.png */,
-				A9F677981A6E428700E5F06E /* pokemon0.png */,
-				A9F677991A6E428700E5F06E /* pokemon1_big.png */,
-				A9F6779A1A6E428700E5F06E /* pokemon1.png */,
-				A9F6779B1A6E428700E5F06E /* pokemon2_big.png */,
-				A9F6779C1A6E428700E5F06E /* pokemon2.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -405,8 +412,9 @@
 				AE4F3A2B1A6FE724000CEE1C /* GameView */,
 				A9B064D21A6ECE5B004554B6 /* ICON */,
 				A9F677961A6E3C1800E5F06E /* Images */,
-				AE15B1501A6E2A0500452FCB /* Images.xcassets */,
+				A91369331A77920600BBB0CA /* pokemonImage */,
 				AE15B1521A6E2A0500452FCB /* LaunchScreen.xib */,
+				AE15B1501A6E2A0500452FCB /* Images.xcassets */,
 				AE15B1431A6E2A0500452FCB /* Supporting Files */,
 			);
 			path = runningCounter;

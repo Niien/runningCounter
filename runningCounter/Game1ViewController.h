@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "myPlist.h"
 
 @interface Game1ViewController : UIViewController
 

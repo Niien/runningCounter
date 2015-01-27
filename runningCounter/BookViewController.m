@@ -11,9 +11,9 @@
 
 @interface BookViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 {
-    NSMutableArray *pictures;
     
     NSArray *data;
+
 }
 
 
@@ -32,22 +32,6 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     // Do any additional setup after loading the view.
     
-    if (pictures == nil) {
-        
-        pictures = [NSMutableArray new];
-        
-    }
-    
-    for (int i = 0; i < 3; i++) {
-        
-        [pictures setObject:[NSString stringWithFormat:@"pokemon%d_big.png",i] atIndexedSubscript:i];
-        
-    }
-    
-    
-    data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
-    
-    NSLog(@"%@",data);
     
     /*
     // sqlite
@@ -60,7 +44,29 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     */
     
     
+    
 }
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
+    
+    NSLog(@"data:%@",data);
+    
+    [self refresh];
+    
+}
+
+
+- (void)refresh {
+    
+    [self.collectionView reloadData];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -95,7 +101,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    //return [pictures count];
+    NSLog(@"numberofItems:%lu",(unsigned long)[data count]);
     return [data count];
 }
 
@@ -104,9 +110,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     // Configure the cell
     
-    //NSString *imageName = [NSString stringWithFormat:@"%@",[pictures objectAtIndex:indexPath.row]];
-    
-    NSString *imageName = [NSString stringWithFormat:@"%@",[data objectAtIndex:indexPath.row]];
+    NSString *imageName = [NSString stringWithFormat:@"%@",[[data objectAtIndex:indexPath.row] objectForKey:@"Name"]];
     
     UIImage *image = [UIImage imageNamed:imageName];
     
@@ -134,7 +138,9 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     MapViewController *MVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     
-    MVC.indexPathNumber = indexPath.row;
+    MVC.pictureName = [[data objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    MVC.iconName = [[data objectAtIndex:indexPath.row] objectForKey:@"iconName"];
+    MVC.Lv = [[[data objectAtIndex:indexPath.row] objectForKey:@"Lv"]integerValue ];
     
     [self presentViewController:MVC animated:YES completion:nil];
     

@@ -18,15 +18,16 @@
     
     CLLocation *userLocation;
     
-    NSInteger pictureID;
-    
     BOOL isfirstLocation;
 }
 
-
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 
+@property (strong, nonatomic) IBOutlet UIImageView *pokemonImage;
 
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *LvLabel;
 
 
 @end
@@ -37,16 +38,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // ==== add image ====
-    self.pokemonImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"pokemon%ld_big.png",(long)self.indexPathNumber]];
-    
-    //================
-    
     locationManager = [CLLocationManager new];
     
-    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    if ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         
-        [locationManager requestWhenInUseAuthorization];
+        [locationManager requestAlwaysAuthorization];
     }
     
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -56,12 +52,25 @@
     //================
     
     _myMapView.userTrackingMode = MKUserTrackingModeFollow;
+    
+    NSLog(@"icon:%@",self.iconName);
+    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    self.pokemonImage.image = [UIImage imageNamed:self.pictureName];
+    
+    self.NameLabel.text = self.pictureName;
+    
+    self.LvLabel.text = [NSString stringWithFormat:@"%d",self.Lv];
 }
 
 
@@ -97,8 +106,8 @@
         
         
         // 縮放比例
-        region.span.latitudeDelta = 0.001;
-        region.span.longitudeDelta = 0.001;
+        region.span.latitudeDelta = 0.01;
+        region.span.longitudeDelta = 0.01;
         
         [_myMapView setRegion:region animated:YES];
         
@@ -135,11 +144,11 @@
     }
     
     
-    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)self.indexPathNumber]];
+    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:self.iconName];
         
     if (AnnotationView == nil) {
             
-        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:[NSString stringWithFormat:@"pokemon%ld",(long)self.indexPathNumber]];
+        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:self.iconName];
             
     }
     else {
@@ -150,10 +159,6 @@
         
         
     AnnotationView.canShowCallout = YES;
-        
-        
-    //37.332018,-122.031409
-        
     
     
     return AnnotationView;

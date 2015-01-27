@@ -12,12 +12,15 @@
 #import "ViewController.h"
 #import "CollectionViewCell.h"
 #import "MyCustomPin.h"
+#import "myPlist.h"
 
 @interface MapViewController : ViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *pokemonImage;
+@property (assign, nonatomic) NSInteger Lv;
 
-@property (assign, nonatomic) NSInteger indexPathNumber;
+@property NSString *pictureName;
+
+@property NSString *iconName;
 
 
 

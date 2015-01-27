@@ -46,6 +46,8 @@
     }
     
     personalData = [[myPlist shareInstanceWithplistName:@"MyPersonProfile"]getDataFromPlist];
+
+    NSLog(@"personalData:%@",personalData);
     
     if (personalData != nil) {
         
@@ -101,6 +103,7 @@
                                                      @"weight":self.weightTextField.text,
                                                      @"age":self.ageTextField.text,
                                                      }, nil];
+    
     
     [[myPlist shareInstanceWithplistName:@"MyPersonProfile"]saveDataWithArray:personalData];
     

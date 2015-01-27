@@ -93,8 +93,12 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (alertView.tag) {
+            
         case 1:     // Successed Alert
             if (buttonIndex == 0) {
+                
+                [self getPokemonAndSave];
+                
                 [self dismissViewControllerAnimated:YES completion:^{
                 //成功動作
                 }];
@@ -114,6 +118,40 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [timeCountDown invalidate];
+}
+
+
+- (void)getPokemonAndSave {
+    
+    int i = arc4random()%3;
+    
+    // create a new empty view
+    //UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.height/4, 100, 100)];
+    
+    NSString *imageName = [NSString stringWithFormat:@"pokemon%d_big.png",i];
+    NSString *iconName = [NSString stringWithFormat:@"pokemon%d.png",i];
+    
+    NSLog(@"imageName:%@",imageName);
+    NSLog(@"iconName:%@",iconName);
+    
+    //UIImage *image = [UIImage imageNamed:imageName];
+    
+    //UIImageView *myImageView = [[UIImageView alloc]initWithImage:image];
+    //myImageView.frame = CGRectMake(0, 0, myView.frame.size.width, myView.frame.size.height);
+    
+    // add view
+    //[myView addSubview:myImageView];
+    //[self.view addSubview:myView];
+    
+    
+    // save data to plist
+     NSDictionary *dict = @{@"Name":imageName, @"iconName":iconName, @"Lv":@"1"};
+    
+    NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
+    
+    NSLog(@"array:%@",array);
+    
+    [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
 }
 
 @end
