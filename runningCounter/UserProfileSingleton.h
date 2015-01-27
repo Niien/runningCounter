@@ -13,6 +13,7 @@
 // 通知的數量
 @property NSMutableArray *notifydateArray;
 
+
 +(UserProfileSingleton *) shareUserProfile;
 -(id) init;
 

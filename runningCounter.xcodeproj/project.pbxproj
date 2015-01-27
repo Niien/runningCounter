@@ -11,6 +11,7 @@
 		844143511A73CAF60002A079 /* StepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143501A73CAF60002A079 /* StepCounter.m */; };
 		844143541A73DAA80002A079 /* MissionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143531A73DAA80002A079 /* MissionTableViewController.m */; };
 		844143581A73DB040002A079 /* MissionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844143571A73DB040002A079 /* MissionTableViewCell.m */; };
+		84D66B461A76648A00A98984 /* TimeMissionNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D66B451A76648A00A98984 /* TimeMissionNotify.m */; };
 		A91368891A75362500BBB0CA /* home_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368871A75362500BBB0CA /* home_30.png */; };
 		A913688A1A75362500BBB0CA /* setting_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368881A75362500BBB0CA /* setting_30.png */; };
 		A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368BE1A76188700BBB0CA /* StoreViewController.m */; };
@@ -90,6 +91,8 @@
 		844143531A73DAA80002A079 /* MissionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewController.m; sourceTree = "<group>"; };
 		844143561A73DB040002A079 /* MissionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionTableViewCell.h; sourceTree = "<group>"; };
 		844143571A73DB040002A079 /* MissionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTableViewCell.m; sourceTree = "<group>"; };
+		84D66B441A76648A00A98984 /* TimeMissionNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeMissionNotify.h; sourceTree = "<group>"; };
+		84D66B451A76648A00A98984 /* TimeMissionNotify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeMissionNotify.m; sourceTree = "<group>"; };
 		A91368871A75362500BBB0CA /* home_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_30.png; sourceTree = "<group>"; };
 		A91368881A75362500BBB0CA /* setting_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_30.png; sourceTree = "<group>"; };
 		A91368BD1A76188700BBB0CA /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 			children = (
 				8441434B1A73C94A0002A079 /* UserProfileSingleton.h */,
 				8441434C1A73C94A0002A079 /* UserProfileSingleton.m */,
+				84D66B441A76648A00A98984 /* TimeMissionNotify.h */,
+				84D66B451A76648A00A98984 /* TimeMissionNotify.m */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -235,6 +240,15 @@
 				844143571A73DB040002A079 /* MissionTableViewCell.m */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		84D66B471A76727700A98984 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				844143521A73DAA80002A079 /* MissionTableViewController.h */,
+				844143531A73DAA80002A079 /* MissionTableViewController.m */,
+			);
+			name = Mission;
 			sourceTree = "<group>";
 		};
 		A91368C01A7619E000BBB0CA /* book */ = {
@@ -323,8 +337,7 @@
 			children = (
 				AE15B14A1A6E2A0500452FCB /* ViewController.h */,
 				AE15B14B1A6E2A0500452FCB /* ViewController.m */,
-				844143521A73DAA80002A079 /* MissionTableViewController.h */,
-				844143531A73DAA80002A079 /* MissionTableViewController.m */,
+				84D66B471A76727700A98984 /* Mission */,
 				A91368C01A7619E000BBB0CA /* book */,
 				A91368C11A7619F000BBB0CA /* setting */,
 			);
@@ -598,6 +611,7 @@
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,
 				AE15B1461A6E2A0500452FCB /* main.m in Sources */,
 				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,
+				84D66B461A76648A00A98984 /* TimeMissionNotify.m in Sources */,
 				844143511A73CAF60002A079 /* StepCounter.m in Sources */,
 				A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */,
 				A9B064E71A6F7D7A004554B6 /* FMDatabaseAdditions.m in Sources */,

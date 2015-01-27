@@ -7,12 +7,13 @@
 //
 
 #import "MissionTableViewController.h"
-#import "MissionTableViewCell.h"
-#import "UserProfileSingleton.h"
-#import "Game1ViewController.h"
-#import "Game2ViewController.h"
 
-@interface MissionTableViewController ()
+
+@interface MissionTableViewController ()<TimeMissionNotifyDelegate>
+{
+    MissionTableViewCell *cell;
+    
+}
 
 @end
 
@@ -27,15 +28,18 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateNew) name:@"USER_Notify" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeDelete) name:@"Delete" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateNew) name:@"DateNow" object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [[NSUserDefaults standardUserDefaults] integerForKey:@"NotifyTotal"];
     _notifyArray = [[UserProfileSingleton shareUserProfile] notifydateArray];
     NSLog(@"%lu",(unsigned long)[_notifyArray count]);
+    
     [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,15 +56,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;//[_notifyArray count];
+    return [_notifyArray count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MissionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.timeLabel.text = [NSString stringWithFormat:@"%@ 分鐘",[_notifyArray objectAtIndex:indexPath.row]];
+    _indexTimePath = indexPath;
+    
+    cell.timeLabel.text = [NSString stringWithFormat:@"%d 秒",[[_notifyArray objectAtIndex:indexPath.row]timeCut] ];
+    
+//    TimeMissionNotify *missionDelegate = [[[UserProfileSingleton shareUserProfile] notifydateArray]objectAtIndex:indexPath.row];
+//    missionDelegate.delegate = self;
     
     return cell;
 }
@@ -88,6 +97,32 @@
 //        //
 //    }];
 }
+
+-(void) dateNew
+{
+//    int timeCut = [[_notifyArray objectAtIndex:_indexTimePath.row] timeCut];
+//    cell.timeLabel.text = [NSString stringWithFormat:@"%d 秒",timeCut];
+    [self.tableView reloadData];
+}
+
+-(void) timeDelete
+{
+//    _notifyArray =  [[UserProfileSingleton shareUserProfile] notifydateArray];
+//    [self.tableView reloadData];
+    [_notifyArray removeObjectAtIndex:0];
+    [[UserProfileSingleton shareUserProfile] setNotifydateArray:_notifyArray];
+    [self.tableView reloadData];
+}
+
+//-(void) CellNowTime
+//{
+////    cell.timeLabel.text = [NSString stringWithFormat:@"%d 分鐘",[[_notifyArray objectAtIndex:indexTimePath.row]timeCut] ];
+//    if ([[_notifyArray objectAtIndexedSubscript:indexTimePath.row] timeCut] == 0) {
+//        [_notifyArray removeObjectAtIndex:indexTimePath.row];
+//        [self.tableView reloadData];
+//    }
+//}
+
 
 /*
 // Override to support conditional editing of the table view.

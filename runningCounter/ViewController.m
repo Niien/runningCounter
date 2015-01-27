@@ -48,7 +48,7 @@
     stepCounter = [StepCounter new];
     [stepCounter startStepCounter];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:nil object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {

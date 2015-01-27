@@ -21,8 +21,7 @@
 @property (strong,nonatomic) NSString *power;
 //====== User Info
 
-// StepCounter
-@property NSString *stepNumber;
+
 
 @end
 

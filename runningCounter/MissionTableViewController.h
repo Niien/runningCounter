@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MissionTableViewCell.h"
+#import "UserProfileSingleton.h"
+#import "Game1ViewController.h"
+#import "Game2ViewController.h"
+#import "TimeMissionNotify.h"
 
 @interface MissionTableViewController : UITableViewController
 
 @property NSMutableArray *notifyArray;
+
+@property NSIndexPath *indexTimePath;
 
 @end

@@ -6,19 +6,13 @@
 //  Copyright (c) 2015年 Longfatown. All rights reserved.
 //
 
-#import "AppDelegate.h"
 #import "StepCounter.h"
-#import "ViewController.h"
-#import "MissionTableViewController.h"
-#import "UserProfileSingleton.h"
-
 
 @interface StepCounter ()
 {
     // 新iphone5s up
     CMPedometer *pedometer;
     NSDate *nowDate;
-    ViewController *viewController;
     
     //  舊
     double accelX;
@@ -29,9 +23,11 @@
     NSTimer *timerMonitor;
         
     MissionTableViewController *mission;
-        
-    NSMutableArray *dateArray;
-
+    
+    // 紀錄目前時間
+    NSMutableArray *dateMuArray;
+    // 倒數時間儲存的陣列
+    NSMutableArray *timeMuArray;
     //通知的數量
     int badgeNB;
 }
@@ -78,15 +74,17 @@
     [self nowTime];
     [pedometer startPedometerUpdatesFromDate:nowDate withHandler:^(CMPedometerData *pedometerData, NSError *error) {
         
+        _stepNB = (int)pedometerData.numberOfSteps;
         
-        viewController.stepNumber = [NSString stringWithFormat:@"%@",pedometerData.numberOfSteps];
+        // 貼步數到ＶＣ
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"StepCounter" object:nil];
         
-        // 步數存入UserDefaults
-        NSUserDefaults *step = [NSUserDefaults standardUserDefaults];
-        [step setInteger:pedometerData.numberOfSteps.integerValue forKey:@"stepcounter"];
-        [step synchronize];
+//        // 步數存入UserDefaults
+//        NSUserDefaults *step = [NSUserDefaults standardUserDefaults];
+//        [step setInteger:pedometerData.numberOfSteps.integerValue forKey:@"stepcounter"];
+//        [step synchronize];
         
-        if ([viewController.stepNumber intValue]%20==0)
+        if (_stepNB%20==0)
         {
             [self notifyAndMission];
         }
@@ -150,9 +148,9 @@
         shake = TRUE;
     if (shake==TRUE) {
         _stepNB ++;
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"www" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"StepCounter" object:nil];
         
-        if (_stepNB %20==0)
+        if (_stepNB %50==0)
         {
             [self notifyAndMission];
         }
@@ -187,16 +185,22 @@
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [appDelegate ReOderBadgeNumber];
     
-    if (dateArray == nil) {
-        dateArray = [NSMutableArray new];
-        [dateArray addObject:nowDate];
-    }else [dateArray addObject:nowDate];
     
-    [[UserProfileSingleton shareUserProfile] setNotifydateArray:dateArray];
+    TimeMissionNotify *timeBack = [[TimeMissionNotify alloc] init];
+    timeBack.firstTime = nowDate;
+    
+    if (dateMuArray == nil) {
+        dateMuArray = [NSMutableArray new];
+        [dateMuArray addObject:timeBack];
+    }else [dateMuArray addObject:timeBack];
+    
+    [[UserProfileSingleton shareUserProfile] setNotifydateArray:dateMuArray];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_Notify" object:nil];
+    
 //    儲存
-    [[NSUserDefaults standardUserDefaults] setInteger:[[UserProfileSingleton shareUserProfile].notifydateArray count] + badgeNB forKey:@"NotifyTotal"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    NSLog(@"NotifyTotal %ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"NotifyTotal"]);
+//    [[NSUserDefaults standardUserDefaults] setInteger:[[UserProfileSingleton shareUserProfile].notifydateArray count] + badgeNB forKey:@"NotifyTotal"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 

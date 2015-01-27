@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+#import "ViewController.h"
+#import "MissionTableViewController.h"
+#import "UserProfileSingleton.h"
+#import "TimeMissionNotify.h"
+
 @import CoreMotion;
 @import UIKit;
 
 @interface StepCounter : NSObject
 
-// 舊 的步數
+// 新 舊 的步數
 @property int stepNB;
 
 
