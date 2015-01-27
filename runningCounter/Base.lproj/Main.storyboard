@@ -640,19 +640,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-It-hga">
-                                <rect key="frame" x="277" y="496" width="60" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0fb-RV-DAr"/>
-                                    <constraint firstAttribute="width" constant="60" id="LaQ-X7-AtH"/>
-                                </constraints>
-                                <state key="normal" title="OK">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="okButton:" destination="Wop-EY-OtG" eventType="touchUpInside" id="7wA-Vh-Gvj"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZI-hE-V2F">
                                 <rect key="frame" x="414" y="380" width="120" height="30"/>
                                 <constraints>
@@ -678,14 +665,27 @@
                                     <action selector="LogInButton:" destination="Wop-EY-OtG" eventType="touchUpInside" id="uKy-WX-XsW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-It-hga">
+                                <rect key="frame" x="270" y="442" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0fb-RV-DAr"/>
+                                    <constraint firstAttribute="width" constant="60" id="LaQ-X7-AtH"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="okButton:" destination="Wop-EY-OtG" eventType="touchUpInside" id="7wA-Vh-Gvj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2oJ-ck-KMw" firstAttribute="top" secondItem="Gu5-1d-gah" secondAttribute="bottom" constant="55" id="6zX-MF-DjC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2oJ-ck-KMw" secondAttribute="trailing" constant="50" id="7ZC-iT-NW5"/>
                             <constraint firstItem="3D8-ne-XK6" firstAttribute="top" secondItem="Gu5-1d-gah" secondAttribute="bottom" constant="55" id="9xP-WW-cDh"/>
-                            <constraint firstAttribute="centerX" secondItem="Xi7-It-hga" secondAttribute="centerX" constant="-7" id="AUW-2T-Rh2"/>
-                            <constraint firstItem="Xi7-It-hga" firstAttribute="top" secondItem="yYd-If-Vif" secondAttribute="topMargin" constant="496" id="BHA-GO-yny"/>
+                            <constraint firstAttribute="centerX" secondItem="Xi7-It-hga" secondAttribute="centerX" id="AUW-2T-Rh2"/>
+                            <constraint firstItem="Xi7-It-hga" firstAttribute="top" secondItem="yYd-If-Vif" secondAttribute="topMargin" constant="442" id="BHA-GO-yny"/>
                             <constraint firstItem="3D8-ne-XK6" firstAttribute="leading" secondItem="yYd-If-Vif" secondAttribute="leadingMargin" constant="80" id="DEQ-0p-bpd"/>
                             <constraint firstItem="2VX-mY-GCf" firstAttribute="top" secondItem="3GE-sm-2YG" secondAttribute="bottom" constant="70" id="LDm-Oa-vY6"/>
                             <constraint firstItem="Q23-Un-JJM" firstAttribute="leading" secondItem="yYd-If-Vif" secondAttribute="leadingMargin" constant="80" id="Rhz-xC-76A"/>

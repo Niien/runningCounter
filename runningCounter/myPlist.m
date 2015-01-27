@@ -48,6 +48,7 @@ myPlist *shareInstance;
     //dbPath = [documentPath stringByAppendingPathComponent:@"MyPokemon.plist"];
     NSString *plistName = [NSString stringWithFormat:@"%@.plist",name];
     dbPath = [documentPath stringByAppendingPathComponent:plistName];
+    
     NSLog(@"path:%@",dbPath);
     
 }

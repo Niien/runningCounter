@@ -32,12 +32,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     //====== Parse
     //初始化
-    getInfo = [[PFQuery alloc]initWithClassName:@"BattleUser"];
-    //Label 取值
-    username = [[getInfo findObjects][0]valueForKey:@"UserName"];
-    userLV = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserLV"]];
-    _power = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserPower"]];
-    useradward = [[getInfo findObjects][0]valueForKey:@"UserAdward"];
+//    getInfo = [[PFQuery alloc]initWithClassName:@"BattleUser"];
+//    //Label 取值
+//    username = [[getInfo findObjects][0]valueForKey:@"UserName"];
+//    userLV = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserLV"]];
+//    _power = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserPower"]];
+//    useradward = [[getInfo findObjects][0]valueForKey:@"UserAdward"];
     
     _UserNameLabel.text = username;
     _UserLVLabel.text = userLV;
