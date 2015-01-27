@@ -42,6 +42,7 @@
     keyinArray = [NSMutableArray new];      // 比對陣列
     X = 0;                                  //
     GameFinal = false;                      // 遊戲輸贏判斷
+    [self getPokemonAndSave];               // 隨機取怪獸
     
     
     //顯示目標 分數 時間
@@ -138,8 +139,6 @@
         case 1:     // Successed Alert
             if (buttonIndex == 0) {
                 
-                [self getPokemonAndSave];
-                
                 [self dismissViewControllerAnimated:YES completion:^{
                     //成功動作
                 }];
@@ -164,13 +163,13 @@
 
 - (void)getPokemonAndSave {
     
-    int i = arc4random()%3;
+    int i = arc4random()%30+1;
     
     // create a new empty view
 //    UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.height/4, 100, 100)];
 //    
-    NSString *imageName = [NSString stringWithFormat:@"pokemon%d_big.png",i];
-    NSString *iconName = [NSString stringWithFormat:@"pokemon%d.png",i];
+    NSString *imageName = [NSString stringWithFormat:@"%d.png",i];
+    NSString *iconName = [NSString stringWithFormat:@"%d.png",i];
     NSLog(@"imageName:%@",imageName);
     NSLog(@"iconName:%@",iconName);
     
