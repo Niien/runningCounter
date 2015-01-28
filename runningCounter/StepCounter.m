@@ -30,12 +30,24 @@
     NSMutableArray *timeMuArray;
     //通知的數量
     int badgeNB;
+    
+    NSUserDefaults *userSteps;
+    
+    UserProfileSingleton *stepCounter;
 }
 
 @end
 
 
 @implementation StepCounter
+static StepCounter *instance;
++(StepCounter *)shareStepCounter
+{
+    if (instance == nil) {
+        instance = [self new];
+    }
+    return instance;
+}
 
 -(void)startStepCounter
 {
@@ -74,7 +86,8 @@
     [self nowTime];
     [pedometer startPedometerUpdatesFromDate:nowDate withHandler:^(CMPedometerData *pedometerData, NSError *error) {
         
-        _stepNB = (int)pedometerData.numberOfSteps;
+        _stepNB =[pedometerData.numberOfSteps intValue];
+        _power =[pedometerData.numberOfSteps intValue];        
         
         // 貼步數到ＶＣ
         [[NSNotificationCenter defaultCenter]postNotificationName:@"StepCounter" object:nil];
@@ -148,8 +161,10 @@
         shake = TRUE;
     if (shake==TRUE) {
         _stepNB ++;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"StepCounter" object:nil];
+        _power ++;
         
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"StepCounter" object:nil];
+        NSLog(@"step %ld",(long)_stepNB);
         if (_stepNB %50==0)
         {
             [self notifyAndMission];

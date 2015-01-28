@@ -48,20 +48,21 @@
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
     
+    stepCounter = [StepCounter shareStepCounter];
+    [stepCounter startStepCounter];
     
 //    [self myParseSetting];
     
     _UserNameLabel.text = username;
     _UserLVLabel.text = userLV;
-    _UserPowerLabel.text = userPower;
+    _UserPowerLabel.text = [NSString stringWithFormat:@"%d",stepCounter.stepNB] ;//userPower;
     _UserAdwardLabel.text = useradward;
-    
+    NSLog(@"VC %d",stepCounter.stepNB);
 //    預設圖片 / 改變圖片
     [self ChangeImageBtn];
     _UserImageView.image = [UIImage imageNamed:@"GG2.jpg"];
     _UserImageView.contentMode = UIViewContentModeScaleAspectFit;
-    stepCounter = [StepCounter new];
-    [stepCounter startStepCounter];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];
@@ -75,7 +76,8 @@
 #pragma mark 增加步數（精力）
 -(void) powerLabel
 {
-    _UserPowerLabel.text = [NSString stringWithFormat:@"%d",stepCounter.stepNB];
+    _UserPowerLabel.text = [NSString stringWithFormat:@"%ld",(long)stepCounter.stepNB];
+    
 }
 #pragma mark Parse設定
 -(void)myParseSetting{

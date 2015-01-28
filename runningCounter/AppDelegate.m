@@ -10,7 +10,9 @@
 
 
 @interface AppDelegate ()
-
+{
+    NSUserDefaults *first;
+}
 @end
 
 @implementation AppDelegate
@@ -63,6 +65,56 @@
     // set tabBar item image
     [self changeTabBarItemImage];
     
+    NSTimeZone *zone = [NSTimeZone defaultTimeZone];//獲得當前應用程序的時區
+    NSInteger interval = [zone secondsFromGMTForDate:[NSDate date]];//以秒為單位返回當前應用程序與世界標準時間（格林威尼時間）的時差
+    NSDate *date = [[NSDate date] dateByAddingTimeInterval:interval];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+    
+    NSString *dateString = [[NSUserDefaults standardUserDefaults]objectForKey:@"LastDate"];
+    if (dateString == nil) {
+        
+        NSString *dateString = [dateFormat stringFromDate:date];
+        
+        first =[NSUserDefaults standardUserDefaults];
+        [first setInteger:0 forKey:@"DaySteps"];
+        [first setInteger:0 forKey:@"Power"];
+        [first setObject:dateString forKey:@"LastDate"];
+        [first synchronize];
+        NSLog(@"first");
+    }
+    else {
+        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        NSDate *lastDate = [dateFormat dateFromString:dateString];
+        
+        NSString *nowDateString = [dateFormat stringFromDate:date];
+        NSDate *nowDate = [dateFormat dateFromString:nowDateString];
+        if ([lastDate isEqualToDate:nowDate]) {
+            first =[NSUserDefaults standardUserDefaults];
+            
+            [[StepCounter shareStepCounter]setPower:[first integerForKey:@"Power"]];
+            
+            [[StepCounter shareStepCounter]setStepNB:[first integerForKey:@"DaySteps"]];
+            
+            NSLog(@"Second");
+        } else {
+            first =[NSUserDefaults standardUserDefaults];
+            
+            [[StepCounter shareStepCounter]setPower:[first integerForKey:@"Power"]];
+            
+            [[StepCounter shareStepCounter]setStepNB:0];
+            
+        }
+        
+        
+    }
+   
+    
+    
+    
     
     return YES;
 }
@@ -104,7 +156,14 @@
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-
+    
+    first =[NSUserDefaults standardUserDefaults];
+    NSInteger power = [[StepCounter shareStepCounter]power];
+    [first setInteger:power forKey:@"Power"];
+    NSInteger step = [[StepCounter shareStepCounter]stepNB];
+    [first setInteger:step forKey:@"DaySteps"];
+    [first synchronize];
+    NSLog(@"closs %ld",(long)power);
 }
 
 

@@ -19,9 +19,11 @@
 @interface StepCounter : NSObject
 
 // 新 舊 的步數
-@property int stepNB;
+@property NSInteger stepNB;
 
+@property NSInteger power;
 
++(StepCounter*)shareStepCounter;
 -(void)startStepCounter ;
 -(void)stopStepCounter;
 

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Longfatown. All rights reserved.
 //
 
+#import "StepCounter.h"
 #import <UIKit/UIKit.h>
 @import Parse;
 
