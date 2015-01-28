@@ -236,7 +236,7 @@
     UILocalNotification *localNotifi = [UILocalNotification new];
     
     // region is not support ios7
-    localNotifi.region = self.circularRegion;
+    //localNotifi.region = self.circularRegion;
     localNotifi.alertBody = @"you arrived the region";
     localNotifi.soundName = UILocalNotificationDefaultSoundName;
     localNotifi.applicationIconBadgeNumber = 1;

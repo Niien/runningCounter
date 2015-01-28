@@ -186,11 +186,5 @@
     
     [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
     
-    
 }
-
-
-
-
-
 @end

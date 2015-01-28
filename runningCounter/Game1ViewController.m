@@ -8,6 +8,7 @@
 
 #import "Game1ViewController.h"
 #import "ViewController.h"
+@import AudioToolbox;
 
 //目前神奇寶貝總數
 #define NumOfPokeMon 30
@@ -55,7 +56,8 @@
     [_BtnLabelright setImage:[UIImage imageNamed:@"RedBtn1.png"] forState:UIControlStateNormal];
     [_BtnLabelright setImage:[UIImage imageNamed:@"RedBtn2.png"] forState:UIControlStateHighlighted];
     
-    
+    //刪除通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"notifyD" object:nil];
 }
 -(void)viewDidAppear:(BOOL)animated{
     //隨機目標數
@@ -72,6 +74,7 @@
     _targetGoal.text = [NSString stringWithFormat:@"Mission Target: %ld",(long)goal];
     _myPoint.text = [NSString stringWithFormat:@"%ld",(long)myPressPoint];
     _mytimeLabel.text = [NSString stringWithFormat:@"= %.1f =",time];
+    
     
 }
 
@@ -115,12 +118,16 @@
             //還有時間 且 已達標
             [timeCountDown invalidate];
             [self SaveToPlist];
+            //結束震動
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Succeed" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             alert.tag = 1;  //要分辨多個 Alert 且加動作 就需設tag
             [alert show];
         }
     }else{
         [timeCountDown invalidate];
+        //結束震動
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         UIAlertView *failalert = [[UIAlertView alloc]initWithTitle:@"Failed" message:nil delegate:self cancelButtonTitle:@"QQ" otherButtonTitles:nil];
         failalert.tag = 2;  //要分辨多個 Alert 且加動作 就需設tag
         [failalert show];

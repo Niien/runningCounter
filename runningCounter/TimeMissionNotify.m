@@ -23,7 +23,7 @@
 -(id) init
 {
     self = [super init];
-    _timeCut = 20;
+    _timeCut = 300;
     timeGo = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeGoCut) userInfo:nil repeats:YES];
     
     return self;

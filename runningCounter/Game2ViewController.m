@@ -7,6 +7,7 @@
 //
 
 #import "Game2ViewController.h"
+@import AudioToolbox;
 
 //目前神奇寶貝總數
 #define NumOfPokeMon 30
@@ -47,6 +48,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    //刪除通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"notifyD" object:nil];
 }
 
 #pragma mark 參數設置
@@ -68,23 +71,25 @@
     //設一個倒數計時器 並在分數達標時停止並響鈴
     [self showRandom];
     myCountdowntimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(myCountDown:) userInfo:nil repeats:YES];
+    
+    
 }
 #pragma mark 隨機取值
 - (void)showRandom{
     //↓←→↑AB
     BaseElementArray = @[@"↑",@"→",@"↓",@"←",@"A",@"B"];
     
-    randomNO = 12;//arc4random()%4+8;
+    randomNO = arc4random()%4+8;
     _RandomLabel.text = @"";
     //生成 箭頭陣列 與 數字陣列
     for (int i=0; i<randomNO; i++) {
-        random = 1;//arc4random()%6;
+        random = arc4random()%6;
         [NumberArray addObject:[NSString stringWithFormat:@"%d",random]];
         [showArrowArray addObject:[BaseElementArray objectAtIndex:random]];
     }
     NSString *tmp1,*tmp2;
     tmp2 = @"";
-    NSLog(@"%@",NumberArray);
+//    NSLog(@"%@",NumberArray);
     //為了修正前面逗號,變一大串 XDD
     for (int i=0; i<randomNO-1; i++) {
         tmp1 = [NSString stringWithFormat:@"%@",showArrowArray[i]];
@@ -134,6 +139,8 @@
                 [[_ButtonsLabel objectAtIndex:i]setEnabled:NO];
             }
             [self SaveToPlist];
+            //震動
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Succeed" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             alert.tag = 1;
             [alert show];
@@ -145,6 +152,8 @@
         for (int i=0; i<6; i++) {
             [[_ButtonsLabel objectAtIndex:i]setEnabled:NO];
         }
+        //震動
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         UIAlertView *failalert = [[UIAlertView alloc]initWithTitle:@"Failed" message:nil delegate:self cancelButtonTitle:@"QQ" otherButtonTitles:nil];
         failalert.tag = 2;
         [failalert show];
@@ -202,7 +211,6 @@
 }
 
 #pragma mark 設置圖位置
-
 -(void)showPokemonImage{
     //add pokeimageview
     pokeImage = [UIImage imageNamed:imageName];

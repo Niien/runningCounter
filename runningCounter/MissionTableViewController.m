@@ -31,6 +31,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateNew) name:@"USER_Notify" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeDelete) name:@"Delete" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateNew) name:@"DateNow" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyDelete) name:@"notifyD" object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -102,6 +103,7 @@
 {
 //    int timeCut = [[_notifyArray objectAtIndex:_indexTimePath.row] timeCut];
 //    cell.timeLabel.text = [NSString stringWithFormat:@"%d 秒",timeCut];
+    _notifyArray = [[UserProfileSingleton shareUserProfile] notifydateArray];
     [self.tableView reloadData];
 }
 
@@ -110,6 +112,16 @@
 //    _notifyArray =  [[UserProfileSingleton shareUserProfile] notifydateArray];
 //    [self.tableView reloadData];
     [_notifyArray removeObjectAtIndex:0];
+    [[UserProfileSingleton shareUserProfile] setNotifydateArray:_notifyArray];
+    [self.tableView reloadData];
+}
+
+-(void) notifyDelete
+{
+    int index = _indexTimePath.row-1;
+    //NSLog(@"%ld",(long)_indexTimePath.row);
+    //NSLog(@"index %d",index);
+    [_notifyArray removeObjectAtIndex:index];
     [[UserProfileSingleton shareUserProfile] setNotifydateArray:_notifyArray];
     [self.tableView reloadData];
 }
