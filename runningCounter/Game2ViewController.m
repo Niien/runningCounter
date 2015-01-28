@@ -23,6 +23,15 @@
     int randomMonster;
     NSString *imageName;
     NSString *iconName;
+    //Pokeimgmove
+    NSTimer *pokeImgMove;
+    float changeFrameTime;
+    int pokeFrameX;
+    int peopleFrameX;
+    UIImage *pokeImage;
+    UIImageView *pokeImageView;
+    UIImage *peopleImage;
+    UIImageView *peopleImageView;
     //
 }
 @property (weak, nonatomic) IBOutlet UILabel *showTextLabel;
@@ -169,6 +178,7 @@
 }
 
 
+#pragma mark 隨機選取怪獸
 - (void)getPokemonNo {
     
     randomMonster = arc4random()%NumOfPokeMon+1;
@@ -178,30 +188,58 @@
     NSLog(@"imageName:%@",imageName);
     NSLog(@"iconName:%@",iconName);
     
+    [self showPokemonImage];
 }
 
+#pragma mark 存入Plist
 -(void)SaveToPlist{
     
-    // save data to plist
-    NSDictionary *dict = @{@"image":imageName, @"iconName":iconName, @"Lv":@"1"};
     
-    NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
     
-    NSLog(@"array:%@",array);
     
-    [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
+    
+    
+    
+    
+    
 }
 
+#pragma mark 設置圖位置
 -(void)showPokemonImage{
-    UIImage *image = [UIImage imageNamed:imageName];
+    //add pokeimageview
+    pokeImage = [UIImage imageNamed:imageName];
+    pokeImageView = [[UIImageView alloc]initWithImage:pokeImage];
+    pokeImageView.frame = CGRectMake(0, 20, 100, 100);
+    [self.view addSubview:pokeImageView];
     
-    UIImageView *myImageView = [[UIImageView alloc]initWithImage:image];
-    myImageView.frame = CGRectMake(0, 0, 100,100);
+    //add pepleimageview
+    peopleImage = [UIImage imageNamed:@"GG2.jpg"];
+    peopleImageView = [[UIImageView alloc]initWithImage:peopleImage];
+    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100, self.view.frame.size.height/2-0, 100, 100);
+    [self.view addSubview:peopleImageView];
     
-    //add view
-//    [myView addSubview:myImageView];
-    [self.view addSubview:myImageView];
+    //time
+    pokeImgMove = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changePokeImage) userInfo:nil repeats:YES];
+    
 }
+
+#pragma mark 改變圖位置
+-(void)changePokeImage{
+    //    changeFrameTime -= 0.1;
+    pokeFrameX += self.view.frame.size.width /15;
+    pokeImageView.frame = CGRectMake(pokeFrameX, 20, 100, 100);
+    [self.view addSubview:pokeImageView];
+    
+    peopleFrameX -= self.view.frame.size.width /15;
+    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100+peopleFrameX, self.view.frame.size.height/2-110, 100, 100);
+    [self.view addSubview:peopleImageView];
+    
+    if (pokeFrameX>=self.view.frame.size.width-100) {
+        [pokeImgMove invalidate];
+    }
+    
+}
+
 
 /*
 #pragma mark - Navigation
