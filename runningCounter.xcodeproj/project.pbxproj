@@ -101,6 +101,7 @@
 		AE90C5891A77BBF700BE2700 /* 28.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C56B1A77BBF700BE2700 /* 28.png */; };
 		AE90C58A1A77BBF700BE2700 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C56C1A77BBF700BE2700 /* 29.png */; };
 		AE90C58B1A77BBF700BE2700 /* 30.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C56D1A77BBF700BE2700 /* 30.png */; };
+		AEC279F01A7812E500F3836D /* GetPokemonAndStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC279EF1A7812E500F3836D /* GetPokemonAndStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,8 @@
 		AE90C56B1A77BBF700BE2700 /* 28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 28.png; sourceTree = "<group>"; };
 		AE90C56C1A77BBF700BE2700 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
 		AE90C56D1A77BBF700BE2700 /* 30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30.png; sourceTree = "<group>"; };
+		AEC279EE1A7812E500F3836D /* GetPokemonAndStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPokemonAndStore.h; sourceTree = "<group>"; };
+		AEC279EF1A7812E500F3836D /* GetPokemonAndStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPokemonAndStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -548,6 +551,8 @@
 				A9BFE8E91A75245E00D2B2EA /* Game2ViewController.m */,
 				A9BFE8EB1A75246D00D2B2EA /* Game3ViewController.h */,
 				A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */,
+				AEC279EE1A7812E500F3836D /* GetPokemonAndStore.h */,
+				AEC279EF1A7812E500F3836D /* GetPokemonAndStore.m */,
 			);
 			name = GameView;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				A9B064EA1A6F7D7A004554B6 /* FMResultSet.m in Sources */,
 				A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */,
 				A9B064E81A6F7D7A004554B6 /* FMDatabasePool.m in Sources */,
+				AEC279F01A7812E500F3836D /* GetPokemonAndStore.m in Sources */,
 				A9BFE8E41A7523EF00D2B2EA /* WorldMapViewController.m in Sources */,
 				A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */,
 				AE15B1491A6E2A0500452FCB /* AppDelegate.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "Game2ViewController.h"
 
+//目前神奇寶貝總數
+#define NumOfPokeMon 30
+
 @interface Game2ViewController ()
 {
     int random,randomNO;        // 隨機取值
@@ -16,6 +19,11 @@
     float time;                 // 所剩時間
     BOOL GameFinal;             // 判斷遊戲成敗
     NSArray *BaseElementArray;
+    //
+    int randomMonster;
+    NSString *imageName;
+    NSString *iconName;
+    //
 }
 @property (weak, nonatomic) IBOutlet UILabel *showTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *RandomLabel;
@@ -42,7 +50,7 @@
     keyinArray = [NSMutableArray new];      // 比對陣列
     X = 0;                                  //
     GameFinal = false;                      // 遊戲輸贏判斷
-    [self getPokemonAndSave];               // 隨機取怪獸
+    [self getPokemonNo];               // 隨機取怪獸
     
     
     //顯示目標 分數 時間
@@ -116,7 +124,7 @@
             for (int i=0; i<6; i++) {
                 [[_ButtonsLabel objectAtIndex:i]setEnabled:NO];
             }
-
+            [self SaveToPlist];
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Succeed" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             alert.tag = 1;
             [alert show];
@@ -161,35 +169,40 @@
 }
 
 
-- (void)getPokemonAndSave {
+- (void)getPokemonNo {
     
-    int i = arc4random()%30+1;
+    randomMonster = arc4random()%NumOfPokeMon+1;
     
-    // create a new empty view
-//    UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.height/4, 100, 100)];
-//    
-    NSString *imageName = [NSString stringWithFormat:@"%d.png",i];
-    NSString *iconName = [NSString stringWithFormat:@"%d.png",i];
+    imageName = [NSString stringWithFormat:@"%d.png",randomMonster];
+    iconName = [NSString stringWithFormat:@"%d.png",randomMonster];
     NSLog(@"imageName:%@",imageName);
     NSLog(@"iconName:%@",iconName);
     
-//    UIImage *image = [UIImage imageNamed:imageName];
-//    
-//    UIImageView *myImageView = [[UIImageView alloc]initWithImage:image];
-//    myImageView.frame = CGRectMake(0, 0, myView.frame.size.width, myView.frame.size.height);
-//    
-//    // add view
-//    [myView addSubview:myImageView];
-//    [self.view addSubview:myView];
-    
+}
+
+-(void)SaveToPlist{
     
     // save data to plist
     NSDictionary *dict = @{@"Name":imageName, @"iconName":iconName, @"Lv":@"1"};
     
-    NSArray *array = [[NSArray alloc]initWithObjects:dict ,nil];
+    NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
+    
+    NSLog(@"array:%@",array);
     
     [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
 }
+
+-(void)showPokemonImage{
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    UIImageView *myImageView = [[UIImageView alloc]initWithImage:image];
+    myImageView.frame = CGRectMake(0, 0, 100,100);
+    
+    //add view
+//    [myView addSubview:myImageView];
+    [self.view addSubview:myImageView];
+}
+
 /*
 #pragma mark - Navigation
 
