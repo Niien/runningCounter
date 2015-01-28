@@ -118,10 +118,7 @@
 
 -(void) notifyDelete
 {
-    int index = _indexTimePath.row;
-    NSLog(@"%ld",(long)_indexTimePath.row);
-    NSLog(@"index %d",index);
-    [_notifyArray removeObjectAtIndex:index];
+    [_notifyArray removeObjectAtIndex:_indexTimePath.row];
     [[UserProfileSingleton shareUserProfile] setNotifydateArray:_notifyArray];
     [self.tableView reloadData];
 }
