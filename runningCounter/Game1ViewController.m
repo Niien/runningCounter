@@ -171,6 +171,7 @@
 #pragma mark 存入Plist
 -(void)SaveToPlist{
   
+<<<<<<< HEAD
     
     
     
@@ -181,6 +182,15 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
 =======
+    
+    
+    
+>>>>>>> FETCH_HEAD
+=======
+    
+    
+    
+    
     
     
     
