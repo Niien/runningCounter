@@ -54,7 +54,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
     
-    NSLog(@"data:%@",data);
+    NSLog(@"BookView:%@",data);
     
     [self refresh];
     
@@ -114,6 +114,8 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     UIImage *image = [UIImage imageNamed:imageName];
     
     cell.myImage.image = image;
+    
+    cell.ImageName.text = [NSString stringWithFormat:@"Lv:%@",[[data objectAtIndex:indexPath.row]objectForKey:@"Lv"]];
     
     return cell;
     

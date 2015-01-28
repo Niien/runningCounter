@@ -83,7 +83,7 @@
 - (IBAction)pressedBtnleft:(id)sender {
     myPressPoint++;
     _myPoint.text = [NSString stringWithFormat:@"%ld",(long)myPressPoint];
-    NSLog(@"%d",myPressPoint);
+    //NSLog(@"%d",myPressPoint);
     
     //按了按鈕才開始
     if (myPressPoint == 1) {
@@ -96,7 +96,7 @@
 - (IBAction)pressedBtnRight:(id)sender {
     myPressPoint++;
     _myPoint.text = [NSString stringWithFormat:@"%ld",(long)myPressPoint];
-    NSLog(@"%d",myPressPoint);
+    //NSLog(@"%d",myPressPoint);
 
     //按了按鈕才開始
     if (myPressPoint == 1) {
@@ -173,7 +173,7 @@
 
     // save data to plist
     NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1"};
-    
+    NSLog(@"G1:%@",dict);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
 
 }

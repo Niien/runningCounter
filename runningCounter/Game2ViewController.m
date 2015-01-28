@@ -74,11 +74,11 @@
     //↓←→↑AB
     BaseElementArray = @[@"↑",@"→",@"↓",@"←",@"A",@"B"];
     
-    randomNO = arc4random()%4+8;
+    randomNO = 12;//arc4random()%4+8;
     _RandomLabel.text = @"";
     //生成 箭頭陣列 與 數字陣列
     for (int i=0; i<randomNO; i++) {
-        random = arc4random()%6;
+        random = 1;//arc4random()%6;
         [NumberArray addObject:[NSString stringWithFormat:@"%d",random]];
         [showArrowArray addObject:[BaseElementArray objectAtIndex:random]];
     }
@@ -134,7 +134,6 @@
                 [[_ButtonsLabel objectAtIndex:i]setEnabled:NO];
             }
             [self SaveToPlist];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil];
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Succeed" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             alert.tag = 1;
             [alert show];
@@ -198,7 +197,7 @@
 
     // save data to plist
     NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1"};
-    
+    NSLog(@"G2:%@",dict);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
 }
 
@@ -208,14 +207,14 @@
     //add pokeimageview
     pokeImage = [UIImage imageNamed:imageName];
     pokeImageView = [[UIImageView alloc]initWithImage:pokeImage];
-    pokeImageView.frame = CGRectMake(0, 20, 100, 100);
+    pokeImageView.frame = CGRectMake(0, 15, 100, 100);
     [self.view addSubview:pokeImageView];
 
     
     //add pepleimageview
     peopleImage = [UIImage imageNamed:@"GG2.jpg"];
     peopleImageView = [[UIImageView alloc]initWithImage:peopleImage];
-    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100, self.view.frame.size.height/2-0, 100, 100);
+    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100, self.view.frame.size.height/2-165, 100, 100);
     [self.view addSubview:peopleImageView];
     
     //time
@@ -227,11 +226,11 @@
 -(void)changePokeImage{
     //    changeFrameTime -= 0.1;
     pokeFrameX += self.view.frame.size.width /15;
-    pokeImageView.frame = CGRectMake(pokeFrameX, 20, 100, 100);
+    pokeImageView.frame = CGRectMake(pokeFrameX, 15, 100, 100);
     [self.view addSubview:pokeImageView];
     
     peopleFrameX -= self.view.frame.size.width /15;
-    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100+peopleFrameX, self.view.frame.size.height/2-110, 100, 100);
+    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100+peopleFrameX, self.view.frame.size.height/2-165, 100, 100);
     [self.view addSubview:peopleImageView];
     
     if (pokeFrameX>=self.view.frame.size.width-100) {

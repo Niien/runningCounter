@@ -171,18 +171,18 @@
 - (void)addAnnotation:(NSDictionary *)sender {
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:[sender valueForKey:@"userInfo"]];
-    
+    NSLog(@"viewControllerDictNoCoordinate:%@",dict);
     NSString *lat = [NSString stringWithFormat:@"%f",userLocation.coordinate.latitude];
     NSString *lon = [NSString stringWithFormat:@"%f",userLocation.coordinate.longitude];
 
     
     [dict setObject:lat forKey:@"lat"];
     [dict setObject:lon forKey:@"lon"];
-    NSLog(@"dict:%@",dict);
+    NSLog(@"viewControllerDict:%@",dict);
     
     NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
     
-    NSLog(@"array:%@",array);
+    NSLog(@"viewControllerArray:%@",array);
     
     [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
     
