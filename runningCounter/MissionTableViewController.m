@@ -65,7 +65,6 @@
     cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    _indexTimePath = indexPath;
     
     cell.timeLabel.text = [NSString stringWithFormat:@"%d 秒",[[_notifyArray objectAtIndex:indexPath.row]timeCut] ];
     
@@ -77,6 +76,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _indexTimePath = indexPath;
     Game1ViewController *vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"Game1"];
     Game2ViewController *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Game2"];
     //UIViewController *VC;
@@ -118,9 +118,9 @@
 
 -(void) notifyDelete
 {
-    int index = _indexTimePath.row-1;
-    //NSLog(@"%ld",(long)_indexTimePath.row);
-    //NSLog(@"index %d",index);
+    int index = _indexTimePath.row;
+    NSLog(@"%ld",(long)_indexTimePath.row);
+    NSLog(@"index %d",index);
     [_notifyArray removeObjectAtIndex:index];
     [[UserProfileSingleton shareUserProfile] setNotifydateArray:_notifyArray];
     [self.tableView reloadData];
