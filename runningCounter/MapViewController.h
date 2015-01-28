@@ -13,6 +13,7 @@
 #import "CollectionViewCell.h"
 #import "MyCustomPin.h"
 #import "myPlist.h"
+#import "test.h"
 
 @interface MapViewController : ViewController
 
@@ -22,6 +23,7 @@
 
 @property NSString *iconName;
 
-
+@property (assign, nonatomic) double lat;
+@property (assign, nonatomic) double lon;
 
 @end

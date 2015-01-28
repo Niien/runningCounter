@@ -5,11 +5,11 @@
 //  Created by Longfatown on 1/20/15.
 //  Copyright (c) 2015 Longfatown. All rights reserved.
 //
-
+#import "test.h"
 #import "ViewController.h"
 #import "StepCounter.h"
 
-@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
     //因為不能直接接parse下來的東西 所以設個用來接的變數
     NSString *username,*useradward,*userLV,*userPower;
@@ -24,6 +24,9 @@
     
     //改變照片
     UIImagePickerController *imagePicker;
+    
+    CLLocationManager *locationManager;
+    CLLocation *userLocation;
 }
 
 @end
@@ -33,7 +36,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
+    locationManager = [CLLocationManager new];
+    
+    if ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        
+        [locationManager requestAlwaysAuthorization];
+    }
+    
+    
+    
 //    [self myParseSetting];
     
     _UserNameLabel.text = username;
@@ -49,6 +61,7 @@
     [stepCounter startStepCounter];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation) name:@"getLocation" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -142,6 +155,30 @@
 
 
 
+#pragma mark - locationManager delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    userLocation = [locations lastObject];
+    
+}
+
+
+#pragma mark - addAnnotation
+
+- (void)addAnnotation {
+    
+    //NSLog(@"in");
+    
+    //NSLog(@"user:%f,%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+    
+    double lat = userLocation.coordinate.latitude;
+    double lon = userLocation.coordinate.longitude;
+    NSLog(@"%f",lat);
+    NSLog(@"%f",lon);
+    
+    [test share].lat = lat;
+    [test share].lon = lon;
+}
 
 
 

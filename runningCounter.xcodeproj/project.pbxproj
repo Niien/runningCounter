@@ -16,6 +16,7 @@
 		A913688A1A75362500BBB0CA /* setting_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368881A75362500BBB0CA /* setting_30.png */; };
 		A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368BE1A76188700BBB0CA /* StoreViewController.m */; };
 		A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */; };
+		A9846B3E1A78AF7F0036D904 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A9846B3D1A78AF7F0036D904 /* test.m */; };
 		A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */; };
 		A9B064D41A6ECECA004554B6 /* backIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B064D31A6ECECA004554B6 /* backIcon.jpg */; };
 		A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B064D61A6F5848004554B6 /* HousePlaceMark.m */; };
@@ -131,6 +132,8 @@
 		A91368BE1A76188700BBB0CA /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		A91368C51A7629D300BBB0CA /* PersonalIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalIDViewController.h; sourceTree = "<group>"; };
 		A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalIDViewController.m; sourceTree = "<group>"; };
+		A9846B3C1A78AF7F0036D904 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		A9846B3D1A78AF7F0036D904 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		A9B064CF1A6EC5FC004554B6 /* MyCustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomPin.h; sourceTree = "<group>"; };
 		A9B064D01A6EC5FC004554B6 /* MyCustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomPin.m; sourceTree = "<group>"; };
 		A9B064D31A6ECECA004554B6 /* backIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backIcon.jpg; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				8441434C1A73C94A0002A079 /* UserProfileSingleton.m */,
 				84D66B441A76648A00A98984 /* TimeMissionNotify.h */,
 				84D66B451A76648A00A98984 /* TimeMissionNotify.m */,
+				A9846B3C1A78AF7F0036D904 /* test.h */,
+				A9846B3D1A78AF7F0036D904 /* test.m */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 				A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */,
 				84D66B461A76648A00A98984 /* TimeMissionNotify.m in Sources */,
 				844143511A73CAF60002A079 /* StepCounter.m in Sources */,
+				A9846B3E1A78AF7F0036D904 /* test.m in Sources */,
 				A9B064D71A6F5848004554B6 /* HousePlaceMark.m in Sources */,
 				A9B064E71A6F7D7A004554B6 /* FMDatabaseAdditions.m in Sources */,
 				AE4F3A2E1A6FE756000CEE1C /* Game1ViewController.m in Sources */,

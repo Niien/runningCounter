@@ -154,7 +154,7 @@
 -(void)SaveToPlist{
     
     // save data to plist
-    NSDictionary *dict = @{@"Name":imageName, @"iconName":iconName, @"Lv":@"1"};
+    NSDictionary *dict = @{@"image":imageName, @"iconName":iconName, @"Lv":@"1"};
     
     NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
     

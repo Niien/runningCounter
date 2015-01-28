@@ -31,11 +31,13 @@ myPlist *shareInstance;
 
 + (myPlist *)shareInstanceWithplistName:(NSString *)name {
     
-    if (shareInstance == nil) {
-        
-        shareInstance = [[myPlist alloc]initWith:name];
-        
-    }
+//    if (shareInstance == nil) {
+//        
+//        shareInstance = [[myPlist alloc]initWith:name];
+//        
+//    }
+    
+    shareInstance = [[myPlist alloc]initWith:name];
     
     return shareInstance;
 }

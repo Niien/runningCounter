@@ -105,8 +105,9 @@
                                                      }, nil];
     
     
-    [[myPlist shareInstanceWithplistName:@"MyPersonProfile"]saveDataWithArray:personalData];
+    [[myPlist shareInstanceWithplistName:@"MyPersonalProfile"]saveDataWithArray:personalData];
     
+    NSLog(@"personalData:%@",personalData);
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

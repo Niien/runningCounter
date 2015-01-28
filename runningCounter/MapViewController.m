@@ -53,7 +53,8 @@
     
     _myMapView.userTrackingMode = MKUserTrackingModeFollow;
     
-    NSLog(@"icon:%@",self.iconName);
+    self.lat = [test share].lat;
+    self.lon = [test share].lon;
     
 }
 
@@ -70,7 +71,7 @@
     
     self.NameLabel.text = self.pictureName;
     
-    self.LvLabel.text = [NSString stringWithFormat:@"%d",self.Lv];
+    self.LvLabel.text = [NSString stringWithFormat:@"%ld",(long)self.Lv];
 }
 
 
@@ -111,20 +112,9 @@
         
         [_myMapView setRegion:region animated:YES];
         
+        [self addAnnotation];
+        
         isfirstLocation = YES;
-        
-        CLLocationCoordinate2D annoationCoordinate = userLocation.coordinate;
-        
-        // 改變經緯度
-        annoationCoordinate.latitude += 0.0005;
-        annoationCoordinate.longitude += 0.0005;
-        
-        MKPointAnnotation *annotation = [MKPointAnnotation new];
-        
-        // 註解位置等於上面新的經緯度
-        annotation.coordinate = annoationCoordinate;
-        
-        [_myMapView addAnnotation:annotation];
         
     }
     
@@ -162,6 +152,21 @@
     
     
     return AnnotationView;
+    
+}
+
+
+- (void)addAnnotation {
+    
+    NSLog(@"ok");
+    
+    CLLocationCoordinate2D annotationCoordinate = CLLocationCoordinate2DMake(self.lat, self.lon);
+    
+    MKPointAnnotation *annotation = [MKPointAnnotation new];
+    
+    annotation.coordinate = annotationCoordinate;
+    
+    [self.myMapView addAnnotation:annotation];
     
 }
 

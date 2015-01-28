@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @import Parse;
+@import CoreLocation;
 
 @interface ViewController : UIViewController
 

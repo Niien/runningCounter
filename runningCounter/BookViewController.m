@@ -101,7 +101,6 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    NSLog(@"numberofItems:%lu",(unsigned long)[data count]);
     return [data count];
 }
 
@@ -110,7 +109,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     // Configure the cell
     
-    NSString *imageName = [NSString stringWithFormat:@"%@",[[data objectAtIndex:indexPath.row] objectForKey:@"Name"]];
+    NSString *imageName = [NSString stringWithFormat:@"%@",[[data objectAtIndex:indexPath.row] objectForKey:@"image"]];
     
     UIImage *image = [UIImage imageNamed:imageName];
     
@@ -138,7 +137,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     MapViewController *MVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     
-    MVC.pictureName = [[data objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    MVC.pictureName = [[data objectAtIndex:indexPath.row] objectForKey:@"image"];
     MVC.iconName = [[data objectAtIndex:indexPath.row] objectForKey:@"iconName"];
     MVC.Lv = [[[data objectAtIndex:indexPath.row] objectForKey:@"Lv"]integerValue ];
     
