@@ -161,7 +161,7 @@
     randomMonster = arc4random()%NumOfPokeMon+1;
     
     imageName = [NSString stringWithFormat:@"%d.png",randomMonster];
-    iconName = [NSString stringWithFormat:@"%d.png",randomMonster];
+    iconName = [NSString stringWithFormat:@"%ds.png",randomMonster];
     NSLog(@"imageName:%@",imageName);
     NSLog(@"iconName:%@",iconName);
     
@@ -170,31 +170,12 @@
 
 #pragma mark 存入Plist
 -(void)SaveToPlist{
-  
-<<<<<<< HEAD
-    
-    
-    
-    
-<<<<<<< HEAD
+
     // save data to plist
     NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1"};
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
-=======
-    
-    
-    
->>>>>>> FETCH_HEAD
-=======
-    
-    
-    
-    
-    
-    
-    
->>>>>>> FETCH_HEAD
+
 }
 
 #pragma mark 設置圖位置

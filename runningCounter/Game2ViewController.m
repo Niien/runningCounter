@@ -185,7 +185,7 @@
     randomMonster = arc4random()%NumOfPokeMon+1;
     
     imageName = [NSString stringWithFormat:@"%d.png",randomMonster];
-    iconName = [NSString stringWithFormat:@"%d.png",randomMonster];
+    iconName = [NSString stringWithFormat:@"%ds.png",randomMonster];
     NSLog(@"imageName:%@",imageName);
     NSLog(@"iconName:%@",iconName);
     
@@ -195,48 +195,22 @@
 #pragma mark 存入Plist
 -(void)SaveToPlist{
     
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     // save data to plist
     NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1"};
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
 }
 
-
-=======
-    
-    
-    
-    
-    
-    
-    
-    
-}
-
 #pragma mark 設置圖位置
->>>>>>> FETCH_HEAD
-=======
-    
-    
-    
-    
-    
-    
-    
-    
-}
 
-#pragma mark 設置圖位置
->>>>>>> FETCH_HEAD
 -(void)showPokemonImage{
     //add pokeimageview
     pokeImage = [UIImage imageNamed:imageName];
     pokeImageView = [[UIImageView alloc]initWithImage:pokeImage];
     pokeImageView.frame = CGRectMake(0, 20, 100, 100);
     [self.view addSubview:pokeImageView];
-<<<<<<< HEAD
+
     
     //add pepleimageview
     peopleImage = [UIImage imageNamed:@"GG2.jpg"];
@@ -266,37 +240,8 @@
     
 }
 
-=======
-    
-    //add pepleimageview
-    peopleImage = [UIImage imageNamed:@"GG2.jpg"];
-    peopleImageView = [[UIImageView alloc]initWithImage:peopleImage];
-    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100, self.view.frame.size.height/2-0, 100, 100);
-    [self.view addSubview:peopleImageView];
-    
-    //time
-    pokeImgMove = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changePokeImage) userInfo:nil repeats:YES];
-    
-}
 
-#pragma mark 改變圖位置
--(void)changePokeImage{
-    //    changeFrameTime -= 0.1;
-    pokeFrameX += self.view.frame.size.width /15;
-    pokeImageView.frame = CGRectMake(pokeFrameX, 20, 100, 100);
-    [self.view addSubview:pokeImageView];
-    
-    peopleFrameX -= self.view.frame.size.width /15;
-    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100+peopleFrameX, self.view.frame.size.height/2-110, 100, 100);
-    [self.view addSubview:peopleImageView];
-    
-    if (pokeFrameX>=self.view.frame.size.width-100) {
-        [pokeImgMove invalidate];
-    }
-    
-}
 
->>>>>>> FETCH_HEAD
 
 /*
 #pragma mark - Navigation
