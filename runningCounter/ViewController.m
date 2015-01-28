@@ -27,6 +27,7 @@
     
     CLLocationManager *locationManager;
     CLLocation *userLocation;
+    NSArray *getData;
 }
 
 @end
@@ -43,7 +44,9 @@
         
         [locationManager requestAlwaysAuthorization];
     }
-    
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
     
     
 //    [self myParseSetting];
@@ -61,7 +64,7 @@
     [stepCounter startStepCounter];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation) name:@"getLocation" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -165,19 +168,25 @@
 
 #pragma mark - addAnnotation
 
-- (void)addAnnotation {
+- (void)addAnnotation:(NSDictionary *)sender {
     
-    //NSLog(@"in");
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:[sender valueForKey:@"userInfo"]];
     
-    //NSLog(@"user:%f,%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+    NSString *lat = [NSString stringWithFormat:@"%f",userLocation.coordinate.latitude];
+    NSString *lon = [NSString stringWithFormat:@"%f",userLocation.coordinate.longitude];
+
     
-    double lat = userLocation.coordinate.latitude;
-    double lon = userLocation.coordinate.longitude;
-    NSLog(@"%f",lat);
-    NSLog(@"%f",lon);
+    [dict setObject:lat forKey:@"lat"];
+    [dict setObject:lon forKey:@"lon"];
+    NSLog(@"dict:%@",dict);
     
-    [test share].lat = lat;
-    [test share].lon = lon;
+    NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
+    
+    NSLog(@"array:%@",array);
+    
+    [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
+    
+    
 }
 
 

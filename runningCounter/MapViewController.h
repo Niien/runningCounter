@@ -23,7 +23,6 @@
 
 @property NSString *iconName;
 
-@property (assign, nonatomic) double lat;
-@property (assign, nonatomic) double lon;
+
 
 @end

@@ -46,8 +46,8 @@
     }
     else
     {
-        UIAlertView *noUsePedometer = [[UIAlertView alloc] initWithTitle:@"Can't use" message:@"You need iphone 5s UP" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [noUsePedometer show];
+//        UIAlertView *noUsePedometer = [[UIAlertView alloc] initWithTitle:@"Can't use" message:@"You need iphone 5s UP" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [noUsePedometer show];
         
         [self UseAcceleration];
     }

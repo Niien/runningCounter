@@ -19,6 +19,8 @@
     CLLocation *userLocation;
     
     BOOL isfirstLocation;
+    
+    NSArray *data;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
@@ -28,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *LvLabel;
+
 
 
 @end
@@ -53,8 +56,6 @@
     
     _myMapView.userTrackingMode = MKUserTrackingModeFollow;
     
-    self.lat = [test share].lat;
-    self.lon = [test share].lon;
     
 }
 
@@ -67,11 +68,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
+    NSLog(@"data:%@",data);
+    
     self.pokemonImage.image = [UIImage imageNamed:self.pictureName];
     
     self.NameLabel.text = self.pictureName;
     
     self.LvLabel.text = [NSString stringWithFormat:@"%ld",(long)self.Lv];
+    
+    [self addAnnotation];
 }
 
 
@@ -112,8 +118,6 @@
         
         [_myMapView setRegion:region animated:YES];
         
-        [self addAnnotation];
-        
         isfirstLocation = YES;
         
     }
@@ -146,8 +150,7 @@
         AnnotationView.annotation = annotation;
     }
         
-        
-        
+    
     AnnotationView.canShowCallout = YES;
     
     
@@ -158,16 +161,27 @@
 
 - (void)addAnnotation {
     
-    NSLog(@"ok");
-    
-    CLLocationCoordinate2D annotationCoordinate = CLLocationCoordinate2DMake(self.lat, self.lon);
-    
-    MKPointAnnotation *annotation = [MKPointAnnotation new];
-    
-    annotation.coordinate = annotationCoordinate;
-    
-    [self.myMapView addAnnotation:annotation];
-    
+    for (NSDictionary *dict in data) {
+        
+        if ([[dict objectForKey:@"image"]isEqualToString:self.pictureName]) {
+            
+            double lat = [[dict objectForKey:@"lat"]doubleValue];
+            double lon = [[dict objectForKey:@"lon"]doubleValue];
+            NSLog(@"lat:%f",lat);
+            NSLog(@"lon:%f",lon);
+            
+            CLLocationCoordinate2D annotationCoordinate = CLLocationCoordinate2DMake(lat,lon);
+            
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            
+            annotation.coordinate = annotationCoordinate;
+            
+            [self.myMapView addAnnotation:annotation];
+            
+        }
+        
+    }
+
 }
 
 /*

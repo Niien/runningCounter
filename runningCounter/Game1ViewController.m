@@ -13,13 +13,24 @@
 #define NumOfPokeMon 30
 
 @interface Game1ViewController (){
-    NSTimer *timeCountDown;
+    
+    NSTimer *pokeImgMove;
+    //
     int goal,myPressPoint;
     float time;
     //
     int randomMonster;
     NSString *imageName;
     NSString *iconName;
+    //Pokeimgmove
+    NSTimer *timeCountDown;
+    float changeFrameTime;
+    int pokeFrameX;
+    int peopleFrameX;
+    UIImage *pokeImage;
+    UIImageView *pokeImageView;
+    UIImage *peopleImage;
+    UIImageView *peopleImageView;
     //
 }
 @property (weak, nonatomic) IBOutlet UIImageView *firstVCImage;
@@ -44,13 +55,18 @@
     [_BtnLabelright setImage:[UIImage imageNamed:@"RedBtn1.png"] forState:UIControlStateNormal];
     [_BtnLabelright setImage:[UIImage imageNamed:@"RedBtn2.png"] forState:UIControlStateHighlighted];
     
+    
 }
 -(void)viewDidAppear:(BOOL)animated{
     //隨機目標數
     time = 6.0;
-    goal = 10;//arc4random()%50+40;
+    goal = arc4random()%50+40;
     myPressPoint = 0;
+    changeFrameTime = 1.5;
     [self getPokemonNo];
+    [_BtnLabelleft setEnabled:NO];
+    [_BtnLabelright setEnabled:NO];
+
     
     //顯示目標 分數 時間
     _targetGoal.text = [NSString stringWithFormat:@"Mission Target: %ld",(long)goal];
@@ -136,9 +152,10 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [timeCountDown invalidate];
+    [pokeImgMove invalidate];
 }
 
-
+#pragma mark 隨機選取怪獸
 - (void)getPokemonNo {
     
     randomMonster = arc4random()%NumOfPokeMon+1;
@@ -151,29 +168,61 @@
     [self showPokemonImage];
 }
 
+#pragma mark 存入Plist
 -(void)SaveToPlist{
+  
     
+    
+    
+    
+<<<<<<< HEAD
     // save data to plist
-    NSDictionary *dict = @{@"image":imageName, @"iconName":iconName, @"Lv":@"1"};
+    NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1"};
     
-    NSArray *array = [[NSArray alloc]initWithObjects:dict, nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
+=======
     
-    NSLog(@"array:%@",array);
     
-    [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
+    
+>>>>>>> FETCH_HEAD
 }
 
+#pragma mark 設置圖位置
 -(void)showPokemonImage{
+    //add pokeimageview
+    pokeImage = [UIImage imageNamed:imageName];
+    pokeImageView = [[UIImageView alloc]initWithImage:pokeImage];
+    pokeImageView.frame = CGRectMake(0, 20, 100, 100);
+    [self.view addSubview:pokeImageView];
     
-    UIImage *image = [UIImage imageNamed:imageName];
+    //add pepleimageview
+    peopleImage = [UIImage imageNamed:@"GG2.jpg"];
+    peopleImageView = [[UIImageView alloc]initWithImage:peopleImage];
+    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100, self.view.frame.size.height/2-110, 100, 100);
+    [self.view addSubview:peopleImageView];
     
-    UIImageView *myImageView = [[UIImageView alloc]initWithImage:image];
-    myImageView.frame = CGRectMake(0, 50, 100,100);
+    //time
+    pokeImgMove = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changePokeImage) userInfo:nil repeats:YES];
     
-    //add view
-//    [myView addSubview:myImageView];
-    [self.view addSubview:myImageView];
 }
 
+#pragma mark 改變圖位置
+-(void)changePokeImage{
+//    changeFrameTime -= 0.1;
+    pokeFrameX += self.view.frame.size.width /15;
+    pokeImageView.frame = CGRectMake(pokeFrameX, 20, 100, 100);
+    [self.view addSubview:pokeImageView];
+    
+    peopleFrameX -= self.view.frame.size.width /15;
+    peopleImageView.frame = CGRectMake(self.view.frame.size.width-100+peopleFrameX, self.view.frame.size.height/2-110, 100, 100);
+    [self.view addSubview:peopleImageView];
+    
+    if (pokeFrameX>=self.view.frame.size.width-100) {
+        [pokeImgMove invalidate];
+        [_BtnLabelleft setEnabled:YES];
+        [_BtnLabelright setEnabled:YES];
+    }
+    
+}
 
 @end
