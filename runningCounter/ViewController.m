@@ -52,12 +52,12 @@
     [stepCounter startStepCounter];
     
 //    [self myParseSetting];
-    
     _UserNameLabel.text = username;
     _UserLVLabel.text = userLV;
-    _UserPowerLabel.text = [NSString stringWithFormat:@"%d",stepCounter.stepNB] ;//userPower;
+    _UserPowerLabel.text = [NSString stringWithFormat:@"累積步數：%ld",(long)stepCounter.stepNB] ;//userPower;
     _UserAdwardLabel.text = useradward;
-    NSLog(@"VC %d",stepCounter.stepNB);
+    NSLog(@"VC %ld",(long)stepCounter.stepNB);
+    
 //    預設圖片 / 改變圖片
     [self ChangeImageBtn];
     _UserImageView.image = [UIImage imageNamed:@"GG2.jpg"];
@@ -169,7 +169,6 @@
 
 
 #pragma mark - addAnnotation
-
 - (void)addAnnotation:(NSDictionary *)sender {
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:[sender valueForKey:@"userInfo"]];

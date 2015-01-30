@@ -7,6 +7,7 @@
 //
 
 #import "PersonalIDViewController.h"
+#import "LoginVC.h"
 
 @interface PersonalIDViewController ()<UITextFieldDelegate>
 {
@@ -35,13 +36,9 @@
     // Do any additional setup after loading the view.
 
     if ([self.LogInButton.titleLabel.text isEqualToString:@"登入"]) {
-        
         islogin = NO;
-        
     } else {
-        
         self.LogInButton.titleLabel.text = @"登出";
-        
         islogin = YES;
     }
     
@@ -81,7 +78,10 @@
 
 
 - (IBAction)LogInButton:(id)sender {
-    
+    LoginVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+    [self presentViewController:VC animated:YES completion:^{
+        //
+    }];
     
     
     
@@ -111,9 +111,6 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-
 
 /*
 #pragma mark - Navigation

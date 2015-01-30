@@ -127,6 +127,10 @@
 		AEB786CE1A790C8000181446 /* 28s.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB786B01A790C8000181446 /* 28s.png */; };
 		AEB786CF1A790C8000181446 /* 29s.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB786B11A790C8000181446 /* 29s.png */; };
 		AEB786D01A790C8000181446 /* 30s.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB786B21A790C8000181446 /* 30s.png */; };
+		AEB786D21A7A088F00181446 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB786D11A7A088F00181446 /* ParseUI.framework */; };
+		AEB786D41A7A094400181446 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB786D31A7A094400181446 /* Social.framework */; };
+		AEB786D61A7A094A00181446 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB786D51A7A094A00181446 /* Accounts.framework */; };
+		AEB786D91A7A0C7600181446 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB786D81A7A0C7600181446 /* LoginVC.m */; };
 		AEC279F01A7812E500F3836D /* GetPokemonAndStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC279EF1A7812E500F3836D /* GetPokemonAndStore.m */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +297,11 @@
 		AEB786B01A790C8000181446 /* 28s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 28s.png; sourceTree = "<group>"; };
 		AEB786B11A790C8000181446 /* 29s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29s.png; sourceTree = "<group>"; };
 		AEB786B21A790C8000181446 /* 30s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30s.png; sourceTree = "<group>"; };
+		AEB786D11A7A088F00181446 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		AEB786D31A7A094400181446 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		AEB786D51A7A094A00181446 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		AEB786D71A7A0C7600181446 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		AEB786D81A7A0C7600181446 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		AEC279EE1A7812E500F3836D /* GetPokemonAndStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPokemonAndStore.h; sourceTree = "<group>"; };
 		AEC279EF1A7812E500F3836D /* GetPokemonAndStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPokemonAndStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,6 +311,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB786D61A7A094A00181446 /* Accounts.framework in Frameworks */,
+				AEB786D41A7A094400181446 /* Social.framework in Frameworks */,
 				A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */,
 				AE6BF3F61A6E3663004280AF /* libsqlite3.dylib in Frameworks */,
 				AE6BF3F71A6E3663004280AF /* libz.dylib in Frameworks */,
@@ -314,6 +325,7 @@
 				AE6BF3FC1A6E3663004280AF /* SystemConfiguration.framework in Frameworks */,
 				AE6BF3EB1A6E362B004280AF /* AudioToolbox.framework in Frameworks */,
 				AE6BF3EC1A6E362B004280AF /* CFNetwork.framework in Frameworks */,
+				AEB786D21A7A088F00181446 /* ParseUI.framework in Frameworks */,
 				AE6BF3ED1A6E362B004280AF /* CoreGraphics.framework in Frameworks */,
 				AE6BF3EE1A6E362B004280AF /* CoreLocation.framework in Frameworks */,
 			);
@@ -393,6 +405,8 @@
 				A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */,
 				A91368BD1A76188700BBB0CA /* StoreViewController.h */,
 				A91368BE1A76188700BBB0CA /* StoreViewController.m */,
+				AEB786D71A7A0C7600181446 /* LoginVC.h */,
+				AEB786D81A7A0C7600181446 /* LoginVC.m */,
 			);
 			name = setting;
 			sourceTree = "<group>";
@@ -648,6 +662,9 @@
 		AE6BF3FD1A6E366F004280AF /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				AEB786D51A7A094A00181446 /* Accounts.framework */,
+				AEB786D31A7A094400181446 /* Social.framework */,
+				AEB786D11A7A088F00181446 /* ParseUI.framework */,
 				A9F677801A6E34F200E5F06E /* MapKit.framework */,
 				AE6BF3FE1A6E3691004280AF /* Bolts.framework */,
 				AE6BF3FF1A6E3691004280AF /* Parse.framework */,
@@ -843,6 +860,7 @@
 			files = (
 				A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */,
 				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
+				AEB786D91A7A0C7600181446 /* LoginVC.m in Sources */,
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
 				A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */,

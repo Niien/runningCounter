@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-
 @interface AppDelegate ()
 {
     NSUserDefaults *first;
@@ -42,8 +41,8 @@
     //====== 裝置版本判斷
     
     //====== Parse
-//    [Parse enableLocalDatastore];   //允許本地儲存
-//    
+    [Parse enableLocalDatastore];   //允許本地儲存
+//
 //    // Initialize Parse(初始化)
 //    [Parse setApplicationId:@"37sMr08M1ovb6en1nQ7mm6wMa0wZS9w8EBrb8203"
 //                  clientKey:@"VPIfQhgqixZKALeTzbhIurFTwYOrLZZPqRYS9oRn"];
