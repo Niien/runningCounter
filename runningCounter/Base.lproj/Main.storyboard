@@ -1192,27 +1192,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="6pl-0H-hSi">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="uUM-ve-Hvj">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fGw-hp-FO8">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="cSx-9h-DMU">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fpv-Ca-6AJ">
                                                 <rect key="frame" x="16" y="7" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="backIcon.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="backButton:" destination="OMi-NS-OT2" eventType="touchUpInside" id="wVh-bC-5FF"/>
+                                                    <action selector="backButton:" destination="OMi-NS-OT2" eventType="touchUpInside" id="15e-GI-cvV"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="b04-3K-l6M">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2He-t7-RGe">
-                                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Y2W-5z-xlM">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gYI-rE-UsO">
+                                                <rect key="frame" x="451" y="7" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="position">
+                                                <state key="normal" image="position_30.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="positionButton:" destination="OMi-NS-OT2" eventType="touchUpInside" id="xGU-4p-nkp"/>
+                                                    <action selector="positionButton:" destination="OMi-NS-OT2" eventType="touchUpInside" id="KG9-Hw-ZyK"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1371,15 +1371,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="WuG-Wd-GbT">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="X3y-oe-kmO">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3b5-Lo-muR">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="feV-Zm-aBS">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NT5-39-VsF">
                                                 <rect key="frame" x="16" y="7" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="backIcon.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="back:" destination="5Hf-dk-OiW" eventType="touchUpInside" id="liN-lB-T1C"/>
+                                                    <action selector="back:" destination="5Hf-dk-OiW" eventType="touchUpInside" id="rEy-50-aM9"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1441,5 +1441,6 @@
         <image name="RedBtn2.png" width="614" height="614"/>
         <image name="backIcon.png" width="25" height="25"/>
         <image name="cart_25.png" width="25" height="25"/>
+        <image name="position_30.png" width="30" height="30"/>
     </resources>
 </document>

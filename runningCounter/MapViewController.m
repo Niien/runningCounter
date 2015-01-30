@@ -159,6 +159,7 @@
 }
 
 
+#pragma mark - addAnnotation
 - (void)addAnnotation {
     
     for (NSDictionary *dict in data) {
