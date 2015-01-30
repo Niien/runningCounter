@@ -1196,7 +1196,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fGw-hp-FO8">
                                                 <rect key="frame" x="16" y="7" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="backIcon.jpg">
+                                                <state key="normal" image="backIcon.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -1228,40 +1228,36 @@
                                     <outlet property="delegate" destination="OMi-NS-OT2" id="Tji-vf-IEW"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odA-R7-P0E">
-                                <rect key="frame" x="21" y="530" width="70" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_25.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jrm-8R-Ysu">
+                                <rect key="frame" x="16" y="509" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tQK-yx-k5k"/>
-                                    <constraint firstAttribute="width" constant="70" id="u6A-Uj-6IP"/>
+                                    <constraint firstAttribute="height" constant="25" id="2gJ-2H-qk1"/>
+                                    <constraint firstAttribute="width" constant="25" id="W5w-QP-tMb"/>
                                 </constraints>
-                                <state key="normal" title="Store">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="StoreButton:" destination="OMi-NS-OT2" eventType="touchUpInside" id="e39-Wa-eii"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMS-JR-8j9">
-                                <rect key="frame" x="141" y="530" width="70" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="處於附近時可進入商店" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfR-5n-Qak">
+                                <rect key="frame" x="46" y="509" width="150" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="55v-Ka-a2u"/>
-                                    <constraint firstAttribute="height" constant="50" id="FUD-f7-eWz"/>
+                                    <constraint firstAttribute="width" constant="150" id="kqz-hF-8pg"/>
+                                    <constraint firstAttribute="height" constant="25" id="r33-PI-YCV"/>
                                 </constraints>
-                                <state key="normal" title="hospital">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="odA-R7-P0E" firstAttribute="leading" secondItem="V8X-9j-zEb" secondAttribute="leadingMargin" constant="5" id="4QV-PU-1aQ"/>
-                            <constraint firstItem="odA-R7-P0E" firstAttribute="top" secondItem="xbj-Nn-VKc" secondAttribute="bottom" constant="31" id="DgR-eQ-C75"/>
-                            <constraint firstItem="MMS-JR-8j9" firstAttribute="top" secondItem="xbj-Nn-VKc" secondAttribute="bottom" constant="31" id="IiV-H5-fO9"/>
-                            <constraint firstItem="meR-J3-rFP" firstAttribute="top" secondItem="odA-R7-P0E" secondAttribute="bottom" constant="20" id="LFI-8L-dk2"/>
-                            <constraint firstItem="meR-J3-rFP" firstAttribute="top" secondItem="MMS-JR-8j9" secondAttribute="bottom" constant="20" id="Lab-u2-GxW"/>
+                            <constraint firstItem="meR-J3-rFP" firstAttribute="top" secondItem="Jrm-8R-Ysu" secondAttribute="bottom" constant="66" id="0vp-jq-siR"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="xbj-Nn-VKc" secondAttribute="bottom" constant="101" id="2r2-U7-e6u"/>
+                            <constraint firstItem="Jrm-8R-Ysu" firstAttribute="top" secondItem="xbj-Nn-VKc" secondAttribute="bottom" constant="10" id="8Pp-Uu-KLI"/>
+                            <constraint firstItem="bfR-5n-Qak" firstAttribute="top" secondItem="xbj-Nn-VKc" secondAttribute="bottom" constant="10" id="BiE-wI-xll"/>
+                            <constraint firstItem="Jrm-8R-Ysu" firstAttribute="top" secondItem="xbj-Nn-VKc" secondAttribute="bottom" constant="10" id="Cy7-Kt-gCN"/>
+                            <constraint firstItem="meR-J3-rFP" firstAttribute="top" secondItem="bfR-5n-Qak" secondAttribute="bottom" constant="66" id="HJ6-QZ-WP9"/>
+                            <constraint firstItem="bfR-5n-Qak" firstAttribute="leading" secondItem="Jrm-8R-Ysu" secondAttribute="trailing" constant="5" id="Uf2-le-AJm"/>
                             <constraint firstItem="xbj-Nn-VKc" firstAttribute="top" secondItem="V8X-9j-zEb" secondAttribute="top" constant="44" id="Xrb-Ka-lyL"/>
+                            <constraint firstItem="Jrm-8R-Ysu" firstAttribute="leading" secondItem="V8X-9j-zEb" secondAttribute="leadingMargin" id="bar-mx-6SW"/>
                             <constraint firstItem="xbj-Nn-VKc" firstAttribute="top" secondItem="d5x-fA-VhG" secondAttribute="bottom" id="eH1-zY-Gka"/>
-                            <constraint firstItem="MMS-JR-8j9" firstAttribute="leading" secondItem="odA-R7-P0E" secondAttribute="trailing" constant="50" id="ldc-Gx-YBe"/>
                             <constraint firstItem="xbj-Nn-VKc" firstAttribute="trailing" secondItem="d5x-fA-VhG" secondAttribute="trailing" id="nDU-Yr-4kV"/>
                             <constraint firstItem="xbj-Nn-VKc" firstAttribute="leading" secondItem="d5x-fA-VhG" secondAttribute="leading" id="oaX-Jn-m84"/>
                             <constraint firstAttribute="trailing" secondItem="xbj-Nn-VKc" secondAttribute="trailing" id="qI0-sj-RdR"/>
@@ -1269,7 +1265,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="StoreButton" destination="odA-R7-P0E" id="j2R-hE-PCn"/>
                         <outlet property="myMapView" destination="xbj-Nn-VKc" id="reS-34-OZi"/>
                     </connections>
                 </viewController>
@@ -1277,16 +1272,39 @@
             </objects>
             <point key="canvasLocation" x="1614" y="487"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Store View Controller-->
         <scene sceneID="3Ow-18-2uR">
             <objects>
-                <tableViewController id="XG2-xC-1hW" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StoreViewController" id="XG2-xC-1hW" customClass="StoreViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cyf-g4-nal">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="rLC-hA-I92">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem id="K8b-Th-b56">
+                                    <barButtonItem key="leftBarButtonItem" style="plain" id="0IG-ci-ztx">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ziK-s7-woX">
+                                            <rect key="frame" x="16" y="7" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="backIcon.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="backButton:" destination="XG2-xC-1hW" eventType="touchUpInside" id="9Kg-py-Taa"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                            <connections>
+                                <outlet property="delegate" destination="XG2-xC-1hW" id="Slo-hq-cGh"/>
+                            </connections>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kSb-qH-gxF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="kSb-qH-gxF" customClass="storeTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kSb-qH-gxF" id="ajJ-Ti-gRl">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1357,7 +1375,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3b5-Lo-muR">
                                                 <rect key="frame" x="16" y="7" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="backIcon.jpg">
+                                                <state key="normal" image="backIcon.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -1421,6 +1439,7 @@
     <resources>
         <image name="RedBtn1.png" width="614" height="614"/>
         <image name="RedBtn2.png" width="614" height="614"/>
-        <image name="backIcon.jpg" width="25" height="25"/>
+        <image name="backIcon.png" width="25" height="25"/>
+        <image name="cart_25.png" width="25" height="25"/>
     </resources>
 </document>

@@ -54,6 +54,7 @@
 //    [self myParseSetting];
     _UserNameLabel.text = username;
     _UserLVLabel.text = userLV;
+
     _UserPowerLabel.text = [NSString stringWithFormat:@"累積步數：%ld",(long)stepCounter.stepNB] ;//userPower;
     _UserAdwardLabel.text = useradward;
     NSLog(@"VC %ld",(long)stepCounter.stepNB);

@@ -8,6 +8,7 @@
 
 @import MapKit;
 @import CoreLocation;
+#import "StoreViewController.h"
 #import <UIKit/UIKit.h>
 #import "MyCustomPin.h"
 

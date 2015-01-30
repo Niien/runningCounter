@@ -139,25 +139,25 @@
 
 - (void)VoiceChange {
     
-    myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/3, self.view.frame.size.height/3, 200, 100)];
-    
-    myView.backgroundColor = [UIColor grayColor];
-    
-    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(0, myView.frame.size.height/2-10, 200, 30)];
-    
-    [myView addSubview:slider];
-    
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(myView.frame.size.width/3, myView.frame.size.height/2+30, 50, 20)];
-    
-    [button setTitle:@"ok" forState:UIControlStateNormal];
-    
-    [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
-    
-    button.backgroundColor = [UIColor blueColor];
-    
-    [myView addSubview:button];
-    
-    [self.view addSubview:myView];
+//    myView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/3, self.view.frame.size.height/3, 200, 100)];
+//    
+//    myView.backgroundColor = [UIColor grayColor];
+//    
+//    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(0, myView.frame.size.height/2-10, 200, 30)];
+//    
+//    [myView addSubview:slider];
+//    
+//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(myView.frame.size.width/3, myView.frame.size.height/2+30, 50, 20)];
+//    
+//    [button setTitle:@"ok" forState:UIControlStateNormal];
+//    
+//    [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
+//    
+//    button.backgroundColor = [UIColor blueColor];
+//    
+//    [myView addSubview:button];
+//    
+//    [self.view addSubview:myView];
     
 }
 

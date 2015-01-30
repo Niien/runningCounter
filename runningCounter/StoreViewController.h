@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "storeTableViewCell.h"
+#import "StepCounter.h"
+
 
 @interface StoreViewController : UITableViewController
 

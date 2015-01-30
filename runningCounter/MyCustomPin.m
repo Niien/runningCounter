@@ -23,8 +23,6 @@
     
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     
-    NSLog(@"%@",reuseIdentifier);
-    
     if ([reuseIdentifier  isEqualToString: @"hospital"]) {
         
         UIImage *image = [UIImage imageNamed:@"hospital_25.png"];

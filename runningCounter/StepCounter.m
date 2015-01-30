@@ -85,9 +85,14 @@ static StepCounter *instance;
 {
     [self nowTime];
     [pedometer startPedometerUpdatesFromDate:nowDate withHandler:^(CMPedometerData *pedometerData, NSError *error) {
+
         
         _stepNB =[pedometerData.numberOfSteps intValue];
         _power =[pedometerData.numberOfSteps intValue];        
+
+
+        _stepNB = (int)pedometerData.numberOfSteps;
+
         
         // 貼步數到ＶＣ
         [[NSNotificationCenter defaultCenter]postNotificationName:@"StepCounter" object:nil];

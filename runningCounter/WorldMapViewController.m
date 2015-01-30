@@ -19,13 +19,10 @@
     CLLocation *lastLocation;
     
     BOOL isfirstLocation;
-    BOOL isEnterRegion;
     
     NSMutableArray *downloadDatas;
     
     NSDictionary *locationDict;
-    
-    UIButton *rightButton;
     
 }
 
@@ -70,7 +67,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
-    isEnterRegion = YES;
+
 }
 
 // hide status bar
@@ -95,6 +92,7 @@
         
         //NSLog(@"lastLocation:%f,%f",lastLocation.coordinate.latitude,lastLocation.coordinate.longitude);
         
+        // download data from google api
         [self downloadJSON];
         
         MKCoordinateRegion region = _myMapView.region;
@@ -121,12 +119,6 @@
         
     }
     
-    if ([self.circularRegion containsCoordinate:userLocation.coordinate]) {
-        
-        
-    }
-    
-    
 }
 
 
@@ -137,7 +129,7 @@
     
     downloadDatas = [NSMutableArray new];
     
-    NSString *JSONURL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%@,%@&radius=1200&types=convenience_store|hospital&key=AIzaSyAGTkG8ERNdX-bXpMxBO_jhBad7fJggAkk", [locationDict objectForKey:@"lat"], [locationDict objectForKey:@"lng"]];
+    NSString *JSONURL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%@,%@&radius=1200&types=convenience_store&key=AIzaSyAGTkG8ERNdX-bXpMxBO_jhBad7fJggAkk", [locationDict objectForKey:@"lat"], [locationDict objectForKey:@"lng"]];
     
     // 編碼
     NSString *URLstring = [JSONURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -196,27 +188,27 @@
         self.annotation = [MKPointAnnotation new];
         
         // set annotation title
-        if ([[dict objectForKey:@"types"] containsObject:@"hospital"]) {
-            
-            self.annotation.title = @"hospital";
-            
-        }
-        else if ([[dict objectForKey:@"types"] containsObject:@"convenience_store"]) {
+        if ([[dict objectForKey:@"types"] containsObject:@"convenience_store"]) {
             
             self.annotation.title = @"convenience_store";
         }
+//        else if ([[dict objectForKey:@"types"] containsObject:@"hospital"]) {
+//            
+//            self.annotation.title = @"hospital";
+//            
+//        }
         
+        double lat = [[dict valueForKeyPath:@"geometry.location.lat"]doubleValue];
         
-        double lat = [[[[dict objectForKey:@"geometry"]objectForKey:@"location"] objectForKey:@"lat"]doubleValue];
         double lon = [[[[dict objectForKey:@"geometry"]objectForKey:@"location"] objectForKey:@"lng"]doubleValue];
-        
+
         //NSLog(@"lat:%f",lat);
         //NSLog(@"lon:%f",lon);
         
         CLLocationCoordinate2D annoationCoordinate = CLLocationCoordinate2DMake(lat, lon);
         
         // create a circularRegion
-        self.circularRegion = [[CLCircularRegion alloc]initWithCenter:annoationCoordinate radius:50 identifier:self.annotation.title];
+        self.circularRegion = [[CLCircularRegion alloc]initWithCenter:annoationCoordinate radius:100 identifier:self.annotation.title];
         
         [self scheduleLocalNotification];
         
@@ -268,11 +260,9 @@
         self.annotationView.annotation = annotation;
     }
     
-    
-    
     self.annotationView.canShowCallout = YES;
     
-    rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
     self.annotationView.rightCalloutAccessoryView = rightButton;
     
@@ -287,13 +277,10 @@
     
     CLLocation *location = [[CLLocation alloc]initWithLatitude:[view.annotation coordinate].latitude longitude:[view.annotation coordinate].longitude];
     
-    if ([userLocation distanceFromLocation:location] < 50 ) {
+    if ([userLocation distanceFromLocation:location] <= 1000 ) {
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"welcome" message:nil delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        
-        [alert show];
-        
-        
+       StoreViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"StoreViewController"];
+        [self presentViewController:svc animated:YES completion:nil];
         
     }
     else {
