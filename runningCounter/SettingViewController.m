@@ -38,6 +38,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
     content = [[NSMutableArray alloc]initWithObjects:@"個人資料",@"世界地圖",@"連線對戰",@"藍芽對戰",@"圖鑑",@"音量", nil];
 }
 

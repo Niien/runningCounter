@@ -52,11 +52,11 @@
     [stepCounter startStepCounter];
     
 //    [self myParseSetting];
-    _UserNameLabel.text = username;
-    _UserLVLabel.text = userLV;
+    
+//    _UserLVLabel.text = userLV;
 
-    _UserPowerLabel.text = [NSString stringWithFormat:@"累積步數：%ld",(long)stepCounter.stepNB] ;//userPower;
-    _UserAdwardLabel.text = useradward;
+    _UserPowerLabel.text = [NSString stringWithFormat:@"可消費步數：%ld",(long)stepCounter.stepNB] ;//userPower;
+//    _UserAdwardLabel.text = useradward;
     NSLog(@"VC %ld",(long)stepCounter.stepNB);
     
 //    預設圖片 / 改變圖片
@@ -67,6 +67,14 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    NSUserDefaults *usertmp = [NSUserDefaults standardUserDefaults];
+    if ([usertmp objectForKey:@"username"] == nil) {
+        _UserNameLabel.text = @"Guest";
+    }else{
+        _UserNameLabel.text = [NSString stringWithFormat:@"%@",[usertmp objectForKey:@"username"]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

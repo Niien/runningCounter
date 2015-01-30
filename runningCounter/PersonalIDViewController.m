@@ -9,13 +9,15 @@
 #import "PersonalIDViewController.h"
 #import "LoginVC.h"
 
-@interface PersonalIDViewController ()<UITextFieldDelegate>
+@interface PersonalIDViewController ()<UITextFieldDelegate,PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate>
 {
     NSArray *personalData;
     
     NSString *status;
     
     BOOL islogin;
+    
+    LoginVC *logIn;
     
 }
 
@@ -35,12 +37,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    if ([self.LogInButton.titleLabel.text isEqualToString:@"登入"]) {
-        islogin = NO;
-    } else {
-        self.LogInButton.titleLabel.text = @"登出";
-        islogin = YES;
-    }
+    //跟Parse溝通 (猶豫是否放這兒)
+    [Parse setApplicationId:@"37sMr08M1ovb6en1nQ7mm6wMa0wZS9w8EBrb8203"
+                  clientKey:@"VPIfQhgqixZKALeTzbhIurFTwYOrLZZPqRYS9oRn"];
+    
+    //
     
     personalData = [[myPlist shareInstanceWithplistName:@"MyPersonProfile"]getDataFromPlist];
 
@@ -57,6 +58,20 @@
     }
     
     
+}
+//進畫面即判斷 是否登入
+-(void)viewDidAppear:(BOOL)animated{
+    //
+    if ([PFUser currentUser]) {
+        //若登入
+        PFUser *user = [PFUser user];
+        NSLog(@"username:%@",user.username);
+        _LogInButton.titleLabel.text = @"登出";
+    }else{
+        //若沒登入
+        _LogInButton.titleLabel.text = @"登入";
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,18 +91,37 @@
 }
 
 
-
+#pragma mark 登入按鈕
 - (IBAction)LogInButton:(id)sender {
-    LoginVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
-    [self presentViewController:VC animated:YES completion:^{
-        //
-    }];
+
+    if ([PFUser currentUser]) {
+        [PFUser logOut];    //若以登入 按了就登出
+        NSUserDefaults *usertmp = [NSUserDefaults standardUserDefaults];
+        [usertmp setObject:nil forKey:@"username"];
+    }
+    //繼承自 "已經繼承Parse登入物件的" LoginVC
+    logIn = [[LoginVC alloc] init];
     
+    logIn.fields = (PFLogInFieldsUsernameAndPassword
+                    | PFLogInFieldsLogInButton
+                    | PFLogInFieldsSignUpButton
+                    | PFLogInFieldsPasswordForgotten
+                    | PFLogInFieldsDismissButton);
     
+    [logIn.signUpController setFields:(PFSignUpFieldsUsernameAndPassword
+                                     | PFSignUpFieldsSignUpButton
+                                     | PFSignUpFieldsDismissButton)];
+
+    //要響應：成功與否方法所加
+    logIn.delegate = self;
+    logIn.signUpController.delegate = self;
+    
+    //秀出來
+    [self presentViewController:logIn animated:YES completion:nil];
     
 }
 
-
+#pragma mark OK返回鈕
 - (IBAction)okButton:(id)sender {
     
     if (islogin) {
@@ -121,5 +155,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark Parse 登入判斷區 (都是餵給delegate吃!)
+- (void)logInViewController:(PFLogInViewController *)controller
+               didLogInUser:(PFUser *)user {
+    NSLog(@"Did Login");
+    //把使用者資訊一併抓下來
+    NSUserDefaults *usertmp = [NSUserDefaults standardUserDefaults];
+    [usertmp setObject:user.username forKey:@"username"];
+
+    NSLog(@"username:%@,password:%@",[usertmp objectForKey:@"username"],[usertmp objectForKey:@"password"]);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+    NSLog(@"Cancel login");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    NSLog(@"Did sign");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+    NSLog(@"Cancel sign");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

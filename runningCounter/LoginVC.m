@@ -20,81 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    // Initialize Parse(初始化)
-    [Parse setApplicationId:@"37sMr08M1ovb6en1nQ7mm6wMa0wZS9w8EBrb8203"
-                  clientKey:@"VPIfQhgqixZKALeTzbhIurFTwYOrLZZPqRYS9oRn"];
-    // [Optional] Track statistics around application opens.
-//    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    //註冊
-//    PFSignUpViewController *signUpController = [[PFSignUpViewController alloc] init];
-////    signUpController.delegate = self;
-//    
-//    signUpController.fields = (PFSignUpFieldsUsernameAndPassword
-//                               | PFSignUpFieldsSignUpButton
-//                               | PFSignUpFieldsDismissButton);
-//    
+    //客制外觀
+    self.logInView.logInButton.frame = CGRectMake(100,30, 30, 200);
+    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"25.png"]];
+    self.logInView.logo = logoView; // logo can be any UIView
 
 }
--(void)viewWillAppear:(BOOL)animated{
-    
-    PFLogInViewController *logInController = [[PFLogInViewController alloc] init];
-
-    logInController.fields = (PFLogInFieldsUsernameAndPassword
-                              | PFLogInFieldsLogInButton
-                              | PFLogInFieldsSignUpButton
-                              | PFLogInFieldsPasswordForgotten
-                              | PFLogInFieldsDismissButton);
-    
-    logInController.delegate = self;
-    
-    //
-//    logInController.signUpController.fields = (PFSignUpFieldsUsernameAndPassword
-//       | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton);
-//    
-//    logInController.signUpController.delegate = self;
-    
-    [self presentViewController:logInController animated:YES completion:nil];
-}
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    self.view.backgroundColor = [UIColor darkGrayColor];
-   
-    //    self.logInView.logInButton.frame = CGRectMake(100,30, 30, 200);
-        UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"500.png"]];
-        self.logInView.logo = logoView; // logo can be any UIView
-    
-}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (void)logInViewController:(PFLogInViewController *)controller
-               didLogInUser:(PFUser *)user {
-    NSLog(@"Login");
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-    NSLog(@"cancel login");
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    NSLog(@"did sign");
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
-    NSLog(@"cancel sign");
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
