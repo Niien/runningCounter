@@ -18,6 +18,9 @@
 		A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */; };
 		A974CA721A7BD8AA00F08AA0 /* position_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CA711A7BD8AA00F08AA0 /* position_30.png */; };
 		A974CAB81A7CC0F600F08AA0 /* exp_30*60.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */; };
+		A974CABB1A7D12B300F08AA0 /* illustratedHandBook.m in Sources */ = {isa = PBXBuildFile; fileRef = A974CABA1A7D12B300F08AA0 /* illustratedHandBook.m */; };
+		A974CABF1A7D33CE00F08AA0 /* mission_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CABE1A7D33CE00F08AA0 /* mission_30.png */; };
+		A974CACB1A7D380900F08AA0 /* tabBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CACA1A7D380900F08AA0 /* tabBar2.png */; };
 		A9846B3E1A78AF7F0036D904 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A9846B3D1A78AF7F0036D904 /* test.m */; };
 		A99C70111A7A612200558EB2 /* storeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C70101A7A612200558EB2 /* storeTableViewCell.m */; };
 		A99C70131A7A925500558EB2 /* woodBackground.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A99C70121A7A925500558EB2 /* woodBackground.jpeg */; };
@@ -40,7 +43,6 @@
 		A9BFE8EA1A75245E00D2B2EA /* Game2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8E91A75245E00D2B2EA /* Game2ViewController.m */; };
 		A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */; };
 		A9BFE8F21A75264B00D2B2EA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */; };
-		A9BFE8F61A752BA500D2B2EA /* mission_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8F51A752BA500D2B2EA /* mission_30.png */; };
 		A9BFE8F81A752C7E00D2B2EA /* book_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BFE8F71A752C7E00D2B2EA /* book_30.png */; };
 		A9F677811A6E34F200E5F06E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F677801A6E34F200E5F06E /* MapKit.framework */; };
 		A9F677861A6E35B700E5F06E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F677851A6E35B700E5F06E /* MapViewController.m */; };
@@ -168,6 +170,10 @@
 		A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalIDViewController.m; sourceTree = "<group>"; };
 		A974CA711A7BD8AA00F08AA0 /* position_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = position_30.png; sourceTree = "<group>"; };
 		A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exp_30*60.png"; sourceTree = "<group>"; };
+		A974CAB91A7D12B300F08AA0 /* illustratedHandBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = illustratedHandBook.h; sourceTree = "<group>"; };
+		A974CABA1A7D12B300F08AA0 /* illustratedHandBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = illustratedHandBook.m; sourceTree = "<group>"; };
+		A974CABE1A7D33CE00F08AA0 /* mission_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mission_30.png; sourceTree = "<group>"; };
+		A974CACA1A7D380900F08AA0 /* tabBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar2.png; sourceTree = "<group>"; };
 		A9846B3C1A78AF7F0036D904 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
 		A9846B3D1A78AF7F0036D904 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		A99C700F1A7A612200558EB2 /* storeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storeTableViewCell.h; sourceTree = "<group>"; };
@@ -206,7 +212,6 @@
 		A9BFE8EC1A75246D00D2B2EA /* Game3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game3ViewController.m; sourceTree = "<group>"; };
 		A9BFE8F01A75264B00D2B2EA /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		A9BFE8F51A752BA500D2B2EA /* mission_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mission_30.png; sourceTree = "<group>"; };
 		A9BFE8F71A752C7E00D2B2EA /* book_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book_30.png; sourceTree = "<group>"; };
 		A9F677801A6E34F200E5F06E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A9F677841A6E35B700E5F06E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -414,12 +419,14 @@
 				A9BFE8F11A75264B00D2B2EA /* SettingViewController.m */,
 				A91368C51A7629D300BBB0CA /* PersonalIDViewController.h */,
 				A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */,
+				AEB786D71A7A0C7600181446 /* LoginVC.h */,
+				AEB786D81A7A0C7600181446 /* LoginVC.m */,
 				A9BFE8E21A7523EF00D2B2EA /* WorldMapViewController.h */,
 				A9BFE8E31A7523EF00D2B2EA /* WorldMapViewController.m */,
 				A91368BD1A76188700BBB0CA /* StoreViewController.h */,
 				A91368BE1A76188700BBB0CA /* StoreViewController.m */,
-				AEB786D71A7A0C7600181446 /* LoginVC.h */,
-				AEB786D81A7A0C7600181446 /* LoginVC.m */,
+				A974CAB91A7D12B300F08AA0 /* illustratedHandBook.h */,
+				A974CABA1A7D12B300F08AA0 /* illustratedHandBook.m */,
 			);
 			name = setting;
 			sourceTree = "<group>";
@@ -507,9 +514,9 @@
 				A99C70161A7AC5C200558EB2 /* backIcon.png */,
 				A974CA711A7BD8AA00F08AA0 /* position_30.png */,
 				A91368871A75362500BBB0CA /* home_30.png */,
+				A974CABE1A7D33CE00F08AA0 /* mission_30.png */,
 				A91368881A75362500BBB0CA /* setting_30.png */,
 				A9BFE8F71A752C7E00D2B2EA /* book_30.png */,
-				A9BFE8F51A752BA500D2B2EA /* mission_30.png */,
 				A9BFE8DB1A74F33400D2B2EA /* cart_25.png */,
 				A9BFE8DC1A74F33400D2B2EA /* hospital_25.png */,
 				A99C70141A7A933000558EB2 /* power_100.png */,
@@ -585,6 +592,7 @@
 		A9F677961A6E3C1800E5F06E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A974CACA1A7D380900F08AA0 /* tabBar2.png */,
 				A99C70121A7A925500558EB2 /* woodBackground.jpeg */,
 				AE90C54E1A77B89900BE2700 /* GG2.jpg */,
 				AE4F3A2F1A6FED4D000CEE1C /* battle01-1.jpeg */,
@@ -823,7 +831,6 @@
 				AEB786CD1A790C8000181446 /* 27s.png in Resources */,
 				AEB786B81A790C8000181446 /* 6s.png in Resources */,
 				A974CA721A7BD8AA00F08AA0 /* position_30.png in Resources */,
-				A9BFE8F61A752BA500D2B2EA /* mission_30.png in Resources */,
 				AE90C5811A77BBF700BE2700 /* 20.png in Resources */,
 				AE90C5731A77BBF700BE2700 /* 6.png in Resources */,
 				AEB786BE1A790C8000181446 /* 12s.png in Resources */,
@@ -854,11 +861,13 @@
 				A9BFE8F81A752C7E00D2B2EA /* book_30.png in Resources */,
 				AE90C5851A77BBF700BE2700 /* 24.png in Resources */,
 				AE90C5771A77BBF700BE2700 /* 10.png in Resources */,
+				A974CABF1A7D33CE00F08AA0 /* mission_30.png in Resources */,
 				AE90C5701A77BBF700BE2700 /* 3.png in Resources */,
 				AE4F3A331A6FED4D000CEE1C /* battle01-1.jpeg in Resources */,
 				AEB786C11A790C8000181446 /* 15s.png in Resources */,
 				AEB786C61A790C8000181446 /* 20s.png in Resources */,
 				AEB786CC1A790C8000181446 /* 26s.png in Resources */,
+				A974CACB1A7D380900F08AA0 /* tabBar2.png in Resources */,
 				AEB786CE1A790C8000181446 /* 28s.png in Resources */,
 				AE90C56E1A77BBF700BE2700 /* 1.png in Resources */,
 				A9BFE8DD1A74F33400D2B2EA /* cart_25.png in Resources */,
@@ -882,6 +891,7 @@
 				A9B064D11A6EC5FC004554B6 /* MyCustomPin.m in Sources */,
 				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
 				AEB786D91A7A0C7600181446 /* LoginVC.m in Sources */,
+				A974CABB1A7D12B300F08AA0 /* illustratedHandBook.m in Sources */,
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
 				A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */,

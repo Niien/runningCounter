@@ -15,5 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *LvLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *illustrateImage;
 
 @end

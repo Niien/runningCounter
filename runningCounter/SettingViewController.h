@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WorldMapViewController.h"
 #import "PersonalIDViewController.h"
+#import "illustratedHandBook.h"
 
 @interface SettingViewController : UITableViewController
 

@@ -227,7 +227,7 @@
     UITabBar *myTabBar = tbc.tabBar;
     
     myTabBar.barTintColor = [UIColor blackColor];
-    
+    myTabBar.backgroundImage = [UIImage imageNamed:@"tabBar2.png"];
     
     UITabBarItem *myItem = [myTabBar.items objectAtIndex:0];
     myItem.image = [[UIImage imageNamed:@"home_30.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

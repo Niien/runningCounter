@@ -39,7 +39,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    content = [[NSMutableArray alloc]initWithObjects:@"個人資料",@"世界地圖",@"連線對戰",@"藍芽對戰",@"圖鑑",@"音量", nil];
+    content = [[NSMutableArray alloc]initWithObjects:@"個人資料",@"世界地圖",@"連線對戰",@"藍芽對戰",@"圖鑑", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,12 +99,8 @@
             break;
             
         case 4:  //圖鑑
-            //
-            break;
             
-        case 5: // 音量
-            
-            [self VoiceChange];
+            [self toIllustratedHandBook];
             
             break;
             
@@ -135,7 +131,12 @@
     
 }
 
-
+- (void)toIllustratedHandBook {
+    
+    illustratedHandBook *ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"illustratedHandBook"];
+    
+    [self presentViewController:ivc animated:YES completion:nil];
+}
 
 
 - (void)VoiceChange {
