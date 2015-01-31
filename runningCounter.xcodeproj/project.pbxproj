@@ -17,6 +17,7 @@
 		A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368BE1A76188700BBB0CA /* StoreViewController.m */; };
 		A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */; };
 		A974CA721A7BD8AA00F08AA0 /* position_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CA711A7BD8AA00F08AA0 /* position_30.png */; };
+		A974CAB81A7CC0F600F08AA0 /* exp_30*60.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */; };
 		A9846B3E1A78AF7F0036D904 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A9846B3D1A78AF7F0036D904 /* test.m */; };
 		A99C70111A7A612200558EB2 /* storeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C70101A7A612200558EB2 /* storeTableViewCell.m */; };
 		A99C70131A7A925500558EB2 /* woodBackground.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A99C70121A7A925500558EB2 /* woodBackground.jpeg */; };
@@ -166,6 +167,7 @@
 		A91368C51A7629D300BBB0CA /* PersonalIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalIDViewController.h; sourceTree = "<group>"; };
 		A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalIDViewController.m; sourceTree = "<group>"; };
 		A974CA711A7BD8AA00F08AA0 /* position_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = position_30.png; sourceTree = "<group>"; };
+		A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exp_30*60.png"; sourceTree = "<group>"; };
 		A9846B3C1A78AF7F0036D904 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
 		A9846B3D1A78AF7F0036D904 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		A99C700F1A7A612200558EB2 /* storeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storeTableViewCell.h; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 		A9B064D21A6ECE5B004554B6 /* ICON */ = {
 			isa = PBXGroup;
 			children = (
+				A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */,
 				A99C70161A7AC5C200558EB2 /* backIcon.png */,
 				A974CA711A7BD8AA00F08AA0 /* position_30.png */,
 				A91368871A75362500BBB0CA /* home_30.png */,
@@ -845,6 +848,7 @@
 				AE90C5711A77BBF700BE2700 /* 4.png in Resources */,
 				AE90C5781A77BBF700BE2700 /* 11.png in Resources */,
 				A9A8B5D71A7930F50058E60E /* mystery.png in Resources */,
+				A974CAB81A7CC0F600F08AA0 /* exp_30*60.png in Resources */,
 				AE4F3A361A6FED4D000CEE1C /* Rufe.png in Resources */,
 				AE90C56F1A77BBF700BE2700 /* 2.png in Resources */,
 				A9BFE8F81A752C7E00D2B2EA /* book_30.png in Resources */,

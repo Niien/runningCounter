@@ -179,7 +179,7 @@
 -(void)SaveToPlist{
 
     // save data to plist
-    NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1"};
+    NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1", @"exp":@"0"};
     NSLog(@"G1:%@",dict);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
 

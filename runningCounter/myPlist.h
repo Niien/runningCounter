@@ -15,9 +15,11 @@
 
 - (void)saveDataWithArray:(NSArray *)data;
 
-- (NSArray *)getDataFromPlist;
+- (void)saveDataByOverRide:(NSArray *)data;
 
-- (NSArray *)getDataWithPokemonName:(NSString *)key;
+- (NSMutableArray *)getDataFromPlist;
+
+//- (NSArray *)getDataWithPokemonName:(NSString *)key;
 
 
 @end

@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *myImage;
 
-@property (weak, nonatomic) IBOutlet UILabel *ImageName;
+@property (weak, nonatomic) IBOutlet UILabel *LvLabel;
+
 
 @end

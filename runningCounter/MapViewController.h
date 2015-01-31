@@ -11,17 +11,16 @@
 @import CoreLocation;
 #import "ViewController.h"
 #import "CollectionViewCell.h"
+#import "StepCounter.h"
 #import "MyCustomPin.h"
 #import "myPlist.h"
 #import "test.h"
 
+
 @interface MapViewController : ViewController
 
-@property (assign, nonatomic) NSInteger Lv;
 
-@property NSString *pictureName;
-
-@property NSString *iconName;
+@property (assign, nonatomic) NSInteger numberofIndex;
 
 
 

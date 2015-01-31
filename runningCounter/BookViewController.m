@@ -115,7 +115,8 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     cell.myImage.image = image;
     
-    cell.ImageName.text = [NSString stringWithFormat:@"Lv:%@",[[data objectAtIndex:indexPath.row]objectForKey:@"Lv"]];
+    cell.LvLabel.text = [NSString stringWithFormat:@"Lv:%@",[[data objectAtIndex:indexPath.row]objectForKey:@"Lv"]];
+    
     
     return cell;
     
@@ -139,9 +140,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     MapViewController *MVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     
-    MVC.pictureName = [[data objectAtIndex:indexPath.row] objectForKey:@"image"];
-    MVC.iconName = [[data objectAtIndex:indexPath.row] objectForKey:@"iconName"];
-    MVC.Lv = [[[data objectAtIndex:indexPath.row] objectForKey:@"Lv"]integerValue ];
+    MVC.numberofIndex = indexPath.row;
     
     [self presentViewController:MVC animated:YES completion:nil];
     

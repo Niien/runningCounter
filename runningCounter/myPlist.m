@@ -75,9 +75,16 @@ myPlist *shareInstance;
 }
 
 
-- (NSArray *)getDataFromPlist{
+- (void)saveDataByOverRide:(NSArray *)data {
     
-    NSArray *array = [[NSArray alloc]initWithContentsOfFile:dbPath];
+    [data writeToFile:dbPath atomically:YES];
+    
+}
+
+
+- (NSMutableArray *)getDataFromPlist{
+    
+    NSMutableArray *array = [[NSMutableArray alloc]initWithContentsOfFile:dbPath];
     
     return array;
 }

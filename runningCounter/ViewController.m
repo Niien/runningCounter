@@ -66,7 +66,7 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];    
 }
 -(void)viewWillAppear:(BOOL)animated{
     NSUserDefaults *usertmp = [NSUserDefaults standardUserDefaults];
