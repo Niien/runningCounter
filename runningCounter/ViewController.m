@@ -8,6 +8,7 @@
 #import "test.h"
 #import "ViewController.h"
 #import "StepCounter.h"
+@import AssetsLibrary;  //  儲存照片用
 
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
@@ -53,20 +54,40 @@
     
 //    [self myParseSetting];
     
-//    _UserLVLabel.text = userLV;
+    _UserLVLabel.text = [NSString stringWithFormat:@"累積能量：%ld",(long)stepCounter.power] ;
 
-    _UserPowerLabel.text = [NSString stringWithFormat:@"可消費步數：%ld",(long)stepCounter.stepNB] ;//userPower;
+    _UserPowerLabel.text = [NSString stringWithFormat:@"步數：%ld",(long)stepCounter.stepNB] ;//userPower;
 //    _UserAdwardLabel.text = useradward;
     NSLog(@"VC %ld",(long)stepCounter.stepNB);
     
 //    預設圖片 / 改變圖片
     [self ChangeImageBtn];
-    _UserImageView.image = [UIImage imageNamed:@"GG2.jpg"];
-    _UserImageView.contentMode = UIViewContentModeScaleAspectFit;
     
+    //有暫存 就套用
+    NSUserDefaults *UserImageTmp = [NSUserDefaults standardUserDefaults];
+    if ([UserImageTmp objectForKey:@"UserImageTmp"]) {
+        NSLog(@"有暫存");
+        NSString *Ttmp = [NSString stringWithFormat:@"%@",[UserImageTmp objectForKey:@"UserImageTmp"]];
+        _UserImageView.image = [UIImage imageNamed:Ttmp];
+        _UserImageView.contentMode = UIViewContentModeScaleAspectFit;}
+    else {
+        //若無暫存 就抓預設圖
+        NSLog(@"無暫存");
+        _UserImageView.image = [UIImage imageNamed:@"GG2.jpg"];
+        _UserImageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+    }
     
+//======    改變圖片結束
+    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];
+    //for test
+//    NSDictionary *dict = @{@"name":@"pikachu", @"image":@"5.png", @"iconName":@"5s.png", @"Lv":@"1", @"exp":@"0", @"lat":@"24.965235", @"lon":@"121.193882"};
+//    NSArray *arr = [[NSArray alloc]initWithObjects:dict, nil];
+//    [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:arr];
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     NSUserDefaults *usertmp = [NSUserDefaults standardUserDefaults];
@@ -138,6 +159,26 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     _UserImageView.image = [self modifyWithImage:editedImage];
     
+    //Save Image 0.8是壓縮率 越小品質越差
+    NSData *data = UIImageJPEGRepresentation(_UserImageView.image, 0.8);
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    
+    NSString *fileName = [documentPath stringByAppendingPathComponent:@"image.jpg"];
+    [data writeToFile:fileName atomically:NO];
+    NSLog(@"Document:%@",documentPath);
+    
+    //檔名暫存
+    NSUserDefaults *UserImageTmp = [NSUserDefaults standardUserDefaults];
+    [UserImageTmp setObject:fileName forKey:@"UserImageTmp"];
+    
+    //save to album 為上傳雲端用
+    ALAssetsLibrary *library = [ALAssetsLibrary new];
+    [library writeImageToSavedPhotosAlbum:_UserImageView.image.CGImage
+                              orientation:(ALAssetOrientation)_UserImageView.image.imageOrientation
+                          completionBlock:^(NSURL *assetURL, NSError *error) {
+                              NSLog(@"did save");
+                          }];
+
     //選完返回
     [imagePicker dismissViewControllerAnimated:YES completion:^{//
     }];

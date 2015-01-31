@@ -220,8 +220,8 @@
             exp = exp % 2000;
         }
         
-        NSString *EXP = [NSString stringWithFormat:@"%d",exp];
-        NSString *LvStr = [NSString stringWithFormat:@"%d",Lv];
+        NSString *EXP = [NSString stringWithFormat:@"%ld",(long)exp];
+        NSString *LvStr = [NSString stringWithFormat:@"%ld",(long)Lv];
         
         [pokemonDict setObject:EXP forKey:@"exp"];
         [pokemonDict setObject:LvStr forKey:@"Lv"];
