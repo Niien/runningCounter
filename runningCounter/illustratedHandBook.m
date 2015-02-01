@@ -118,13 +118,39 @@ static NSString * const reuseIdentifier = @"Cell";
     
     if ([[allPokemons objectAtIndex:indexPath.row]isEqualToString:[[myPokemons objectAtIndex:i] objectForKey:@"image"]]) {
         
-        cell.illustrateImage.image = [UIImage imageNamed:[allPokemons objectAtIndex:indexPath.row]];
+        
+//        cell.illustrateImage.image = [UIImage imageNamed:[allPokemons objectAtIndex:indexPath.row]];
+        //替換成以下
+        UIImage *tmpImage = [UIImage imageNamed:[allPokemons objectAtIndex:indexPath.row]];
+        //加上邊框(頗累的)
+        UIImage *frameImage = [UIImage imageNamed:@"poke_frame(100).png"];
+        UIGraphicsBeginImageContext(tmpImage.size);
+        [tmpImage drawInRect:CGRectMake(0, 0, tmpImage.size.width, tmpImage.size.height)];
+        [frameImage drawInRect:CGRectMake(0, 0, tmpImage.size.width, tmpImage.size.height)];
+        UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //加上邊框結束
+        cell.illustrateImage.image = resultImage;
+
+        
         i++;
         
     }
     else {
         
-        cell.illustrateImage.image = [UIImage imageNamed:@"mystery.png"];
+//        cell.illustrateImage.image = [UIImage imageNamed:@"mystery.png"];
+        //替換成下面的
+        UIImage *tmpImage = [UIImage imageNamed:@"mystery.png"];
+        //加上邊框(頗累的)
+        UIImage *frameImage = [UIImage imageNamed:@"poke_frame(100).png"];
+        UIGraphicsBeginImageContext(tmpImage.size);
+        [tmpImage drawInRect:CGRectMake(0, 0, tmpImage.size.width, tmpImage.size.height)];
+        [frameImage drawInRect:CGRectMake(0, 0, tmpImage.size.width, tmpImage.size.height)];
+        UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //加上邊框結束
+        cell.illustrateImage.image = resultImage;
+
         
     }
     

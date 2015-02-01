@@ -27,6 +27,8 @@
     UITextField *textfield;
     
     NSInteger exp;
+    
+//    UIProgressView *pro1;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
@@ -36,6 +38,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *LvLabel;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *expProgress;
 
 
 
@@ -63,6 +67,14 @@
     _myMapView.userTrackingMode = MKUserTrackingModeFollow;
     
     pokemonDict = [NSMutableDictionary new];
+    
+    //
+//    pro1=[[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleBar];
+//    pro1.frame=CGRectMake(30, 100, 200, 50);
+//    pro1.progress=exp/2000;
+//    //anomation
+//    [self.view addSubview:pro1];
+    
 }
 
 
@@ -79,7 +91,18 @@
     
     pokemonDict = [data objectAtIndex:self.numberofIndex];
     
-    self.pokemonImage.image = [UIImage imageNamed:[pokemonDict objectForKey:@"image"]];
+//    self.pokemonImage.image = [UIImage imageNamed:[pokemonDict objectForKey:@"image"]];
+    UIImage *tmpImage = [UIImage imageNamed:[pokemonDict objectForKey:@"image"]];
+    //加上邊框(頗累的)
+    UIImage *frameImage = [UIImage imageNamed:@"poke_frame(100).png"];
+    UIGraphicsBeginImageContext(tmpImage.size);
+    [tmpImage drawInRect:CGRectMake(0, 0, tmpImage.size.width, tmpImage.size.height)];
+    [frameImage drawInRect:CGRectMake(0, 0, tmpImage.size.width, tmpImage.size.height)];
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //加上邊框結束
+    self.pokemonImage.image = resultImage;
+    
     
     self.NameLabel.text = [pokemonDict objectForKey:@"name"];
     
@@ -110,7 +133,6 @@
         
         region.center = userLocation.coordinate;
         
-        
         // 縮放比例
         region.span.latitudeDelta = 0.01;
         region.span.longitudeDelta = 0.01;
@@ -118,10 +140,7 @@
         [_myMapView setRegion:region animated:YES];
         
         isfirstLocation = YES;
-        
     }
-    
-    
 }
 
 
@@ -130,12 +149,10 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
-    
     if (annotation == mapView.userLocation) {
         
         return nil;
     }
-    
     
     MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:[pokemonDict objectForKey:@"iconName"]];
         
@@ -218,7 +235,11 @@
             
             Lv += (exp /2000);
             exp = exp % 2000;
+            
         }
+        //
+//        [pro1 setProgress:exp/2000 animated:YES];
+//        [self.view addSubview:pro1];
         
         NSString *EXP = [NSString stringWithFormat:@"%ld",(long)exp];
         NSString *LvStr = [NSString stringWithFormat:@"%ld",(long)Lv];

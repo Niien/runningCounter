@@ -1461,9 +1461,16 @@
                                     <action selector="SaleButton:" destination="5Hf-dk-OiW" eventType="touchUpInside" id="tEB-2z-a1V"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="7yF-UG-F4x">
+                                <rect key="frame" x="126" y="150" width="100" height="2.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="m5H-yY-PZN"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oRz-JZ-Qm4" firstAttribute="leading" secondItem="7yF-UG-F4x" secondAttribute="leading" id="04Y-Xe-zue"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mxy-m0-Ls2" secondAttribute="trailing" constant="10" id="2Eo-0N-Pc9"/>
                             <constraint firstItem="g3W-PS-UVw" firstAttribute="top" secondItem="Ow6-yy-cdJ" secondAttribute="bottom" constant="180" id="3gV-KS-bx5"/>
                             <constraint firstItem="Zoa-3o-XvY" firstAttribute="top" secondItem="SDk-xr-ETT" secondAttribute="bottom" constant="20" id="6cP-vn-3kB"/>
@@ -1473,6 +1480,7 @@
                             <constraint firstItem="g3W-PS-UVw" firstAttribute="leading" secondItem="JMz-e4-5uy" secondAttribute="leadingMargin" constant="-16" id="F8t-x8-W45"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B53-3u-d4o" secondAttribute="trailing" constant="10" id="H9e-8F-Zoo"/>
                             <constraint firstItem="B53-3u-d4o" firstAttribute="top" secondItem="JMz-e4-5uy" secondAttribute="top" constant="64" id="Ldl-PB-jAh"/>
+                            <constraint firstItem="7yF-UG-F4x" firstAttribute="top" secondItem="oRz-JZ-Qm4" secondAttribute="bottom" constant="20" id="LeH-1B-veb"/>
                             <constraint firstAttribute="centerX" secondItem="g3W-PS-UVw" secondAttribute="centerX" id="OqC-x7-eva"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g3W-PS-UVw" secondAttribute="trailing" constant="-16" id="Oyz-A5-IBq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="g3W-PS-UVw" secondAttribute="bottom" constant="-6" id="P0X-jy-Zqf"/>
@@ -1486,6 +1494,7 @@
                     <connections>
                         <outlet property="LvLabel" destination="oRz-JZ-Qm4" id="iIa-Di-PCd"/>
                         <outlet property="NameLabel" destination="tqY-wB-kN6" id="22g-Ds-6M6"/>
+                        <outlet property="expProgress" destination="7yF-UG-F4x" id="iGk-Vv-rkC"/>
                         <outlet property="myMapView" destination="g3W-PS-UVw" id="FEr-cF-bDf"/>
                         <outlet property="pokemonImage" destination="Zoa-3o-XvY" id="ysJ-l1-F9B"/>
                     </connections>

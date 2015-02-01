@@ -52,8 +52,6 @@
     stepCounter = [StepCounter shareStepCounter];
     [stepCounter startStepCounter];
     
-//    [self myParseSetting];
-    
     _UserLVLabel.text = [NSString stringWithFormat:@"累積能量：%ld",(long)stepCounter.power] ;
 
     _UserPowerLabel.text = [NSString stringWithFormat:@"步數：%ld",(long)stepCounter.stepNB] ;//userPower;
@@ -69,8 +67,8 @@
         NSLog(@"有暫存");
         NSString *Ttmp = [NSString stringWithFormat:@"%@",[UserImageTmp objectForKey:@"UserImageTmp"]];
         _UserImageView.image = [UIImage imageNamed:Ttmp];
-        _UserImageView.contentMode = UIViewContentModeScaleAspectFit;}
-    else {
+        _UserImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }else {
         //若無暫存 就抓預設圖
         NSLog(@"無暫存");
         _UserImageView.image = [UIImage imageNamed:@"GG2.jpg"];
@@ -80,11 +78,10 @@
     
 //======    改變圖片結束
     
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(powerLabel) name:@"StepCounter" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addAnnotation:) name:@"getLocation" object:nil];
-    //for test
-//    NSDictionary *dict = @{@"name":@"pikachu", @"image":@"5.png", @"iconName":@"5s.png", @"Lv":@"1", @"exp":@"0", @"lat":@"24.965235", @"lon":@"121.193882"};
+    //For Test Sell
+//    NSDictionary *dict = @{@"name":@"pikachu", @"image":@"5.png", @"iconName":@"5s.png", @"Lv":@"10", @"exp":@"0", @"lat":@"24.965235", @"lon":@"121.193882"};
 //    NSArray *arr = [[NSArray alloc]initWithObjects:dict, nil];
 //    [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:arr];
     
@@ -108,19 +105,6 @@
 {
     _UserPowerLabel.text = [NSString stringWithFormat:@"%ld",(long)stepCounter.stepNB];
     
-}
-#pragma mark Parse設定
--(void)myParseSetting{
-//    ====== Parse
-//    初始化
-        getInfo = [[PFQuery alloc]initWithClassName:@"BattleUser"];
-    
-//    Label 取值
-    
-        username = [[getInfo findObjects][0]valueForKey:@"UserName"];
-        userLV = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserLV"]];
-        _power = [NSString stringWithFormat:@"%@",[[getInfo findObjects][0]valueForKey:@"UserPower"]];
-        useradward = [[getInfo findObjects][0]valueForKey:@"UserAdward"];
 }
 
 #pragma mark 變更照片
@@ -208,15 +192,12 @@
     return result;
 }
 
-
-
 #pragma mark - locationManager delegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
     userLocation = [locations lastObject];
     
 }
-
 
 #pragma mark - addAnnotation
 - (void)addAnnotation:(NSDictionary *)sender {
@@ -238,4 +219,6 @@
     [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataWithArray:array];
     
 }
+
+
 @end
