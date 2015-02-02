@@ -43,7 +43,7 @@
     
     //
     
-    personalData = [[myPlist shareInstanceWithplistName:@"MyPersonProfile"]getDataFromPlist];
+    personalData = [[myPlist shareInstanceWithplistName:@"MyPersonalProfile"]getDataFromPlist];
 
     NSLog(@"personalData:%@",personalData);
     
@@ -139,7 +139,7 @@
                                                      }, nil];
     
     
-    [[myPlist shareInstanceWithplistName:@"MyPersonalProfile"]saveDataWithArray:personalData];
+    [[myPlist shareInstanceWithplistName:@"MyPersonalProfile"]saveDataByOverRide:personalData];
     
     NSLog(@"personalData:%@",personalData);
     

@@ -11,7 +11,7 @@
 #import "MapViewController.h"
 
 
-@interface MapViewController () <MKMapViewDelegate,CLLocationManagerDelegate,UIAlertViewDelegate>
+@interface MapViewController () <MKMapViewDelegate,CLLocationManagerDelegate>
 {
     
     CLLocationManager *locationManager;
@@ -24,18 +24,12 @@
     
     NSMutableDictionary *pokemonDict;
     
-    UITextField *textfield;
+    NSString *iconName;
     
-    NSInteger exp;
+    
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
-
-@property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
-
-@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *LvLabel;
 
 
 
@@ -63,6 +57,7 @@
     _myMapView.userTrackingMode = MKUserTrackingModeFollow;
     
     pokemonDict = [NSMutableDictionary new];
+    
 }
 
 
@@ -77,17 +72,9 @@
     data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
     //NSLog(@"data:%@",data);
     
-    pokemonDict = [data objectAtIndex:self.numberofIndex];
-    
-    self.pokemonImage.image = [UIImage imageNamed:[pokemonDict objectForKey:@"image"]];
-    
-    self.NameLabel.text = [pokemonDict objectForKey:@"name"];
-    
-    self.LvLabel.text = [NSString stringWithFormat:@"等級%@",[pokemonDict objectForKey:@"Lv"]];
-    
-    exp = [[pokemonDict objectForKey:@"exp"]integerValue];
     
     [self addAnnotation];
+    
 }
 
 
@@ -96,6 +83,36 @@
     
     return YES;
 }
+
+
+#pragma mark - addAnnotation
+- (void)addAnnotation {
+    
+    for (NSDictionary *dict in data) {
+        
+        if ([[dict objectForKey:@"image"]isEqualToString:self.pictureName]) {
+            
+            double lat = [[dict objectForKey:@"lat"]doubleValue];
+            double lon = [[dict objectForKey:@"lon"]doubleValue];
+            //NSLog(@"lat:%f",lat);
+            //NSLog(@"lon:%f",lon);
+            
+            CLLocationCoordinate2D annotationCoordinate = CLLocationCoordinate2DMake(lat,lon);
+            
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            
+            annotation.coordinate = annotationCoordinate;
+            
+            [self.myMapView addAnnotation:annotation];
+            
+            iconName = [dict objectForKey:@"iconName"];
+            
+        }
+        
+    }
+    
+}
+
 
 
 #pragma mark - locattionManager Delegate
@@ -129,7 +146,7 @@
 #pragma mark - mapView delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-    
+    NSLog(@"view");
     
     if (annotation == mapView.userLocation) {
         
@@ -137,11 +154,11 @@
     }
     
     
-    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:[pokemonDict objectForKey:@"iconName"]];
+    MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:iconName];
         
     if (AnnotationView == nil) {
             
-        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:[pokemonDict objectForKey:@"iconName"]];
+        AnnotationView = [[MyCustomPin alloc]initWithAnnotation:annotation reuseIdentifier:iconName];
             
     }
     else {
@@ -158,126 +175,11 @@
 }
 
 
-#pragma mark - addAnnotation
-- (void)addAnnotation {
-    
-    for (NSDictionary *dict in data) {
-        
-        if ([[dict objectForKey:@"image"]isEqualToString:[pokemonDict objectForKey:@"image"]]) {
-            
-            double lat = [[dict objectForKey:@"lat"]doubleValue];
-            double lon = [[dict objectForKey:@"lon"]doubleValue];
-            //NSLog(@"lat:%f",lat);
-            //NSLog(@"lon:%f",lon);
-            
-            CLLocationCoordinate2D annotationCoordinate = CLLocationCoordinate2DMake(lat,lon);
-            
-            MKPointAnnotation *annotation = [MKPointAnnotation new];
-            
-            annotation.coordinate = annotationCoordinate;
-            
-            [self.myMapView addAnnotation:annotation];
-            
-        }
-        
-    }
-
-}
-
-
-#pragma mark - alert view delegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    NSInteger Lv = [[pokemonDict objectForKey:@"Lv"] integerValue];
-    
-    if (alertView.tag == 1) {
-        
-        NSInteger inputNumber = [textfield.text integerValue];
-        
-//            if (inputNumber <= [StepCounter shareStepCounter].power) {
-//        
-//                [StepCounter shareStepCounter].power -= inputNumber;
-//                exp += inputNumber;
-//        
-//                if (exp > 2000) {
-//        
-//                    Lv += (exp /2000);
-//                    exp = exp % 2000;
-//        
-//                }
-//            } else {
-//                
-//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"精力不夠" message:nil delegate:self cancelButtonTitle:@"確定" otherButtonTitles: nil];
-//                [alert show];
-//                
-//            }
-        
-        exp += inputNumber;
-        
-        if (exp >= 2000) {
-            
-            Lv += (exp /2000);
-            exp = exp % 2000;
-        }
-        
-        NSString *EXP = [NSString stringWithFormat:@"%ld",(long)exp];
-        NSString *LvStr = [NSString stringWithFormat:@"%ld",(long)Lv];
-        
-        [pokemonDict setObject:EXP forKey:@"exp"];
-        [pokemonDict setObject:LvStr forKey:@"Lv"];
-        
-        [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataByOverRide:data];
-        
-        self.LvLabel.text = [NSString stringWithFormat:@"等級%@",LvStr];
-    }
-    else if (alertView.tag == 2) {
-        
-        if (buttonIndex == 1) {
-            
-            [data removeObject:pokemonDict];
-            
-            [StepCounter shareStepCounter].power += (Lv*1000);
-            
-            [[myPlist shareInstanceWithplistName:@"MyPokemon"]saveDataByOverRide:data];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-        
-    }
-    
-}
 
 
 
-#pragma mark - button Action
-
-- (IBAction)back:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
-- (IBAction)expButton:(id)sender {
-    
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"輸入給予的精力" message:nil delegate:self cancelButtonTitle:@"確定" otherButtonTitles: nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alert.tag = 1;
-    [alert show];
-    
-    textfield = [alert textFieldAtIndex:0];
-}
 
 
-- (IBAction)SaleButton:(id)sender {
-    
-    NSInteger Lv = [[pokemonDict objectForKey:@"Lv"] integerValue];
-    NSString *message = [NSString stringWithFormat:@"可回收%d精力",Lv*1000];
-    
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"確定要賣掉" message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"確定", nil];
-    alert.tag = 2;
-    [alert show];
-    
-}
 
 
 /*

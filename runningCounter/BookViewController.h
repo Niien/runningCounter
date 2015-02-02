@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CollectionViewCell.h"
-#import "MapViewController.h"
+#import "pokemonDetailViewController.h"
 #import "myDB.h"
 #import "myPlist.h"
 

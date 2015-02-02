@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "myPlist.h"
 #import "CollectionViewCell.h"
+#import "MapViewController.h"
 
 @interface illustratedHandBook : UICollectionViewController
 

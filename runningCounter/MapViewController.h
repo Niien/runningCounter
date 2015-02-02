@@ -20,7 +20,7 @@
 @interface MapViewController : ViewController
 
 
-@property (assign, nonatomic) NSInteger numberofIndex;
+@property (strong, nonatomic) NSString *pictureName;
 
 
 

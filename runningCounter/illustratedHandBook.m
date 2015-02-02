@@ -8,11 +8,12 @@
 
 #import "illustratedHandBook.h"
 
-@interface illustratedHandBook () <UICollectionViewDelegateFlowLayout>
+@interface illustratedHandBook () <UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 {
     
     NSMutableArray *allPokemons;
     NSMutableArray *myPokemons;
+    NSMutableArray *reOrderArray;
     
 }
 
@@ -34,13 +35,13 @@ static NSString * const reuseIdentifier = @"Cell";
     // Do any additional setup after loading the view.
     
     allPokemons = [NSMutableArray new];
+    reOrderArray = [NSMutableArray new];
     
     for (int i = 1; i <= 30; i++) {
         
-        [allPokemons addObject:[NSString stringWithFormat:@"%d.png",i]];
+        [allPokemons addObject:@"mystery.png"];
         
     }
-    
     
     UINavigationBar *bar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
     [self.view addSubview:bar];
@@ -57,6 +58,14 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewWillAppear:animated];
 
     myPokemons = [[NSMutableArray alloc]initWithArray:[[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist]];
+    
+    for (NSDictionary *dict in myPokemons) {
+        
+        int i = [[dict objectForKey:@"id"]intValue];
+        allPokemons [i-1] = [dict objectForKey:@"image"];
+        
+    }
+    
     [self refresh];
 }
 
@@ -80,12 +89,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)back:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
 
 /*
 #pragma mark - Navigation
@@ -111,32 +114,48 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CollectionViewCell *cell = (CollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    int i = 0;
     
-    if ([[allPokemons objectAtIndex:indexPath.row]isEqualToString:[[myPokemons objectAtIndex:i] objectForKey:@"image"]]) {
-        
-        cell.illustrateImage.image = [UIImage imageNamed:[allPokemons objectAtIndex:indexPath.row]];
-        i++;
-        
-    }
-    else {
-        
-        cell.illustrateImage.image = [UIImage imageNamed:@"mystery.png"];
-        
-    }
+    cell.illustrateImage.image = [UIImage imageNamed:[allPokemons objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MapViewController *mvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    
+    if (![[allPokemons objectAtIndex:indexPath.row]isEqualToString:@"mystery.png"]) {
+        
+        mvc.pictureName = [allPokemons objectAtIndex:indexPath.row];
+        
+        [self presentViewController:mvc animated:YES completion:nil];
+        
+    }
+    
+}
+
+
+
+#pragma mark - collection view delegate flowlayout
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
     return UIEdgeInsetsMake(35.0, 0, 10.0, 0);
     
 }
+
+
+#pragma mark - button action
+
+- (IBAction)back:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 
 #pragma mark <UICollectionViewDelegate>

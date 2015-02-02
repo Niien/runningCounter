@@ -16,6 +16,7 @@
 		A913688A1A75362500BBB0CA /* setting_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A91368881A75362500BBB0CA /* setting_30.png */; };
 		A91368BF1A76188700BBB0CA /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368BE1A76188700BBB0CA /* StoreViewController.m */; };
 		A91368C71A7629D300BBB0CA /* PersonalIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */; };
+		A93E91FF1A7D67D3009440E3 /* pokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E91FE1A7D67D3009440E3 /* pokemonDetailViewController.m */; };
 		A974CA721A7BD8AA00F08AA0 /* position_30.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CA711A7BD8AA00F08AA0 /* position_30.png */; };
 		A974CAB81A7CC0F600F08AA0 /* exp_30*60.png in Resources */ = {isa = PBXBuildFile; fileRef = A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */; };
 		A974CABB1A7D12B300F08AA0 /* illustratedHandBook.m in Sources */ = {isa = PBXBuildFile; fileRef = A974CABA1A7D12B300F08AA0 /* illustratedHandBook.m */; };
@@ -168,6 +169,8 @@
 		A91368BE1A76188700BBB0CA /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		A91368C51A7629D300BBB0CA /* PersonalIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalIDViewController.h; sourceTree = "<group>"; };
 		A91368C61A7629D300BBB0CA /* PersonalIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalIDViewController.m; sourceTree = "<group>"; };
+		A93E91FD1A7D67D3009440E3 /* pokemonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pokemonDetailViewController.h; sourceTree = "<group>"; };
+		A93E91FE1A7D67D3009440E3 /* pokemonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pokemonDetailViewController.m; sourceTree = "<group>"; };
 		A974CA711A7BD8AA00F08AA0 /* position_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = position_30.png; sourceTree = "<group>"; };
 		A974CAB71A7CC0F600F08AA0 /* exp_30*60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exp_30*60.png"; sourceTree = "<group>"; };
 		A974CAB91A7D12B300F08AA0 /* illustratedHandBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = illustratedHandBook.h; sourceTree = "<group>"; };
@@ -406,8 +409,8 @@
 			children = (
 				A9F6778B1A6E366400E5F06E /* BookViewController.h */,
 				A9F6778C1A6E366400E5F06E /* BookViewController.m */,
-				A9F677841A6E35B700E5F06E /* MapViewController.h */,
-				A9F677851A6E35B700E5F06E /* MapViewController.m */,
+				A93E91FD1A7D67D3009440E3 /* pokemonDetailViewController.h */,
+				A93E91FE1A7D67D3009440E3 /* pokemonDetailViewController.m */,
 			);
 			name = book;
 			sourceTree = "<group>";
@@ -427,6 +430,8 @@
 				A91368BE1A76188700BBB0CA /* StoreViewController.m */,
 				A974CAB91A7D12B300F08AA0 /* illustratedHandBook.h */,
 				A974CABA1A7D12B300F08AA0 /* illustratedHandBook.m */,
+				A9F677841A6E35B700E5F06E /* MapViewController.h */,
+				A9F677851A6E35B700E5F06E /* MapViewController.m */,
 			);
 			name = setting;
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 				A9F677901A6E368400E5F06E /* CollectionViewCell.m in Sources */,
 				AEB786D91A7A0C7600181446 /* LoginVC.m in Sources */,
 				A974CABB1A7D12B300F08AA0 /* illustratedHandBook.m in Sources */,
+				A93E91FF1A7D67D3009440E3 /* pokemonDetailViewController.m in Sources */,
 				A9F6778D1A6E366400E5F06E /* BookViewController.m in Sources */,
 				A9B064E61A6F7D7A004554B6 /* FMDatabase.m in Sources */,
 				A9BFE8ED1A75246D00D2B2EA /* Game3ViewController.m in Sources */,

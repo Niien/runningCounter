@@ -202,10 +202,10 @@
 
 #pragma mark 存入Plist
 -(void)SaveToPlist{
-    
+    NSString *id = [NSString stringWithFormat:@"%d",randomMonster];
     // save data to plist
-    NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1", @"exp":@"0"};
-    NSLog(@"G2:%@",dict);
+    NSDictionary *dict = @{@"name":imageName, @"image":imageName, @"iconName":iconName, @"Lv":@"1", @"exp":@"0", @"id":id};
+    NSLog(@"G1:%@",dict);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"getLocation" object:nil userInfo:dict];
 }
 

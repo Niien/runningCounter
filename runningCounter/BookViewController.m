@@ -54,7 +54,7 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     
     data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
     
-    NSLog(@"BookView:%@",data);
+    //NSLog(@"BookView:%@",data);
     
     [self refresh];
     
@@ -138,11 +138,11 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    MapViewController *MVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    pokemonDetailViewController *pdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"pokemonDetail"];
     
-    MVC.numberofIndex = indexPath.row;
+    pdvc.numberOfIndex = indexPath.row;
     
-    [self presentViewController:MVC animated:YES completion:nil];
+    [self presentViewController:pdvc animated:YES completion:nil];
     
 }
 
