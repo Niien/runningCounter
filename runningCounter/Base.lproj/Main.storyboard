@@ -1479,6 +1479,7 @@
                                     <action selector="removeTeam:" destination="5Hf-dk-OiW" eventType="touchUpInside" id="uGT-dv-g9q"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B53-3u-d4o">
                                 <rect key="frame" x="441" y="279" width="60" height="30"/>
                                 <constraints>
@@ -1525,6 +1526,36 @@
                             <constraint firstItem="Mxy-m0-Ls2" firstAttribute="top" secondItem="B53-3u-d4o" secondAttribute="bottom" constant="30" id="uSE-eR-sxT"/>
                             <constraint firstItem="CCx-MQ-zvC" firstAttribute="top" secondItem="Lc3-KH-a4H" secondAttribute="bottom" constant="30" id="uUn-T6-iMy"/>
                             <constraint firstItem="tqY-wB-kN6" firstAttribute="top" secondItem="Ow6-yy-cdJ" secondAttribute="bottom" constant="53" id="vLg-9D-Ino"/>
+=======
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="7yF-UG-F4x">
+                                <rect key="frame" x="126" y="150" width="100" height="2.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="m5H-yY-PZN"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oRz-JZ-Qm4" firstAttribute="leading" secondItem="7yF-UG-F4x" secondAttribute="leading" id="04Y-Xe-zue"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mxy-m0-Ls2" secondAttribute="trailing" constant="10" id="2Eo-0N-Pc9"/>
+                            <constraint firstItem="g3W-PS-UVw" firstAttribute="top" secondItem="Ow6-yy-cdJ" secondAttribute="bottom" constant="180" id="3gV-KS-bx5"/>
+                            <constraint firstItem="Zoa-3o-XvY" firstAttribute="top" secondItem="SDk-xr-ETT" secondAttribute="bottom" constant="20" id="6cP-vn-3kB"/>
+                            <constraint firstItem="oRz-JZ-Qm4" firstAttribute="top" secondItem="tqY-wB-kN6" secondAttribute="bottom" constant="15" id="949-cL-yer"/>
+                            <constraint firstItem="Zoa-3o-XvY" firstAttribute="leading" secondItem="JMz-e4-5uy" secondAttribute="leadingMargin" id="9eT-5Q-ZIg"/>
+                            <constraint firstItem="g3W-PS-UVw" firstAttribute="top" secondItem="Zoa-3o-XvY" secondAttribute="bottom" constant="36" id="AQ7-xO-UKz"/>
+                            <constraint firstItem="g3W-PS-UVw" firstAttribute="leading" secondItem="JMz-e4-5uy" secondAttribute="leadingMargin" constant="-16" id="F8t-x8-W45"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B53-3u-d4o" secondAttribute="trailing" constant="10" id="H9e-8F-Zoo"/>
+                            <constraint firstItem="B53-3u-d4o" firstAttribute="top" secondItem="JMz-e4-5uy" secondAttribute="top" constant="64" id="Ldl-PB-jAh"/>
+                            <constraint firstItem="7yF-UG-F4x" firstAttribute="top" secondItem="oRz-JZ-Qm4" secondAttribute="bottom" constant="20" id="LeH-1B-veb"/>
+                            <constraint firstAttribute="centerX" secondItem="g3W-PS-UVw" secondAttribute="centerX" id="OqC-x7-eva"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g3W-PS-UVw" secondAttribute="trailing" constant="-16" id="Oyz-A5-IBq"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="g3W-PS-UVw" secondAttribute="bottom" constant="-6" id="P0X-jy-Zqf"/>
+                            <constraint firstItem="tqY-wB-kN6" firstAttribute="leading" secondItem="Zoa-3o-XvY" secondAttribute="trailing" constant="10" id="PJE-GT-J1s"/>
+                            <constraint firstItem="Mxy-m0-Ls2" firstAttribute="top" secondItem="B53-3u-d4o" secondAttribute="bottom" constant="15" id="QGh-II-jkq"/>
+                            <constraint firstItem="B53-3u-d4o" firstAttribute="top" secondItem="Zoa-3o-XvY" secondAttribute="top" id="T7D-fv-qae"/>
+                            <constraint firstItem="tqY-wB-kN6" firstAttribute="top" secondItem="SDk-xr-ETT" secondAttribute="bottom" constant="29" id="XLU-eJ-o2g"/>
+                            <constraint firstItem="oRz-JZ-Qm4" firstAttribute="leading" secondItem="Zoa-3o-XvY" secondAttribute="trailing" constant="10" id="ZXp-f6-VOL"/>
+>>>>>>> FETCH_HEAD
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1535,9 +1566,17 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="LvLabel" destination="oRz-JZ-Qm4" id="XSd-ua-L4Y"/>
                         <outlet property="NameLabel" destination="tqY-wB-kN6" id="xUH-fI-vHL"/>
                         <outlet property="pokemonImage" destination="Zoa-3o-XvY" id="Fpv-hc-Ioa"/>
+=======
+                        <outlet property="LvLabel" destination="oRz-JZ-Qm4" id="iIa-Di-PCd"/>
+                        <outlet property="NameLabel" destination="tqY-wB-kN6" id="22g-Ds-6M6"/>
+                        <outlet property="expProgress" destination="7yF-UG-F4x" id="iGk-Vv-rkC"/>
+                        <outlet property="myMapView" destination="g3W-PS-UVw" id="FEr-cF-bDf"/>
+                        <outlet property="pokemonImage" destination="Zoa-3o-XvY" id="ysJ-l1-F9B"/>
+>>>>>>> FETCH_HEAD
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIw-YH-qFL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -26,10 +26,21 @@
     
     NSString *iconName;
     
+    NSInteger exp;
     
+//    UIProgressView *pro1;
+
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *LvLabel;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *expProgress;
 
 
 
@@ -58,6 +69,14 @@
     
     pokemonDict = [NSMutableDictionary new];
     
+    //
+//    pro1=[[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleBar];
+//    pro1.frame=CGRectMake(30, 100, 200, 50);
+//    pro1.progress=exp/2000;
+//    //anomation
+//    [self.view addSubview:pro1];
+    
+
 }
 
 
@@ -71,7 +90,6 @@
     
     data = [[myPlist shareInstanceWithplistName:@"MyPokemon"]getDataFromPlist];
     //NSLog(@"data:%@",data);
-    
     
     [self addAnnotation];
     
@@ -127,7 +145,6 @@
         
         region.center = userLocation.coordinate;
         
-        
         // 縮放比例
         region.span.latitudeDelta = 0.01;
         region.span.longitudeDelta = 0.01;
@@ -135,10 +152,7 @@
         [_myMapView setRegion:region animated:YES];
         
         isfirstLocation = YES;
-        
     }
-    
-    
 }
 
 
@@ -146,15 +160,19 @@
 #pragma mark - mapView delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
     NSLog(@"view");
+
     
     if (annotation == mapView.userLocation) {
         
         return nil;
     }
     
+
     
     MyCustomPin *AnnotationView = (MyCustomPin *)[self.myMapView dequeueReusableAnnotationViewWithIdentifier:iconName];
+
         
     if (AnnotationView == nil) {
             
@@ -173,13 +191,6 @@
     return AnnotationView;
     
 }
-
-
-
-
-
-
-
 
 
 /*

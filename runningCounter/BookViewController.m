@@ -112,8 +112,15 @@ static NSString * const reuseIdentifier = @"CollectionViewCell";
     NSString *imageName = [NSString stringWithFormat:@"%@",[[data objectAtIndex:indexPath.row] objectForKey:@"image"]];
     
     UIImage *image = [UIImage imageNamed:imageName];
-    
-    cell.myImage.image = image;
+    //加上邊框(頗累的)
+    UIImage *frameImage = [UIImage imageNamed:@"poke_frame(100).png"];
+    UIGraphicsBeginImageContext(image.size);
+    [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+    [frameImage drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //加上邊框結束
+    cell.myImage.image = result;
     
     cell.LvLabel.text = [NSString stringWithFormat:@"Lv:%@",[[data objectAtIndex:indexPath.row]objectForKey:@"Lv"]];
     
